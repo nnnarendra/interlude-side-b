@@ -1,10 +1,10 @@
 # Interlude / Side B (Visual Novel)
 
-> 🇮🇩 [Bahasa Indonesia](#-bahasa-indonesia) | 🇬🇧 [English](#-english)
+> [ID] [Bahasa Indonesia](#id-bahasa-indonesia) | [EN] [English](#en-english)
 
 ---
 
-## 🇮🇩 Bahasa Indonesia
+## [ID] Bahasa Indonesia
 
 **Interlude / Side B** adalah visual novel Ren'Py (`1920×1080`) tentang Kai, Yara, Pak Ageng, dan **Toko Gema Masa** di ujung gang buntu Kota Malang — tempat kaset pita memutar 60 detik suara hari esok.
 
@@ -50,7 +50,7 @@ Seluruh aset merujuk pada jalur tetap di dalam `game/images/` dan `game/audio/`.
 
 ---
 
-## 🇬🇧 English
+## [EN] English
 
 **Interlude / Side B** is a bilingual (`1920×1080`) Ren'Py visual novel about Kai, Yara, Pak Ageng, and **Toko Gema Masa** at the end of a dead-end alley in Malang, Indonesia — a shop where cassette tapes play 60 seconds of tomorrow's sound.
 
