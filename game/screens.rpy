@@ -330,7 +330,8 @@ screen choice(items):
         spacing _card_gap
 
         for idx, i in enumerate(items):
-            $ _meta = get_choice_card_meta(i.caption, idx)
+            $ _cap = renpy.translate_string(i.caption, language=("en" if persistent.story_lang == "en" else None))
+            $ _meta = get_choice_card_meta(_cap, idx)
             $ _card_accent = "#d96252" if _meta["gate_type"] == "climax" else ("#e0a55e" if _meta["gate_type"] in ("major", "cond") else "#c9a275")
 
             button:
@@ -407,7 +408,7 @@ screen choice(items):
                             background None
                             padding (22, 16)
 
-                            text i.caption:
+                            text _cap:
                                 style "choice_card_caption"
                                 align (0.5, 0.5)
                                 text_align 0.5
@@ -1298,6 +1299,18 @@ screen changelog():
                 frame:
                     xfill True
                     ysize 2
+                    padding (0, 0)
+                    background Solid(UI_BORDER_SUBTLE)
+
+                vbox:
+                    spacing 10
+                    xfill True
+                    text ui_tr("changelog_v105_title") size 27 bold True color gui.accent_color
+                    text ui_tr("changelog_v105_body") size 24 color gui.text_color line_spacing 8
+
+                frame:
+                    xfill True
+                    ysize 1
                     padding (0, 0)
                     background Solid(UI_BORDER_SUBTLE)
 

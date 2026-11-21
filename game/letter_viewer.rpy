@@ -29,9 +29,16 @@ init -5 python:
         "ink": "#261a12", "title_color": "#6b472a", "rule_color": "#b58c5f88",
     }
 
+    def _tr_letter(s):
+        if not s:
+            return s
+        lang = "en" if persistent.story_lang == "en" else None
+        return renpy.translate_string(str(s), language=lang)
+
     def _record_letter_to_history(title, paragraphs):
-        if title:
-            narrator.add_history(kind="adv", who=title, what="\n".join(str(p) for p in paragraphs if p))
+        t = _tr_letter(title)
+        if t:
+            narrator.add_history(kind="adv", who=t, what="\n".join(_tr_letter(p) for p in paragraphs if p))
 
 screen letter_viewer(cg_id, letter_title, paragraphs, centered_mode=False, paper_bg=None):
     modal True
@@ -42,6 +49,8 @@ screen letter_viewer(cg_id, letter_title, paragraphs, centered_mode=False, paper
     $ _by = _lay["ypos"]
     $ _bw = _lay["xsize"]
     $ _bh = _lay["ysize"]
+    $ _tr_title = _tr_letter(letter_title)
+    $ _tr_paragraphs = [_tr_letter(p) for p in paragraphs]
 
     add cg_id xysize (1920, 1080) fit "cover"
 
@@ -82,21 +91,21 @@ screen letter_viewer(cg_id, letter_title, paragraphs, centered_mode=False, paper
                         xfill True
                         yalign 0.5
                         spacing _lay["spacing"]
-                        for p in paragraphs:
+                        for p in _tr_paragraphs:
                             text p size scaled_font_size(_lay["font_size"]) italic True color _lay["ink"] xalign 0.5 text_align 0.5 line_spacing _lay["line_spacing"] substitute False
             else:
                 vbox:
                     xsize _bw
                     spacing _lay["spacing"]
 
-                    if letter_title:
+                    if _tr_title:
                         vbox:
                             spacing 8
                             xsize _bw
-                            text letter_title size scaled_font_size(_lay["title_size"]) bold True color _lay["title_color"] substitute False
+                            text _tr_title size scaled_font_size(_lay["title_size"]) bold True color _lay["title_color"] substitute False
                             add Solid(_lay["rule_color"]) xsize _bw ysize 2
 
-                    for p in paragraphs:
+                    for p in _tr_paragraphs:
                         text p size scaled_font_size(_lay["font_size"]) italic True color _lay["ink"] line_spacing _lay["line_spacing"] substitute False
 
     frame:

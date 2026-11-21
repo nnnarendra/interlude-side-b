@@ -241,6 +241,8 @@ init -10 python:
             "credits_btn_glossary": "Glosarium",
             "changelog_title": "Changelog",
             "changelog_subtitle": "Riwayat Pembaruan Interlude / Side B",
+            "changelog_v105_title": "v1.0.5 — Perbaikan Terjemahan Pilihan, Transkrip Kaset, & CG Surat (EN)",
+            "changelog_v105_body": "• Perbaikan sinkronisasi terjemahan Bahasa Inggris pada kartu pilihan cerita, transkrip pemutar kaset, dan penampil CG surat terbuka.\n• Penyelarasan bahasa bawaan & konsistensi terjemahan otomatis saat memulai atau memuat permainan.",
             "changelog_v104_title": "v1.0.4 — Ekspansi Audio (3 BGM & 5 SFX), Sprite Dewasa, & Poles UI",
             "changelog_v104_body": "• Penambahan 3 BGM baru (total 9 BGM di Ruang Musik): Hujan di Kamar Malam, Gema 1994 (Tema Siti), & Melodi Hari Baru (Kafe).\n• Penambahan 5 SFX baru (total 14 SFX): suara kertas surat dibuka, notifikasi HP, detak jam dinding, goresan pena, & cangkir teh.\n• Perbaikan CG Bukit Senja & Kaset Siti agar latar kembali normal sebelum sprite muncul.\n• Kartu item otomatis bergeser ke sisi kanan saat hanya 1 karakter di layar agar tidak menutupi wajah.\n• Penambahan 3 sprite versi dewasa/kuliah pasca-timeskip (Yara, Teman 1, & Teman 2 di Bab 46–47) serta penurunan opacity panel kiri Menu Utama sebesar 40%.",
             "changelog_v103_title": "v1.0.3 — Surat Terbuka Fullscreen, Inspeksi Item, & Poles UI",
@@ -584,6 +586,8 @@ init -10 python:
             "credits_btn_glossary": "Glossary",
             "changelog_title": "Changelog",
             "changelog_subtitle": "Interlude / Side B Update History",
+            "changelog_v105_title": "v1.0.5 — Story Choice, Cassette Transcript, & Letter CG Translation Fixes (EN)",
+            "changelog_v105_body": "• Fixed English translation syncing for story choice cards, cassette player transcripts, and fullscreen open-letter CGs.\n• Improved startup and load-time language synchronization across UI and story states.",
             "changelog_v104_title": "v1.0.4 — Audio Expansion (3 BGMs & 5 SFX), Adult Sprites, & UI Polish",
             "changelog_v104_body": "• Added 3 new BGMs (9 BGMs total in Music Room): Rainy Night in the Bedroom, Echo of 1994 (Siti's Theme), & New Day Melody (Café).\n• Added 5 new SFX (14 SFX total): letter paper unfold, phone chime, wall clock tick-tock, pen writing, & teacup set-down.\n• Fixed Bukit Senja & Siti's Cassette CG transitions so backgrounds properly restore before sprites appear.\n• Item popups now automatically shift to the right side when only 1 character is on screen.\n• Added 3 post-timeskip adult/college sprites (Yara, Friend 1, & Friend 2 in Ch. 46–47) and lowered Main Menu left-panel opacity by 40%.",
             "changelog_v103_title": "v1.0.3 — Fullscreen Open Letters, Item Inspection, & UI Polish",
@@ -951,7 +955,10 @@ init -10 python:
     def sync_preferences_with_persistent():
         """Sinkronkan _preferences.language & kecepatan baca dengan variabel persisten tanpa memanggil change_language saat init."""
         _ensure_persistent_containers()
-        _preferences.language = None if persistent.story_lang == "id" else "en"
+        target = None if persistent.story_lang == "id" else "en"
+        _preferences.language = target
+        if not renpy.is_init_phase():
+            renpy.change_language(target, force=True)
         apply_read_speed()
 
     class SetUILanguage(Action, DictEquality):

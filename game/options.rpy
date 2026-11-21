@@ -1,6 +1,6 @@
 define config.name = "Interlude / Side B"
 define gui.show_name = False
-define config.version = "1.0.4"
+define config.version = "1.0.5"
 
 define config.save_directory = "interlude-side-b-2026"
 

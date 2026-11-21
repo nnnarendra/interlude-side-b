@@ -48,9 +48,13 @@ init -8 python:
         if transcript_lines:
             for item in transcript_lines:
                 if isinstance(item, (tuple, list)) and len(item) >= 2:
-                    result.append((item[0], str(item[1])))
+                    _lang = "en" if persistent.story_lang == "en" else None
+                    _spk = renpy.translate_string(str(item[0]), language=_lang) if item[0] is not None else None
+                    _txt = renpy.translate_string(str(item[1]), language=_lang)
+                    result.append((_spk, _txt))
                 elif item is not None:
-                    result.append((None, str(item)))
+                    _lang = "en" if persistent.story_lang == "en" else None
+                    result.append((None, renpy.translate_string(str(item), language=_lang)))
         if not result:
             meta = CASSETTE_CATALOG.get(cassette_id, {})
             if meta.get("is_silent"):
