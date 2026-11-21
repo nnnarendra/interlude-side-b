@@ -1,9 +1,3 @@
-## Interlude / Side B — English Translation (Chapters 9–12)
-
-################################################################################
-## CHAPTER 9 — Joy That Pierces the Chest
-################################################################################
-
 translate en b09_001:
     "That afternoon, the sky over the Gema Masa alley was solid gray, like a canvas soaked in spilled paint. The drizzle kept steadily dampening the asphalt. Kai stood frozen in front of the wooden shop door — his hand already halfway up to grab the handle — when the door suddenly swung open from the inside."
 
@@ -97,11 +91,6 @@ translate en b09_020:
 translate en b09_021:
     kai_hati "Friday. Four in the afternoon. {i}(swallows hard){/i} Giant footsteps. Slow, but unstoppable. Coming straight to crush me."
 
-
-################################################################################
-## CHAPTER 10 — Escape to a Quiet Room
-################################################################################
-
 translate en b10_001a:
     kai_hati "Mom and Dad's laughter from last night is still echoing in my head. Warm. ...And then I remember what day it is."
 
@@ -182,11 +171,6 @@ translate en b10_019:
 
 translate en b10_020:
     kai_hati "3:30. {i}(swallows hard){/i} Thirty minutes left. Thirty minutes until total silence. ...Okay. Here I am. Safest place I could think of. If it's really coming — let it come."
-
-
-################################################################################
-## CHAPTER 11 — The Falling Echo That Silences
-################################################################################
 
 translate en b11_001:
     "The library's old wooden floorboards creaked softly every time Kai shifted, as if protesting his movement. Between the thick, dusty rows of encyclopedias, time felt like thick syrup — refusing to flow. The chilly air and smell of aging paper wrapped around him, offering a flimsy illusion of safety from the outside world he saw as a minefield."
@@ -283,11 +267,6 @@ translate en b11_029:
 
 translate en b11_030:
     kai_hati "The tape didn't lie. Sixty seconds of silence, four o'clock, Friday — all of it was true. It was just the meaning... {i}(shakes his head, smiling){/i} I read the meaning completely wrong. Way off."
-
-
-################################################################################
-## CHAPTER 12 — Sweetness Between Realities
-################################################################################
 
 translate en b12_001:
     "Stepping out of the library, Kai's stomach growled. Made sense — he'd been way too busy being terrified of dying all day to remember to eat. At a little canteen near the library that was about to close, he bought a drink and something to fill his stomach."

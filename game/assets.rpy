@@ -1,12 +1,7 @@
-## Interlude / Side B — Deklarasi Referensi Aset Kanonik (73 aset persis sesuai aset_manifest.json)
-## Mengganti berkas placeholder pada fase berikutnya cukup menimpa file di foldernya dengan nama sama.
-
-## --- UI (3 aset) ---
 image ui_latar_menu = "images/ui/ui_latar_menu.jpg"
 image ui_logo_judul = "images/ui/ui_logo_judul.png"
 image ui_ikon_kaset = "images/ui/ui_ikon_kaset.png"
 
-## --- Background (20 aset) ---
 image bg_gang_hujan = "images/bg/bg_gang_hujan.jpg"
 image bg_gang_kering = "images/bg/bg_gang_kering.jpg"
 image bg_toko_luar = "images/bg/bg_toko_luar.jpg"
@@ -28,8 +23,6 @@ image bg_bukit = "images/bg/bg_bukit.jpg"
 image bg_stasiun = "images/bg/bg_stasiun.jpg"
 image bg_rumah_yara = "images/bg/bg_rumah_yara.jpg"
 
-## --- Sistem Sorot Penutur Aktif (Non-penutur diberi overlay hitam 25% via TintMatrix) ---
-## Memakai kelas top-level (picklable) agar proses Save/Load di PC & Android 100% aman.
 init -6 python:
     _active_speaker_tag = None
 
@@ -65,7 +58,6 @@ init -5:
     transform speaker_dim(tag):
         function make_speaker_dim_fn(tag)
 
-## --- Sprite Karakter (24 aset — tag terpisah spasi + auto-dim 25% saat tidak berbicara) ---
 image kai biasa = At("images/sprites/kai_biasa.png", speaker_dim("kai"))
 image kai cemas = At("images/sprites/kai_cemas.png", speaker_dim("kai"))
 image kai panik = At("images/sprites/kai_panik.png", speaker_dim("kai"))
@@ -95,7 +87,6 @@ image kaya biasa = At("images/sprites/kaya_biasa.png", speaker_dim("kaya"))
 image kaya senyum = At("images/sprites/kaya_senyum.png", speaker_dim("kaya"))
 image kaya marah = At("images/sprites/kaya_marah.png", speaker_dim("kaya"))
 
-## --- Sprite NPC Pendukung (9 aset — auto-dim 25% saat tidak berbicara) ---
 image npc_bu_sarah = At("images/sprites/npc_bu_sarah.png", speaker_dim("npc_bu_sarah"))
 image npc_ibu = At("images/sprites/npc_ibu.png", speaker_dim("npc_ibu"))
 image npc_ayah = At("images/sprites/npc_ayah.png", speaker_dim("npc_ayah"))
@@ -108,7 +99,6 @@ image npc_ibu_penjual = At("images/sprites/npc_ibu_penjual.png", speaker_dim("np
 image npc_pemilik_warung = At("images/sprites/npc_pemilik_warung.png", speaker_dim("npc_pemilik_warung"))
 image npc_barista = At("images/sprites/npc_barista.png", speaker_dim("npc_barista"))
 
-## --- CG Kanonik (12 aset) — dipastikan nama image cocok 1:1 dengan ID Galeri CG ---
 image cg_perpustakaan_debu = "images/cg/cg_perpustakaan_debu.jpg"
 image cg_headphone = "images/cg/cg_headphone.jpg"
 image cg_barter = "images/cg/cg_barter.jpg"
@@ -126,8 +116,6 @@ image cg_surat_perpisahan = "images/cg/cg_surat_perpisahan.jpg"
 image cg_surat_yara = "images/cg/cg_surat_yara.jpg"
 image cg_surat_balasan_yara = "images/cg/cg_surat_balasan_yara.jpg"
 
-## --- Posisi Sprite Standar (1920x1080, kanvas sprite 1000x1400 bottom-anchored) ---
-## Jarak lebar (0.18 / 0.50 / 0.82 @ zoom 0.70) agar 2 maupun 3 karakter tidak berdempetan.
 transform pos_center:
     xpos 0.50
     xanchor 0.5
@@ -146,7 +134,6 @@ transform pos_right:
     yalign 1.0
     zoom 0.70
 
-## --- Audio SFX (9 aset) ---
 define audio.sfx_lonceng_pintu = "audio/sfx/sfx_lonceng_pintu.ogg"
 define audio.sfx_desis_pita = "audio/sfx/sfx_desis_pita.ogg"
 define audio.sfx_klik_play = "audio/sfx/sfx_klik_play.ogg"
@@ -162,7 +149,6 @@ define audio.sfx_jam_dinding = "audio/sfx/sfx_jam_dinding.ogg"
 define audio.sfx_tulis_pena = "audio/sfx/sfx_tulis_pena.ogg"
 define audio.sfx_cangkir_teh = "audio/sfx/sfx_cangkir_teh.ogg"
 
-## --- Audio Kaset (5 aset) ---
 define audio.kaset_besok_busarah = "audio/kaset/kaset_besok_busarah.ogg"
 define audio.kaset_hening_60detik = "audio/kaset/kaset_hening_60detik.ogg"
 define audio.kaset_tangis_yara = "audio/kaset/kaset_tangis_yara.ogg"
@@ -170,7 +156,6 @@ define audio.kaset_tawa_siti = "audio/kaset/kaset_tawa_siti.ogg"
 define audio.kaset_ultah_kai_yara = "audio/kaset/kaset_ultah_kai_yara.ogg"
 define audio.kaset_pesan_ageng = "audio/kaset/kaset_pesan_ageng.ogg"
 
-## --- Audio BGM (6 aset) ---
 define audio.bgm_toko = "audio/bgm/bgm_toko.ogg"
 define audio.bgm_sekolah = "audio/bgm/bgm_sekolah.ogg"
 define audio.bgm_senja = "audio/bgm/bgm_senja.ogg"

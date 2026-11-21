@@ -1,9 +1,3 @@
-## Interlude / Side B — English Translation (Chapters 36–39)
-
-################################################################################
-## CHAPTER 36 — Honesty Too Late / Honesty Right on Time
-################################################################################
-
 translate en b36_m19_a1:
     ageng "{i}(looking at the photo on Kai's phone){/i} This alley… dry. Been a long, long time since I saw it dry."
 
@@ -211,10 +205,6 @@ translate en b36s_026:
 translate en b36s_027:
     "And that afternoon, for once, Kai walks home with his chest lighter than when he arrived — not because he knows the future, simply because he stopped trying to figure it out alone."
 
-################################################################################
-## CHAPTER 37 — Soulless Metal [RED ROUTE + G10=A]
-################################################################################
-
 translate en b37_001:
     "Yara shoots up from her seat. Her breathing comes fast and sharp. All the anger that had been held back behind her tears boils right over — because now she knows everything."
 
@@ -259,10 +249,6 @@ translate en b37_013:
 
 translate en b37_014:
     "Kai is left alone in a living room that has gone dead silent. In his hand, the red cassette shell feels colder than ever — like every last drop of life inside it has evaporated."
-
-################################################################################
-## CHAPTER 38 — A Letter from Remaining Time
-################################################################################
 
 translate en b38_001:
     "Week after week slips by without a single word between them. At school, Yara is completely out of reach now: big black headphones clamped tightly over her ears from the moment she steps off the angkot till the final bell — a wall nobody is allowed through. Especially not Kai."
@@ -344,10 +330,6 @@ translate en b38_015c:
 
 translate en b38_016c:
     "He turns his phone off and puts it in the same drawer. For a whole week it stays dark. At school he keeps his head down. At home he goes to bed early. One month out from August first, Kai decides to sink completely into the silence he built himself — ignoring the last hand held out by the girl who brought his world back to life."
-
-################################################################################
-## CHAPTER 39 — A Spectrum of Soulless Sound
-################################################################################
 
 translate en b39_001:
     "Three weeks since that letter went into the drawer. Three weeks of Kai moving around like a ghost — watching Yara's back from down the hall, a back growing straighter, farther away."

@@ -1,10 +1,3 @@
-## Interlude / Side B — English Translation (Epilogues Chapters 45–48)
-## Source: game/story/bab_45_48.rpy
-
-################################################################################
-## CHAPTER 45 — The Unplayed Tape
-################################################################################
-
 translate en b45_001:
     "Kai walks out of the station concourse. His steps feel light — lighter than any step he's taken all year. This afternoon's storm has passed. The asphalt is still wet, streetlights are flickering on one by one, and his chest feels… open. That hollow ache that sat heavy in him for months has finally melted away."
 
@@ -61,11 +54,6 @@ translate en b45_016b:
 
 translate en b45_017b:
     "Kai tucks that last tape from Pak Ageng into the deepest corner of the drawer and shuts it tight. Some things really are meant for later."
-
-
-################################################################################
-## CHAPTER 46 — An Echo of One's Own (Happy-True)
-################################################################################
 
 translate en b46t_001:
     "A few months later. Dry-season winds sweep through Malang, crisp but still carrying a late-afternoon chill. Kai walks along with a college backpack slung over one shoulder — his thick gray jacket swapped out for a casual flannel shirt."
@@ -124,11 +112,6 @@ translate en b46t_016:
 translate en b46t_017:
     "Kai turns and walks out of the alley toward the bustling main street. Safe in his jacket pocket sits the blank tape Pak Ageng gave him — quiet proof that his future is his own now, to write and listen to, surprises and all."
 
-
-################################################################################
-## CHAPTER 46 — An Echo of One's Own (Happy-Healthy)
-################################################################################
-
 translate en b46s_001:
     "A few months later, Kai's feet bring him back down that alley. Gema Masa is empty now — a \"FOR RENT\" sign taped to its clean window. Pak Ageng is gone, and the shop's work is done. Kai smiles faintly at the empty glass, then reaches into his jacket pocket."
 
@@ -155,11 +138,6 @@ translate en b46s_008:
 
 translate en b46s_009:
     "Kai steps out of the alley onto the lively main street, the cassette tucked safe in his pocket — not to sneak a peek at tomorrow, but to replay whenever he wants to remember today."
-
-
-################################################################################
-## CHAPTER 47 — A New Aroma in the Same Corner
-################################################################################
 
 translate en b47_001:
     "Two years pass. The dead-end alley isn't silent anymore: cool post-rain air, a warm hum of chatter, and at the very end — Gema Masa has been transformed. The heavy wooden door has been replaced by a black iron-framed glass door."
@@ -229,11 +207,6 @@ translate en b47_016b:
 
 translate en b47_016c:
     "Sometimes all you really need is to sit. In the same chair, in the same corner — as someone new."
-
-
-################################################################################
-## CHAPTER 48 — Frequency Never Lost
-################################################################################
 
 translate en b48_001:
     "Four years. Countless all-nighters, crumpled tracing paper, and endless model revisions — all folded neatly into one architecture degree. Kai defended his thesis last week."

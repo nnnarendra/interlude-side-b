@@ -1,16 +1,6 @@
-## Interlude / Side B — Batch 2 (Bab 5–8)
-## Sumber verbatim: NASKAH-VN-MASTER-Interlude-Side-B.md (baris 337–575)
-## Gerbang: m04 (Bab 5), m05 (Bab 6), G2 (Bab 7), m06 (Bab 8)
-## Pencapaian: ach_hening (Bab 5 bila kaset hening didengar sampai tuntas tanpa skip)
-
-################################################################################
-## BAB 5 — Hening
-################################################################################
-
 label bab_05:
     $ chapter_autosave("bab_05", "Bab 5 — Hening", "Ch. 5 — Silence")
 
-    ## Adegan 5-1 — Toko Gema Masa, Kamis sore
     play sound sfx_lonceng_pintu
     scene bg_toko_dalam with dissolve
     play music bgm_toko loop fadein 1.2
@@ -31,7 +21,6 @@ label bab_05:
     show kai cemas at pos_left
     kai_hati "Agak. Nggak pernah benar-benar tenang, sih. Tapi ya… lumayan. Kayak pegang payung. Besok mau hujan kayak apa pun, seenggaknya aku sudah tahu duluan." id b05_006
 
-    ## Adegan 5-2 — Kamar Kai, jam sebelas malam ◆ m04
     stop music fadeout 1.0
     scene bg_kamar_kai_malam with dissolve
     show kai biasa at pos_center with dissolve
@@ -53,8 +42,6 @@ label bab_05:
 
     "Jarinya menekan tombol play." id b05_010
 
-    ## Pemutaran kaset hening 60 detik via komponen pemutar kaset Fase 2
-    ## (Bila didengar sampai tuntas 60 detik tanpa skip -> ach_hening otomatis terbuka)
     call play_cassette(
         cassette_id="kaset_hening_60detik",
         label_title=_("Kaset Hari Jumat — 60 Detik"),
@@ -100,15 +87,9 @@ label bab_05:
 
     return
 
-
-################################################################################
-## BAB 6 — Bukti Kehidupan
-################################################################################
-
 label bab_06:
     $ chapter_autosave("bab_06", "Bab 6 — Bukti Kehidupan", "Ch. 6 — Proof of Life")
 
-    ## Adegan 6-1 — Kaset kosong
     scene bg_kamar_kai_malam with dissolve
     play music bgm_cemas loop if_changed
     show kai panik at pos_center with dissolve
@@ -124,7 +105,6 @@ label bab_06:
 
     "Pita cadangan usang, yang biasa dia pakai merekam lagu acak dari radio. Dia harus memastikan alat rekamnya masih berfungsi. Dia harus dengar napasnya sendiri. Sekarang. Sebagai bukti dia masih hidup." id b06_005
 
-    ## Adegan 6-2 — Tombol REC
     "Tangannya gemetar terlalu hebat. Jari-jarinya kaku dan dingin. Kaset itu meleset dari Walkman dan membentur lantai. Kai ikut jatuh berlutut, memungutnya dengan napas memburu. Matanya perih — bukan sedih, tapi frustrasi dan takut yang sudah nggak tertampung." id b06_006
 
     show kai menangis at pos_center
@@ -142,7 +122,6 @@ label bab_06:
 
     kai_hati "Nggak bisa. Aku nggak bisa ngomong. {i}(memeluk Walkman itu){/i} Aku takut. Kalau aku paksa bersuara, terus aku putar balik… dan yang kudengar tetap hening kayak kaset tadi… aku nggak sanggup. Aku nggak sanggup dengarnya." id b06_012
 
-    ## Adegan 6-3 — Jangkar ◆ m05
     show kai sedih at pos_center
     "Walkman itu berhenti direkam. Kai masih di lantai. Kepalanya berputar mencari satu hal — satu saja — yang bisa membuktikan malam ini dia benar-benar ada." id b06_013
 
@@ -168,15 +147,9 @@ label bab_06:
 
     return
 
-
-################################################################################
-## BAB 7 — Tafsir Bisu Sebuah Jeda
-################################################################################
-
 label bab_07:
     $ chapter_autosave("bab_07", "Bab 7 — Tafsir Bisu Sebuah Jeda", "Ch. 7 — Silent Reading of a Pause")
 
-    ## Adegan 7-1 — Subuh di toko
     scene bg_gang_hujan with dissolve
     play music bgm_cemas loop if_changed
 
@@ -195,7 +168,6 @@ label bab_07:
 
     "Pak Ageng tidak terkejut. Dia bahkan tidak berhenti mengelap pemutar pita tua di belakang konter. Tatapannya tenang sekali, seperti kemarahan Kai cuma riak kecil di permukaan telaga." id b07_005
 
-    ## Adegan 7-2 — Lemper
     stop music fadeout 1.2
     play music bgm_toko loop fadein 1.5
     show ageng senyum at pos_right
@@ -216,7 +188,6 @@ label bab_07:
 
     "Untuk sejenak, teror semalam mereda. Ada rasa nyata di lidahnya. Kakinya masih berpijak di bumi." id b07_011
 
-    ## Adegan 7-3 — Tafsir ◆ G2
     $ hide_item()
     "Setelah gigitan terakhir ditelan, Pak Ageng mengambil kaset itu dan memutarnya di jari-jarinya yang keriput." id b07_012
 
@@ -231,7 +202,6 @@ label bab_07:
 
     "Kai menatap kaset di tangan Pak Ageng. Kepalanya masih menolak. Tapi beban di dadanya — sedikit saja — bergeser. Sekarang giliran Kai yang memutuskan: keheningan itu apa?" id b07_016
 
-    ## GERBANG UTAMA G2 (posisi 2 string 12 huruf)
     menu:
         "Apa kata Kai?"
 
@@ -263,7 +233,6 @@ label bab_07:
             ageng "{i}(mengamati, tidak melarang){/i} Wes. Kalau itu yang kamu butuhkan sekarang." id b07_019c
             "Tapi Kai tahu — dan Pak Ageng juga tahu — dia akan menghindari rak itu berminggu-minggu." id b07_020c
 
-    ## Adegan 7-4 — Pulang
     show ageng biasa at pos_right
     play music bgm_toko loop if_changed
     if get_major_choice(2) == "C":
@@ -278,15 +247,9 @@ label bab_07:
 
     return
 
-
-################################################################################
-## BAB 8 — Surat-Surat yang Tak Sempat Terbaca
-################################################################################
-
 label bab_08:
     $ chapter_autosave("bab_08", "Bab 8 — Surat-Surat yang Tak Sempat Terbaca", "Ch. 8 — Letters Never Read")
 
-    ## Adegan 8-1 — Seikat surat tua ◆ m06
     scene bg_toko_dalam with dissolve
     show kai biasa at pos_left with dissolve
     show ageng biasa at pos_right with dissolve
@@ -321,7 +284,6 @@ label bab_08:
             stop sound fadeout 0.4
             "Kai membetulkan ikatan rafia yang miring itu — hanya itu — lalu berbalik ke pintu. Di belakangnya, derit kursi goyang berhenti sebentar. Pak Ageng tidak bilang apa-apa. Tapi sepertinya dia memperhatikan." id b08_003b
 
-    ## Adegan 8-2 — Museum kecil
     stop sound fadeout 0.4
     stop music fadeout 1.2
     scene bg_kamar_kai_malam with dissolve
@@ -341,7 +303,6 @@ label bab_08:
 
     kai "{i}(memegang tumpukan surat itu lama){/i} …Yang ini juga. Nggak akan pernah terkirim juga, kan. {i}(memasukkannya ke kantong hitam, pelan){/i} Setidaknya… aku ingin diingat sebagai versi yang lebih rapi." id b08_009
 
-    ## Adegan 8-3 — Surat yang tidak akan terkirim
     scene bg_kamar_kai_malam with dissolve
     play sound sfx_tulis_pena
     show kai sedih at pos_center with dissolve

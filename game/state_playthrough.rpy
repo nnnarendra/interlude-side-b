@@ -1,10 +1,5 @@
-## Interlude / Side B — Variabel State Per-Playthrough & Hook Gerbang/Pencapaian (Fase 2)
-## Semua variabel state permainan memakai `default` (bukan `define`) agar tersimpan otomatis di save.
-## Flag minor `m01`–`m23` dan kondisional `K1`/`K2` dipisahkan penuh dari penilai ending.
-
 define SAVE_SCHEMA_VERSION = 1
 
-## Registri mesin 23 gerbang minor persis sesuai `minor_gates.json` (read-only).
 define MINOR_GATES_CATALOG = {
     "m01": ("A", "B", "C"),
     "m02": ("A", "B", "C"),
@@ -37,16 +32,13 @@ define RAIN_SOUND_BY_M15 = {
     "C": "payung",
 }
 
-## Metadata bab berjalan untuk ditampilkan di slot save/load (PRD §4.2).
 default current_chapter_id = ""
 default current_chapter_name_id = ""
 default current_chapter_name_en = ""
 
-## 12 gerbang utama (G1..G12): daftar 12 slot + string 12 huruf yang tersinkronisasi di save.
 default major_choices = [None, None, None, None, None, None, None, None, None, None, None, None]
 default choice_string = "------------"
 
-## 23 gerbang minor (m01..m23) — namespace terpisah, TIDAK pernah dibaca penilai ending.
 default minor_flags = {
     "m01": None, "m02": None, "m03": None, "m04": None, "m05": None,
     "m06": None, "m07": None, "m08": None, "m09": None, "m10": None,
@@ -55,26 +47,17 @@ default minor_flags = {
     "m21": None, "m22": None, "m23": None,
 }
 
-## 2 gerbang kondisional (K1 bila G9=A; K2 di epilog Happy-True Bab 45) — tidak mengubah ending.
 default cond_k1 = None
 default cond_k2 = None
 
-## Flag item kosmetik (rantai item gerbang minor, tersimpan di save):
-## - m02=A -> item_kaset_kosong_mini (dipakai opsi ekstra m21)
-## - m10=A -> item_file_panci (dipakai m13, m20, dan syarat ach_kolektor_suara)
-## - m13=A -> item_panci_di_portofolio (daftar portofolio Yara di Bab 22)
-## - m14=C -> item_kaset_rusak (kosmetik dari rak pojok di Bab 19)
-## - m15   -> item_file_hujan ("talang" | "daun" | "payung", dipakai Bab 25, m20, ach_kolektor_suara)
 default item_kaset_kosong_mini = False
 default item_file_panci = False
 default item_panci_di_portofolio = False
 default item_kaset_rusak = False
 default item_file_hujan = None
 
-## Flag modal dialog G6=A ("toko ini cermin") untuk membuka pengakuan penuh di G10 (Bab 29/36).
 default flag_g6_cermin = False
 
-## Sub-pilihan rasa kalimat rekaman Kai di G7=A (Bab 23-2 — BUKAN gerbang, tidak menyentuh ending).
 default flavor_g7_opening = None
 
 init -5 python:
@@ -112,7 +95,6 @@ init -5 python:
         store.major_choices[idx] = c
         _rebuild_choice_string()
 
-        ## Hook pencapaian & flag terkait gerbang utama (PRD §4.6 & Route Map):
         if gate_num == 4 and c == "A":
             unlock_achievement("ach_telinga_kedua", notify=True)
         elif gate_num == 6:
@@ -154,7 +136,6 @@ init -5 python:
 
         store.minor_flags[gate_id] = c
 
-        ## Rantai item kosmetik sesuai `GERBANG-MINOR-Interlude-Side-B.md` & `minor_gates.json`:
         if gate_id == "m02":
             store.item_kaset_kosong_mini = (c == "A")
         elif gate_id == "m10":
@@ -193,8 +174,6 @@ init -5 python:
             renpy.save_persistent()
         return c
 
-    ## --- Hook Pencapaian Berbasis Adegan/Bab (siap dipanggil di fase naskah) ---
-
     def hook_cassette_played(cassette_id):
         """Dipanggil saat kaset mulai diputar (PRD §4.6: ach_first_tape di Bab 3, plus Side A & Side B epilog)."""
         if cassette_id == "kaset_besok_busarah":
@@ -222,8 +201,6 @@ init -5 python:
         """Dipanggil di akhir bab tertentu (PRD §4.6: ach_penunggu_mati saat Bab 11 selesai)."""
         if chapter_id == "bab_11":
             unlock_achievement("ach_penunggu_mati", notify=True)
-
-    ## --- Kendali Skip, Auto-Play, & Autosave Awal Bab ---
 
     def stop_skip_and_auto():
         """Hentikan skip dan auto-play secara paksa (wajib di menu pilihan & adegan kaset — PRD §4.4)."""

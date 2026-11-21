@@ -1,17 +1,6 @@
-## Interlude / Side B — Batch 11 (Epilog Bab 45–48)
-## Sumber verbatim: NASKAH-VN-MASTER-Interlude-Side-B.md (baris 3760–3990)
-## Gerbang: K2 (Bab 45 — hanya Happy-True: A -> ach_kaset_terakhir + Bab 48 penuh; B -> bonus Galeri Bab 48),
-##          m23 (Bab 47 — Happy-True & Happy-Sehat)
-## CG & Kaset: cg_tombol_play (Bab 45-3), kaset_pesan_ageng (Bab 48-3 via pemutar kaset Fase 2)
-
-################################################################################
-## BAB 45 — Pita yang Tak Terputar [HAPPY-TRUE] ◆ K2
-################################################################################
-
 label bab_45:
     $ chapter_autosave("bab_45", "Bab 45 — Pita yang Tak Terputar", "Ch. 45 — The Unplayed Tape")
 
-    ## Adegan 45-1 — Keluar dari stasiun, malam setelah hujan
     scene bg_stasiun with dissolve
     play music bgm_epilog loop if_changed
     show kai senyum at pos_center with dissolve
@@ -22,7 +11,6 @@ label bab_45:
 
     "Kakinya berjalan sendiri. Tanpa disuruh, tanpa dipikir — trotoar itu membawanya belok ke arah yang sudah sangat dia kenal. Gang buntu. Toko Gema Masa." id b45_003
 
-    ## Adegan 45-2 — Toko Gema Masa, kaset terakhir
     play sound sfx_lonceng_pintu
     scene bg_toko_dalam_malam with dissolve
     play music bgm_duka_siti loop fadein 1.5
@@ -53,7 +41,6 @@ label bab_45:
 
     ageng "{i}(terpaku sejenak — lalu tertawa hangat, tawa paling lega yang pernah keluar dari pria tua itu){/i} Pilihan yang sangat bijak, Kai. Kamu akhirnya benar-benar bebas." id b45_014
 
-    ## Adegan 45-3 — Kamar Kai, malam itu ◆ K2 (CG Kanonik #6: cg_tombol_play)
     scene bg_kamar_kai_malam with dissolve
     show kai biasa at pos_center with dissolve
 
@@ -61,7 +48,6 @@ label bab_45:
 
     $ show_cg_and_unlock("cg_tombol_play", dissolve)
 
-    ## GERBANG KONDISIONAL K2 (hanya Happy-True; A -> ach_kaset_terakhir + Bab 48; B -> bonus Galeri Bab 48)
     menu:
         "Kaset berlabel kosong itu ada di tangan Kai."
 
@@ -77,15 +63,9 @@ label bab_45:
 
     return
 
-
-################################################################################
-## BAB 46 — Gema yang Menjadi Milik Sendiri [HAPPY-TRUE & VARIAN HAPPY-SEHAT]
-################################################################################
-
 label bab_46_true:
     $ chapter_autosave("bab_46_true", "Bab 46 — Gema yang Menjadi Milik Sendiri", "Ch. 46 — An Echo of One's Own")
 
-    ## Adegan 46-1 — Gang buntu, beberapa bulan kemudian, senja kemarau
     scene bg_gang_kering with fade
     play music bgm_epilog loop if_changed
     show kai dewasa at pos_center with dissolve
@@ -105,7 +85,6 @@ label bab_46_true:
 
     kai_hati "Pak Ageng sudah pergi. Tokonya juga. Toko yang lahir dari duka itu… sudah selesai tugasnya. {i}(mengusap kaca jendela perlahan){/i} Makasih, Pak. Nggak sempat bilang langsung. Jadi lewat sini saja." id b46t_006
 
-    ## Adegan 46-2 — Panggilan video dari Yogyakarta
     scene bg_teras_toko with dissolve
     play sound sfx_notifikasi_hp
     show kai dewasa at pos_left with dissolve
@@ -137,11 +116,9 @@ label bab_46_true:
 
     return
 
-
 label bab_46_sehat:
     $ chapter_autosave("bab_46_sehat", "Bab 46 — Gema yang Menjadi Milik Sendiri", "Ch. 46 — An Echo of One's Own")
 
-    ## Adegan 46S-1 — Di depan toko yang kosong [HAPPY-SEHAT]
     scene bg_toko_kosong with fade
     play music bgm_epilog loop fadein 1.5
     show kai dewasa at pos_center with dissolve
@@ -169,15 +146,9 @@ label bab_46_sehat:
 
     return
 
-
-################################################################################
-## BAB 47 — Aroma Baru di Sudut yang Sama [HAPPY-TRUE & HAPPY-SEHAT] ◆ m23
-################################################################################
-
 label bab_47:
     $ chapter_autosave("bab_47", "Bab 47 — Aroma Baru di Sudut yang Sama", "Ch. 47 — A New Aroma in the Same Corner")
 
-    ## Adegan 47-1 — Dua tahun kemudian, kedai kopi di bekas Toko Gema Masa
     play sound sfx_lonceng_pintu
     scene bg_kafe with fade
     play music bgm_kafe_baru loop fadein 1.5
@@ -201,12 +172,10 @@ label bab_47:
 
     kai_hati "Buat mereka, ini cuma kedai kopi enak buat nugas. Buat aku… di balik dinding ekspos ini, kadang aku masih kayak dengar putaran kaset pelan-pelan. Gesekan pita. Tawa Pak Ageng pas menyajikan cenil. Gemanya sudah mati — diganti gema yang hidup. Dan itu nggak apa-apa. Malah bagus." id b47_007
 
-    ## Adegan 47-2 — Kilas balik: pertama kali Kai masuk ke kedai ini ◆ m23
     hide npc_teman1_dewasa with dissolve
     hide npc_teman2_dewasa with dissolve
     "Kai ingat pertama kali dia mendorong pintu kaca ini, tidak lama setelah kedai ini buka. Waktu itu dia berdiri lama di depan bar, membaca papan menu — di tempat yang persis sama dengan konter jati dulu." id b47_008
 
-    ## GERBANG MINOR m23 (pesanan pertama Kai di kedai kopi bekas toko)
     menu:
         "Pesanan pertama Kai di kedai kopi bekas toko itu:"
 
@@ -229,7 +198,6 @@ label bab_47:
             barista "Boleh, santai saja." id b47_010c
             kai_hati "Waktu itu aku cuma butuh duduk. Memastikan tempat ini sudah jadi tempat lain — dan aku baik-baik saja dengan itu." id b47_011c
 
-    ## Adegan 47-3 — Pesan suara dari Yara
     "Saat teman-temannya kembali tenggelam dalam diskusi kolom dan atap, ponsel Kai bergetar. Pesan dari Yara — dengan lampiran rekaman suara sepuluh detik." id b47_012
 
     yara_pesan "\"Kai, dengar ini! Aku baru saja merekam suara rintik hujan yang jatuh di atas atap seng stasiun Tugu sore ini. Nadanya persis seperti gema di Stasiun Malang Kota Lama dua tahun lalu. Aku merindukanmu.\"" id b47_013
@@ -241,7 +209,6 @@ label bab_47:
 
     stop sound fadeout 0.8
 
-    ## Baris penutup adegan mengikuti pilihan m23
     if get_minor_choice("m23") == "A":
         "Kopi hitam pertamanya di tempat ini sudah lama habis. Yang tersisa cuma rasanya — pahit, jujur, dan nggak perlu diramal." id b47_016a
     elif get_minor_choice("m23") == "B":
@@ -251,15 +218,9 @@ label bab_47:
 
     return
 
-
-################################################################################
-## BAB 48 — Frekuensi yang Tak Pernah Hilang [HANYA BILA K2=A / BONUS GALERI]
-################################################################################
-
 label bab_48:
     $ chapter_autosave("bab_48", "Bab 48 — Frekuensi yang Tak Pernah Hilang", "Ch. 48 — Frequency Never Lost")
 
-    ## Adegan 48-1 — Empat tahun kemudian, kamar Kai, siang
     scene bg_kamar_kai with fade
     play music bgm_epilog loop fadein 1.5
     show kai dewasa at pos_center with dissolve
@@ -275,7 +236,6 @@ label bab_48:
 
     kai "{i}(duduk di tepi tempat tidur, merobek plastik segelnya perlahan){/i} Pak… saya putar sekarang, ya." id b48_004
 
-    ## Adegan 48-2 — Isi kaset Side A: Potensi Kebahagiaan (kaset_ultah_kai_yara.ogg)
     stop music fadeout 0.8
     $ hide_item()
     "Desis halus mengalir. Lalu hening, tiga detik. Kai menahan napas. Dan suara yang keluar membuat matanya membelalak." id b48_005
@@ -296,7 +256,6 @@ label bab_48:
     kai_hati "Gimana mungkin… Kaset ini disegel empat tahun lalu. Ulang tahunku baru beberapa bulan kemarin. Gimana dia bisa merekamnya? {i}(jeda panjang; lalu pemahaman itu datang pelan-pelan){/i} …Oh. Oh, Pak. Kaset ini nggak pernah merekam takdir. Nggak ada toko itu yang merekam takdir." id b48_009
     kai_hati "Yang direkamnya… potensi kebahagiaan. Getaran dari keputusan-keputusan baik yang kuambil sejak hari di stasiun itu. Setiap kali aku milih percaya sama hari ini ketimbang takut sama besok — kaset ini menyelaraskan dirinya. Merekam gema kebahagiaan yang memang seharusnya kumiliki." id b48_009_p2
 
-    ## Adegan 48-3 — Pesan terakhir Pak Ageng (komponen pemutar kaset Fase 2 + transkrip penuh)
     stop music fadeout 1.0
     $ hide_item()
     call play_cassette(
@@ -313,7 +272,6 @@ label bab_48:
         allow_skip=True,
     )
 
-    ## Adegan 48-4 — Penutup
     play sound sfx_klik_play
     play music bgm_epilog loop fadein 1.5
     scene bg_kamar_kai with dissolve
@@ -328,16 +286,9 @@ label bab_48:
     stop music fadeout 1.5
     return
 
-
-## Titik putar Adegan Bonus Bab 48 dari Galeri CG (hanya terbuka bila K2=B di Happy-True — PRD §4.7).
 label bab_48_bonus:
     call bab_48
     return
-
-
-################################################################################
-## EPILOG KHUSUS H2 (HAPPY-SEHAT) — Side A Saja: Gema Bahagia (kaset_ultah_kai_yara)
-################################################################################
 
 label epilog_h2_kaset_ultah:
     scene bg_kamar_kai with fade

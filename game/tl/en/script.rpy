@@ -1,8 +1,3 @@
-## Interlude / Side B — Kerangka Terjemahan Cerita Bahasa Inggris (Ren'Py Translation Framework)
-## Terpisah penuh dari terjemahan UI (`game/i18n_ui.rpy`).
-## Seluruh baris cerita Bab 1–48 di `game/story/` memiliki ID stabil (`b01_001` .. `b48_xxx`)
-## dan seluruh string peran/kaset dibungkus `_()` agar siap diisi terjemahan EN pada Fase 8.
-
 translate en strings:
     old "Gadis"
     new "Girl"

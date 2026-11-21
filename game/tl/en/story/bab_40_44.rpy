@@ -1,10 +1,3 @@
-## Interlude / Side B — English Translation (Chapters 40–44 + 5 Ending Closings)
-## Source: game/story/bab_40_44.rpy
-
-################################################################################
-## CHAPTER 40 — A Parcel at the Edge of Time
-################################################################################
-
 translate en b40_001:
     "August first. It's finally here, no putting it off. Malang's sky feels strange this morning — not overcast, not bright. Cool, quiet. Like the whole city is holding its breath, waiting for late afternoon."
 
@@ -68,11 +61,6 @@ translate en b40_016c:
 translate en b40_017:
     "The little parcel goes into Kai's bag. Outside, the sky that's been holding back since morning starts to shift color."
 
-
-################################################################################
-## CHAPTER 41 — Cutting the Tape of Fate
-################################################################################
-
 translate en b41_001:
     kai "{i}(stares at the clock — 2:00 PM){/i} …Idiot. God, I'm such an idiot."
 
@@ -103,11 +91,6 @@ translate en b41_008:
 translate en b41_009:
     "Under rain pouring harder by the second, he has only one destination: Stasiun Malang Kota Lama. No magnetic tape is deciding this afternoon. His own feet are. His own voice is."
 
-
-################################################################################
-## CHAPTER 42 — Meeting at the Platform Edge
-################################################################################
-
 translate en b42_001:
     "Kai kills the engine in the parking lot, bike leaning crooked, no time to straighten it properly. He sprints through the blowing rain into the concourse packed with people taking shelter and travelers hauling cardboard boxes, backpacks, and dripping umbrellas. He's gasping for air. His gray jacket is drenched — water dripping off his hair and hem onto the station tiles."
 
@@ -129,11 +112,6 @@ translate en b42_006:
 translate en b42_007:
     "Just a few meters between them. Right here, every choice Kai has made since his first day at that shop — every tape, every silence, every time he ran — hangs in the balance."
 
-
-################################################################################
-## ENDING — HAPPY-TRUE (H1)
-################################################################################
-
 translate en b42_h1_001:
     "Yara stays frozen, her grip on the suitcase handle going slack. And Kai — for the first time in six months — doesn't back away."
 
@@ -148,11 +126,6 @@ translate en b42_h1_002c:
 
 translate en b42_h1_003:
     kai "{i}(steps forward, still out of breath){/i} Yar… wait. Don't board yet. I… I have to say something. Right now. Right here."
-
-
-################################################################################
-## ENDING — HAPPY-HEALTHY (H2)
-################################################################################
 
 translate en b42_h2_001:
     "Yara looks at Kai, dripping wet, and then — catching even Kai off guard — she lets out a small laugh. A tired laugh, full of relief."
@@ -190,11 +163,6 @@ translate en b42_h2_011:
 translate en b42_h2_012:
     "Those words are finally spoken. Yet on this path, they feel light. No tape coming to collect, no prophecy looming over them. Just two people parting ways because that's how life goes — promising, in their own voices, that this song isn't over yet."
 
-
-################################################################################
-## ENDING — OPEN / UNRESOLVED (G)
-################################################################################
-
 translate en b42_g_001:
     "Kai reaches the platform at the exact moment the train doors shut. The exact moment the conductor's whistle blows. Right on time — and still too late."
 
@@ -227,11 +195,6 @@ translate en b42_g_009b:
 
 translate en b42_g_010:
     "— End of Side B."
-
-
-################################################################################
-## ENDING — SAD-IRONIC (S2)
-################################################################################
 
 translate en b42_s2_001:
     kai "{i}(steps forward fast, words spilling out uncontrollably){/i} Yar, listen to me first. I can explain. I pulled away because of the tape, Yar. That red tape. It showed me you were going to leave — you were crying, saying goodbye — I heard all of it before it even happened, I— I couldn't take it, so I—"
@@ -275,11 +238,6 @@ translate en b42_s2_013:
 translate en b42_s2_014:
     "Silence. Sixty seconds on the dot. Then a click. Potential happiness that never amounted to anything."
 
-
-################################################################################
-## ENDING — SAD-PASSIVE (S1)
-################################################################################
-
 translate en b42_s1_001:
     "Three in the afternoon. In a room with the lights off, Kai sits on the floor, his back pressed against the foot of the bed. The little parcel for Yara sits on the desk — neat, dry, never taken anywhere. Next to it, the red tape. Next to that, a phone whose screen has been dark since yesterday."
 
@@ -309,11 +267,6 @@ translate en b42_s1_008:
 
 translate en b42_s1_009:
     "A young barista steps out to toss the trash, glancing briefly at Kai — just some stranger standing across the alley for too long. Kai gives a small, awkward nod. Then he turns around. And walks home. He doesn't go in. He never goes in."
-
-
-################################################################################
-## CHAPTER 43 — Distance Turned Into Sound
-################################################################################
 
 translate en b43_001:
     "Kai steps forward. Small puddles form on the clean tiles from his dripping jacket. Those few meters vanish. Now he can see her up close: the tip of Yara's nose is red, dried tear tracks still on her cheeks."
@@ -383,11 +336,6 @@ translate en b43_017c:
 
 translate en b43_018:
     yara "Deal, then. {i}(holds up her pinky for a second, then lowers it with a small laugh){/i} Wes, stop crying already. You're gonna make me— {i}(her own voice breaks first){/i} …see what you did?"
-
-
-################################################################################
-## CHAPTER 44 — A Pause, Not an End
-################################################################################
 
 translate en b44_001:
     pengumuman "Attention passengers of the Malioboro Ekspres bound for Yogyakarta, your train is now ready at platform one. Please prepare your tickets and ID for boarding…"

@@ -1,16 +1,6 @@
-## Interlude / Side B — Batch 1 (Bab 1–4)
-## Sumber verbatim: NASKAH-VN-MASTER-Interlude-Side-B.md (baris 19–307)
-## Gerbang: m01 (Bab 1), m02 (Bab 2), m03 (Bab 2), G1 (Bab 4)
-## Pencapaian: ach_first_tape (Bab 3 via pemutar kaset), ach_kusut (Bab 4 via hook_tape_jammed)
-
-################################################################################
-## BAB 1 — Suara Hari Esok
-################################################################################
-
 label bab_01:
     $ chapter_autosave("bab_01", "Bab 1 — Suara Hari Esok", "Ch. 1 — Tomorrow's Sound")
 
-    ## Adegan 1-1 — Gang buntu, sore, hujan badai
     scene bg_gang_hujan with dissolve
     play sound sfx_hujan_deras loop fadein 0.8
     stop music fadeout 0.8
@@ -30,7 +20,6 @@ label bab_01:
     show kai biasa at pos_center with dissolve
     kai_hati "\"Gema Masa\". Toko kaset? Serius, masih ada toko kaset?" id b01_006
 
-    ## Adegan 1-2 — Di dalam Toko Gema Masa
     stop sound fadeout 0.6
     play sound sfx_lonceng_pintu
     scene bg_toko_dalam with dissolve
@@ -86,7 +75,6 @@ label bab_01:
     show ageng serius at pos_right
     ageng "Dan satu aturan. Ini yang paling penting, jadi dengarkan baik-baik. {i}(menatap Kai lurus){/i} Jangan coba mengubahnya. Ojo. Kalau kamu paksa ubah, pitanya kusut." id b01_025
 
-    ## Adegan 1-3 — Tiga kaset di konter ◆ m01
     show ageng biasa at pos_right
     "Pak Ageng meletakkan tiga Kaset Biasa berdampingan. Isinya sama-sama suara besok — beda sampulnya saja: gambar hujan di atap seng, gambar keramaian pasar, gambar gang di pagi hari." id b01_026
 
@@ -112,15 +100,9 @@ label bab_01:
 
     return
 
-
-################################################################################
-## BAB 2 — Harga Sebuah Kepastian
-################################################################################
-
 label bab_02:
     $ chapter_autosave("bab_02", "Bab 2 — Harga Sebuah Kepastian", "Ch. 2 — The Price of Certainty")
 
-    ## Adegan 2-1 — Kursi goyang
     scene bg_toko_dalam with dissolve
     show kai biasa at pos_left with dissolve
     show ageng biasa at pos_right with dissolve
@@ -143,7 +125,6 @@ label bab_02:
 
     ageng "Nah. Itu nyata, kan? {i}(tersenyum){/i} Sekarang dengar. Di toko ini ada dua jenis kaset." id b02_006
 
-    ## Adegan 2-2 — Dua jenis kaset
     show ageng biasa at pos_right
     show kai biasa at pos_left
     ageng "Yang pertama, yang kamu pegang itu. Kaset Biasa. C-60, Type I. Murah — cukup uang sakumu beberapa lembar. Isinya enam puluh detik suara besok. Cuma besok. Efeknya ringan: habis dengar, kamu bisa jadi lega… bisa juga malah tambah cemas." id b02_007
@@ -175,7 +156,6 @@ label bab_02:
     show kai biasa at pos_left
     kai "Saya… ambil yang biasa saja, Pak." id b02_018
 
-    ## Adegan 2-3 — Membeli kaset pertama ◆ m02
     show ageng biasa at pos_right
     "Kai merogoh saku jaketnya. Uangnya sedikit lembap kena hujan." id b02_019
 
@@ -212,7 +192,6 @@ label bab_02:
     show ageng serius at pos_right
     ageng "Satu lagi, sebelum kamu pulang. Kaset ini nggak pernah bohong. Tapi telinga manusia sering salah dengar. Ingat itu." id b02_025
 
-    ## Adegan 2-4 — Pulang ◆ m03
     play sound sfx_lonceng_pintu
     scene bg_toko_luar with dissolve
     show kai biasa at pos_center with dissolve
@@ -238,15 +217,9 @@ label bab_02:
 
     return
 
-
-################################################################################
-## BAB 3 — Gema yang Menjadi Nyata
-################################################################################
-
 label bab_03:
     $ chapter_autosave("bab_03", "Bab 3 — Gema yang Menjadi Nyata", "Ch. 3 — Echoes Made Real")
 
-    ## Adegan 3-1 — Kamar Kai, malam
     scene bg_kamar_kai_malam with dissolve
     stop music fadeout 0.8
     play sound sfx_hujan_deras loop fadein 0.8
@@ -261,7 +234,6 @@ label bab_03:
     stop sound fadeout 0.4
     play sound sfx_desis_pita
 
-    ## Pemutaran kaset pertama (komponen pemutar kaset Fase 2 + transkrip penuh + ach_first_tape)
     call play_cassette(
         cassette_id="kaset_besok_busarah",
         label_title=_("Kaset Hari Jumat"),
@@ -278,7 +250,6 @@ label bab_03:
     show kai panik at pos_center with vpunch
     kai "{i}(melepas headphone, napasnya cepat){/i} …Hah. Hahaha. Nggak. Nggak mungkin. Besok memang ada kelas Bu Sarah, otakku cuma… cuma mengarang. Aku terlalu cemas, itu saja. {i}(jeda; menatap Walkman){/i} …Kan?" id b03_004
 
-    ## Adegan 3-2 — Kelas, keesokan harinya
     scene bg_kelas with dissolve
     play music bgm_sekolah loop fadein 1.2
     play sound sfx_kelas loop fadein 0.6
@@ -306,7 +277,6 @@ label bab_03:
     show kai sedih at pos_left
     kai "{i}(berdiri, kaki lemas, mengemasi buku tanpa suara){/i} …Baik, Bu." id b03_012
 
-    ## Adegan 3-3 — Koridor sekolah
     scene bg_koridor_sekolah with dissolve
     show kai cemas at pos_center with dissolve
 
@@ -318,15 +288,9 @@ label bab_03:
 
     return
 
-
-################################################################################
-## BAB 4 — Candu Hari Esok
-################################################################################
-
 label bab_04:
     $ chapter_autosave("bab_04", "Bab 4 — Candu Hari Esok", "Ch. 4 — Addicted to Tomorrow")
 
-    ## Adegan 4-1 — Montase rutinitas
     play sound sfx_lonceng_pintu
     scene bg_toko_dalam with dissolve
     play music bgm_toko loop fadein 1.2
@@ -344,7 +308,6 @@ label bab_04:
 
     "Malamnya, ritual yang sama: kamar gelap, headphone, enam puluh detik suara besok. Dan anehnya — awalnya kaset itu benar-benar membantu." id b04_005
 
-    ## Adegan 4-2 — Dua keberhasilan kecil
     scene bg_kamar_kai_malam with dissolve
     stop music fadeout 1.0
     play sound sfx_desis_pita
@@ -364,7 +327,6 @@ label bab_04:
 
     kai_hati "Untuk pertama kalinya… aku bangun tanpa dada sesak. Aku tahu apa yang bakal terjadi. Aku bisa siap-siap. {i}(tersenyum){/i} Ini dia. Ini yang selama ini aku cari." id b04_011
 
-    ## Adegan 4-3 — Pita yang kusut
     scene bg_kamar_kai_malam with dissolve
     play music bgm_cemas loop fadein 1.2
     play sound sfx_desis_pita
@@ -391,14 +353,12 @@ label bab_04:
 
     "Persis. Intonasinya pun persis. Sambil meringis, Kai menatap darah di telapak tangannya — dan mengerti sesuatu yang mengerikan: usahanya menghindar justru yang mengantarnya ke sana." id b04_018
 
-    ## Pita kusut pertama -> bunyikan sfx_pita_kusut & picu pencapaian ach_kusut (PRD §4.6)
     play sound sfx_pita_kusut
     $ hook_tape_jammed()
     $ show_cg_and_unlock("cg_pita_kusut", dissolve)
 
     kai_hati "Pitanya… kusut. {i}(jeda lama){/i} Kata Pak Ageng… kalau dicoba diubah, pitanya kusut. {i}(menatap tangannya yang diperban seadanya){/i} …Tapi aku nggak kapok. Itu yang paling serem. Aku nggak kapok. Besok aku tetap ke toko itu. Aku tetap butuh tahu besok ada apa." id b04_019
 
-    ## Adegan 4-4 — Sore berikutnya, di toko ◆ G1
     stop music fadeout 1.0
     play sound sfx_lonceng_pintu
     scene bg_toko_dalam with dissolve
@@ -417,7 +377,6 @@ label bab_04:
     show ageng biasa at pos_right
     "Pak Ageng tidak memarahi. Ia hanya mengambil satu Kaset Biasa dan meletakkannya di konter, seperti biasa. Tapi kali ini ia tidak langsung berbalik pergi." id b04_024
 
-    ## GERBANG UTAMA G1 (posisi 1 string 12 huruf)
     menu:
         "Kai menatap kaset itu. Apa yang dia putuskan soal kebiasaan barunya?"
 

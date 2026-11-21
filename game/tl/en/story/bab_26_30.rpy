@@ -1,9 +1,3 @@
-## Interlude / Side B — English Translation (Chapters 26–30)
-
-################################################################################
-## CHAPTER 26 — The Barter That Claims a Soul
-################################################################################
-
 translate en b26_001:
     "The door chime sounds heavier than usual. Or maybe it's just Kai's ears. Gema Masa is quiet this afternoon — Pak Ageng's rocking chair sits empty, still creaking softly before coming to a stop on its own."
 
@@ -133,10 +127,6 @@ translate en b26_021c:
 translate en b26_022c:
     ageng "Being scared is fine, kid. The dangerous part is letting your fear grab the wheel. {i}(pouring coffee){/i} Wes. Drink up. Let's talk about something else. What sounds did you say Yara's collecting these days?"
 
-################################################################################
-## [DELAY ROUTE] — Next Friday
-################################################################################
-
 translate en bt_001:
     "Four days. Kai counts them down like he's waiting for something to blow up."
 
@@ -236,10 +226,6 @@ translate en bt_029:
 translate en bt_030:
     kai_hati "The station's still open. {i}(pause){/i} I didn't get my certainty. Still, somehow, walking back down that alley, my steps don't feel as heavy as usual. Maybe because for the first time… tomorrow actually belongs to tomorrow again. Not to a cassette."
 
-################################################################################
-## CHAPTER 27 — Tears Drawn Into Tape [RED ROUTE]
-################################################################################
-
 translate en b27r_001:
     "Pak Ageng presses play. The mechanical click sounds ridiculously loud in the quiet shop. Kai puts on the headphones. His heart pounds like it's trying to jump out of his chest."
 
@@ -278,10 +264,6 @@ translate en b27r_010b:
 
 translate en b27r_010c:
     "Hands still shaking, Kai slips a regular cassette into his Walkman and presses play. Sixty seconds of tomorrow — canteen chatter, school bells, ordinary noise. Weirdly, those boring everyday sounds are what calm him down. Tomorrow is still there. The close, small tomorrow is still there."
-
-################################################################################
-## CHAPTER 27 — The Announcement [HEALTHY ROUTE & DELAY ROUTE]
-################################################################################
 
 translate en b27s_001:
     "Nothing special happens that afternoon. And that's the exact part Kai will remember for a long time: big days usually show up wearing an ordinary day's face."
@@ -352,10 +334,6 @@ translate en b27s_022:
 translate en b27s_023:
     yara "With my allowance. So don't order anything expensive."
 
-################################################################################
-## CHAPTER 28 — A Hole in the Memory Map [RED ROUTE]
-################################################################################
-
 translate en b28_001a:
     "Kai wakes with a jolt, like he just fell from somewhere high up. His room looks exactly the same: papers on the desk, the digital clock, and the red plastic case sitting beside it."
 
@@ -409,10 +387,6 @@ translate en b28_009b:
 
 translate en b28_009c:
     kai_hati "Last night I listened to an ordinary tomorrow, and it calmed me down. This morning I woke up and realized: ordinary tomorrows just keep rolling on. The only thing missing is the yesterday that mattered most."
-
-################################################################################
-## CHAPTER 29 — Pulling Away to Protect [RED ROUTE]
-################################################################################
 
 translate en b29r_001:
     "The sound of crying on the red tape loops in Kai's head like a scratched record. Every sob, every pause, and those two words: {i}goodbye.{/i} And Kai's cold brain lands on the harshest conclusion it can find."
@@ -471,10 +445,6 @@ translate en b29r_016:
 translate en b29r_017:
     kai_hati "My stupid logic tells me I just did the right thing. Cutting the thread early so the goodbye later won't hurt as much. {i}(a long pause){/i} Then why does my chest feel like it's slowly dying… inside the silence I built myself?"
 
-################################################################################
-## CHAPTER 29 — Avoiding That Topic [HEALTHY ROUTE]
-################################################################################
-
 translate en b29s_001:
     "Word that Yara got in spreads fast — that's just how school works. And Kai discovers an annoying truth about himself: he can smile and tell Yara congratulations to her face, yet he can't stand hearing the details."
 
@@ -507,10 +477,6 @@ translate en b29s_010:
 
 translate en b29s_011:
     kai_hati "Sixty seconds at a time. {i}(smiling faintly){/i} She really always knows how to shrink big things down to a size I can handle."
-
-################################################################################
-## CHAPTER 30 — Recordings That Lost Their Pulse [RED ROUTE]
-################################################################################
 
 translate en b30r_001:
     "That night, Yara replays all their recordings. The wind on Bukit Banyak. The creak of the library door. The iron clatter of an old train. And tucked between them, there's always Kai's steady breathing nearby — or his faint laugh when they almost tripped over the tripod."
@@ -559,10 +525,6 @@ translate en b30r_011c:
 
 translate en b30r_012c:
     kai_hati "No. Not tonight. If I hit record and it really comes out empty… I'm not ready to hear the proof."
-
-################################################################################
-## CHAPTER 30 — A Shop Quiet in the Right Way [HEALTHY ROUTE]
-################################################################################
 
 translate en b30s_001:
     kai "{i}(stopping at the mouth of the alley, staring at the ground){/i} …Dry. Pak, the alley's dry. That's a first."

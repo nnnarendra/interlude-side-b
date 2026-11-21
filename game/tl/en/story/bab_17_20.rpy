@@ -1,9 +1,3 @@
-## Interlude / Side B — English Translation: Chapters 17–20
-
-################################################################################
-## CHAPTER 17 — Iron Rhythms and Dark Broth
-################################################################################
-
 translate en b17_001:
     "That afternoon, the sound hunt led them to an old railway crossing cutting straight through a crowded neighborhood. The drizzle that had hung in the air since noon was starting to turn into real rain."
 
@@ -118,10 +112,6 @@ translate en b17_024c:
 translate en b17_025c:
     kai_hati "It sounds great. Still feels distant, though. Like listening to somebody else's life from behind a closed door."
 
-################################################################################
-## CHAPTER 18 — Red Tape and Unforetold Recordings
-################################################################################
-
 translate en b18_001ab:
     "The rain eased into a lazy drizzle. Under the shelter of the tin roof's overhang, Yara carefully wiped the mist off her recorder with a microfiber cloth."
 
@@ -227,10 +217,6 @@ translate en b18_025c:
 translate en b18_026:
     "Under the darkening Malang sky, beside tracks left quiet after the old diesel had passed, Kai gazed at the red cassette in Yara's hand — and for the very first time, it didn't look scary at all."
 
-################################################################################
-## CHAPTER 19 — Dust Settling on the Shelves
-################################################################################
-
 translate en b19_001:
     "There was a small change in Kai's room he only noticed that day. His desk was no longer buried under red-circled calendars and worst-case notes for tomorrow."
 
@@ -308,10 +294,6 @@ translate en b19_020:
 
 translate en b19_021:
     ageng "{i}(nods, deeply pleased){/i} Hm. Good. Very good, kid."
-
-################################################################################
-## CHAPTER 20 — Severed Greed
-################################################################################
 
 translate en b20_001:
     "The calm shattered. The wooden door swung open hard enough to make the bell jangle in panic. A middle-aged man stepped inside: sharp, clearly expensive suit, heavy cologne instantly drowning out the scent of jasmine tea and old paper."

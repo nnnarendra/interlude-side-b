@@ -1,9 +1,3 @@
-## Interlude / Side B — English Translation: Chapters 21–25
-
-################################################################################
-## CHAPTER 21 — Secret Behind the Spool
-################################################################################
-
 translate en b21_001:
     "The wealthy man was gone. His heavy cologne slowly lost out to the scent of jasmine tea. On the teak counter, the cassette with the snapped tape lay where it fell — brown, tangled, silent."
 
@@ -106,10 +100,6 @@ translate en b21_010c:
 translate en b21_011c:
     "The shop felt colder than usual that afternoon. Or maybe it was just Kai. He left earlier than normal — and for the first time, he wasn't rushing home to listen to tomorrow; he was running away from today."
 
-################################################################################
-## CHAPTER 22 — Falling Water, Lingering Seconds
-################################################################################
-
 translate en b22_001:
     "The rain hit that afternoon without any warning. A sky that had just been overcast suddenly broke open — pouring so thick the end of the alley vanished behind white mist."
 
@@ -166,10 +156,6 @@ translate en b22_016:
 
 translate en b22_017:
     kai_hati "Weird. I have no idea what tomorrow's going to look like. No idea about six months from now either. {i}(pause){/i} Still, right here, this one minute… I'm not scared. Not scared at all."
-
-################################################################################
-## CHAPTER 23 — Echoes for the Past
-################################################################################
 
 translate en b23_001:
     "The downpour slowly eased up, leaving only a lazy patter of drops on the alley asphalt."
@@ -264,10 +250,6 @@ translate en b23_013c:
 translate en b23_014c:
     "Kai waited at the mouth of the alley until the recording finished — listening to laughter from the shop porch he hadn't joined in on, standing under the exact same drizzle."
 
-################################################################################
-## CHAPTER 24 — Whispers That Tempt Again
-################################################################################
-
 translate en b24_001:
     "That night, Kai lay in bed staring up at the ceiling. His room was a lot neater these days. Sitting nicely on his desk was the red-cased cassette — their recording for the past."
 
@@ -351,10 +333,6 @@ translate en b24_009c:
 
 translate en b24_011c:
     "Kai turned around and walked back down the wet alley alone. Behind him, the shop light stayed on — and nobody ever knew how close he'd come to stepping inside."
-
-################################################################################
-## CHAPTER 25 — Shadows at Dusk's Edge
-################################################################################
 
 translate en b25_001:
     "The air up at the top of Bukit Banyak had a sharp bite to it. For Kai, though, the real chill was spreading from somewhere else — right inside his own chest."

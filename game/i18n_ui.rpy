@@ -1,13 +1,7 @@
-## Interlude / Side B — Sistem Bahasa Ganda Independen (PRD §4.5 & §6)
-## - Bahasa UI (`persistent.ui_lang`: "id" / "en") -> mengatur SELURUH teks antarmuka melalui `ui_tr()`.
-## - Bahasa Cerita (`persistent.story_lang`: "id" / "en") -> mengatur dialog & narasi melalui
-##   translation framework Ren'Py (`None` = Indonesia, `"en"` = `game/tl/en/`).
-## - Kedua pengaturan ini 100% INDEPENDEN (4 kombinasi sah; bawaan: id + id).
-
 init -10 python:
     UI_STRINGS = {
         "id": {
-            # Menu Utama (PRD §4.1)
+
             "menu_new_game": "Mulai Baru",
             "menu_continue": "Lanjutkan",
             "menu_load": "Muat",
@@ -18,7 +12,6 @@ init -10 python:
             "menu_quit": "Keluar",
             "menu_endings_dots_label": "Ending Terbuka: {count} / 5",
 
-            # Navigasi menu dalam permainan
             "nav_return": "Kembali",
             "nav_save": "Simpan",
             "nav_load": "Muat",
@@ -32,7 +25,6 @@ init -10 python:
             "nav_main_menu": "Menu Utama",
             "nav_quit": "Keluar",
 
-            # Quick Menu / HUD (PRD §4.3, §4.4)
             "qm_back": "Kembali",
             "qm_history": "Riwayat",
             "qm_skip": "Lewati",
@@ -58,7 +50,6 @@ init -10 python:
             "sidebar_gates_progress": "Gerbang Utama: {done} / 12",
             "chapter_banner_tag": "INTERLUDE / SIDE B",
 
-            # Save & Load (PRD §4.2)
             "save_title": "Simpan Permainan",
             "load_title": "Muat Permainan",
             "page_num": "Halaman {n}",
@@ -71,12 +62,10 @@ init -10 python:
             "save_auto_readonly": "Slot Autosave dikelola otomatis di setiap awal bab.",
             "save_quick_hint": "Gunakan Simpan Cepat saat bermain atau pilih halaman 1–3 untuk simpan manual.",
 
-            # History / Backlog (PRD §4.3)
             "history_title": "Riwayat Dialog",
             "history_empty": "Belum ada riwayat dialog.",
             "history_jump_hint": "Klik baris riwayat mana pun untuk kembali ke titik percakapan tersebut.",
 
-            # Pengaturan (PRD §4.4, §4.5)
             "settings_title": "Pengaturan",
             "sec_language": "Bahasa (Independen)",
             "lbl_ui_lang": "Bahasa UI",
@@ -114,7 +103,6 @@ init -10 python:
             "state_off": "Mati",
             "state_on": "Nyala",
 
-            # Galeri (PRD §4.7)
             "gallery_title": "Galeri",
             "tab_endings": "Galeri Ending",
             "tab_cg": "Galeri CG",
@@ -134,7 +122,6 @@ init -10 python:
             "music_now_playing": "Sedang diputar: {title}",
             "music_idle": "Pilih trek untuk memutar musik.",
 
-            # Judul 5 Ending Kanonik (PRD §2)
             "ending_h1_title": "Simfoni yang Kita Tulis Sendiri",
             "ending_h1_tag": "Happy-True",
             "ending_h2_title": "Pita yang Tak Pernah Ditukar",
@@ -146,7 +133,6 @@ init -10 python:
             "ending_s2_title": "Hening Enam Puluh Detik",
             "ending_s2_tag": "Sad-Ironis",
 
-            # Judul 6 CG & 6 BGM (sesuai aset_manifest.json)
             "cg_perpustakaan_debu": "Perpustakaan di Cahaya Senja",
             "cg_headphone": "Satu Headphone Berdua",
             "cg_barter": "Barter Kaset Merah",
@@ -174,7 +160,6 @@ init -10 python:
             "bgm_duka_siti": "Gema 1994 — Tema Siti",
             "bgm_kafe_baru": "Melodi Hari Baru (Kafe)",
 
-            # Pencapaian — 17 kanonik (PRD §4.6)
             "achievements_title": "Pencapaian",
             "ach_progress": "Terbuka: {unlocked} / {total}",
             "ach_toast_header": "Pencapaian Terbuka",
@@ -239,7 +224,6 @@ init -10 python:
             "ach_semua_ending_desc": "Membuka kelima ending Interlude / Side B.",
             "ach_semua_ending_hint": "Buka seluruh lima kemungkinan akhir cerita.",
 
-            # Kredit & Tentang (PRD §4.1 & Fase 7)
             "credits_title": "Kredit",
             "credits_subtitle": "Interlude / Side B — Visual Novel",
             "credits_story_label": "Cerita",
@@ -283,7 +267,6 @@ init -10 python:
             "ending_card_header": "TAMAT · ENDING TERBUKA",
             "ending_card_return_menu": "Kembali ke Menu Utama",
 
-            # Konfirmasi & Notifikasi
             "confirm_yes": "Ya",
             "confirm_no": "Tidak",
             "confirm_sure": "Apakah kamu yakin?",
@@ -300,7 +283,6 @@ init -10 python:
             "notify_quick_saved": "Simpan cepat berhasil.",
             "notify_saved": "Permainan tersimpan.",
 
-            # Mode Debug Penilai Ending (PRD §3 & Fase 2)
             "gallery_open_debug": "Mode Debug Penilai Ending",
             "debug_ending_title": "Mode Debug — Penilai Ending (12 Gerbang)",
             "debug_input_label": "String 12 Pilihan (G1–G12, huruf A / B / C)",
@@ -328,7 +310,6 @@ init -10 python:
             "debug_state_items": "Item Kosmetik — Kaset Mini: {mini} · File Panci: {panci} · File Hujan: {hujan}",
             "debug_test_cassette_btn": "Uji Pemutar Kaset (Placeholder)",
 
-            # Komponen Pemutar Kaset (PRD §4.8 & Fase 2)
             "cassette_deck_label": "PEMUTAR KASET",
             "cassette_default_title": "Rekaman Kaset",
             "cassette_name_busarah": "Kaset #1 — Besok (Placeholder)",
@@ -363,7 +344,7 @@ init -10 python:
             "notify_end_bab39": "Akhir Bab 39 (Fase 6). Bab 40–48 (Klimaks G12 & 5 Ending) akan dilanjutkan pada fase berikutnya.",
         },
         "en": {
-            # Main Menu (PRD §4.1)
+
             "menu_new_game": "New Game",
             "menu_continue": "Continue",
             "menu_load": "Load",
@@ -374,7 +355,6 @@ init -10 python:
             "menu_quit": "Quit",
             "menu_endings_dots_label": "Endings Unlocked: {count} / 5",
 
-            # In-game navigation
             "nav_return": "Return",
             "nav_save": "Save",
             "nav_load": "Load",
@@ -388,7 +368,6 @@ init -10 python:
             "nav_main_menu": "Main Menu",
             "nav_quit": "Quit",
 
-            # Quick Menu / HUD (PRD §4.3, §4.4)
             "qm_back": "Back",
             "qm_history": "History",
             "qm_skip": "Skip",
@@ -414,7 +393,6 @@ init -10 python:
             "sidebar_gates_progress": "Major Gates: {done} / 12",
             "chapter_banner_tag": "INTERLUDE / SIDE B",
 
-            # Save & Load (PRD §4.2)
             "save_title": "Save Game",
             "load_title": "Load Game",
             "page_num": "Page {n}",
@@ -427,12 +405,10 @@ init -10 python:
             "save_auto_readonly": "Autosave slots are created automatically at the start of each chapter.",
             "save_quick_hint": "Use Quick Save during gameplay or select Pages 1–3 for manual saves.",
 
-            # History / Backlog (PRD §4.3)
             "history_title": "Dialogue History",
             "history_empty": "No dialogue history yet.",
             "history_jump_hint": "Click any history entry to jump back to that point in the conversation.",
 
-            # Settings (PRD §4.4, §4.5)
             "settings_title": "Settings",
             "sec_language": "Language (Independent)",
             "lbl_ui_lang": "UI Language",
@@ -470,7 +446,6 @@ init -10 python:
             "state_off": "Off",
             "state_on": "On",
 
-            # Gallery (PRD §4.7)
             "gallery_title": "Gallery",
             "tab_endings": "Ending Gallery",
             "tab_cg": "CG Gallery",
@@ -490,7 +465,6 @@ init -10 python:
             "music_now_playing": "Now playing: {title}",
             "music_idle": "Select a track to play music.",
 
-            # 5 Canonical Endings (PRD §2)
             "ending_h1_title": "The Symphony We Write Ourselves",
             "ending_h1_tag": "Happy-True",
             "ending_h2_title": "The Tape Never Traded",
@@ -502,7 +476,6 @@ init -10 python:
             "ending_s2_title": "Sixty Seconds of Silence",
             "ending_s2_tag": "Sad-Ironic",
 
-            # 6 CGs & 6 BGMs
             "cg_perpustakaan_debu": "Library at Golden Hour",
             "cg_headphone": "One Pair of Headphones",
             "cg_barter": "The Red Cassette Trade",
@@ -530,7 +503,6 @@ init -10 python:
             "bgm_duka_siti": "Echo of 1994 — Siti's Theme",
             "bgm_kafe_baru": "New Day Melody (Café)",
 
-            # 17 Canonical Achievements (PRD §4.6)
             "achievements_title": "Achievements",
             "ach_progress": "Unlocked: {unlocked} / {total}",
             "ach_toast_header": "Achievement Unlocked",
@@ -595,7 +567,6 @@ init -10 python:
             "ach_semua_ending_desc": "Unlock all five endings of Interlude / Side B.",
             "ach_semua_ending_hint": "Discover all five possible endings of the story.",
 
-            # Credits & About (PRD §4.1 & Phase 7)
             "credits_title": "Credits",
             "credits_subtitle": "Interlude / Side B — Visual Novel",
             "credits_story_label": "Story",
@@ -639,7 +610,6 @@ init -10 python:
             "ending_card_header": "THE END · ENDING UNLOCKED",
             "ending_card_return_menu": "Return to Main Menu",
 
-            # Confirmations & Notifications
             "confirm_yes": "Yes",
             "confirm_no": "No",
             "confirm_sure": "Are you sure?",
@@ -656,7 +626,6 @@ init -10 python:
             "notify_quick_saved": "Quick save complete.",
             "notify_saved": "Game saved.",
 
-            # Ending Evaluator Debug Mode (PRD §3 & Phase 2)
             "gallery_open_debug": "Ending Evaluator Debug Mode",
             "debug_ending_title": "Debug Mode — Ending Evaluator (12 Gates)",
             "debug_input_label": "12-Choice String (G1–G12, letters A / B / C)",
@@ -684,7 +653,6 @@ init -10 python:
             "debug_state_items": "Cosmetic Items — Mini Tape: {mini} · Pot File: {panci} · Rain File: {hujan}",
             "debug_test_cassette_btn": "Test Cassette Player (Placeholder)",
 
-            # Reusable Cassette Player Component (PRD §4.8 & Phase 2)
             "cassette_deck_label": "CASSETTE PLAYER",
             "cassette_default_title": "Cassette Recording",
             "cassette_name_busarah": "Tape #1 — Tomorrow (Placeholder)",
@@ -1022,5 +990,5 @@ init -10 python:
     config.after_load_callbacks.append(sync_preferences_with_persistent)
 
 init 10 python:
-    ## Sinkronkan _preferences.language & kecepatan sebelum Ren'Py _init_language() berjalan.
+
     sync_preferences_with_persistent()

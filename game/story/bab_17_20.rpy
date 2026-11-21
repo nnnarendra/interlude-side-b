@@ -1,15 +1,6 @@
-## Interlude / Side B — Batch 5 (Bab 17–20)
-## Sumber verbatim: NASKAH-VN-MASTER-Interlude-Side-B.md (baris 1268–1600)
-## Gerbang: dampak G4 (Bab 17–18), m12 (Bab 17), m11 callback (Bab 18), m13 (Bab 18 bila m10=A), m14 (Bab 19), G5 (Bab 20)
-
-################################################################################
-## BAB 17 — Ketukan Besi dan Aroma Kuah Hitam
-################################################################################
-
 label bab_17:
     $ chapter_autosave("bab_17", "Bab 17 — Ketukan Besi dan Aroma Kuah Hitam", "Ch. 17 — Iron Rhythms and Dark Broth")
 
-    ## Adegan 17-1 — Perlintasan kereta, sore, gerimis
     scene bg_warung_rawon with dissolve
     play music bgm_senja loop fadein 1.2
     play sound sfx_hujan_deras loop fadein 0.8
@@ -17,7 +8,7 @@ label bab_17:
     "Sore itu perburuan suara membawa mereka ke perlintasan kereta tua yang membelah pemukiman padat. Gerimis yang menggantung sejak siang mulai berubah jadi hujan beneran." id b17_001
 
     if get_major_choice(4) == "A":
-        ## Varian G4 = A — Kai ikut penuh berburu suara
+
         show kai biasa at pos_left with dissolve
         show yara fokus at pos_right with dissolve
 
@@ -34,7 +25,7 @@ label bab_17:
         kai_hati "Telinga kedua. Julukan baru. Kemarin-kemarin aku cuma \"Laki-laki Penunggu Mati\", sekarang naik pangkat dikit." id b17_006a
 
     elif get_major_choice(4) == "B":
-        ## Varian G4 = B — Kai hanya ikut sebagian adegan berburu
+
         show yara fokus at pos_center with dissolve
 
         "Untuk yang satu ini, Yara tidak mengajak Kai. Dia merekam sendiri di pinggir rel — dan seperti biasa, dia tidak pernah mengajak dua kali." id b17_002b
@@ -42,14 +33,13 @@ label bab_17:
         yara_hati "Diesel tua. Ketukannya berat, nggak rata. Sendirian pun tetap kedengaran bagus. {i}(jeda){/i} …Cuma biasanya ada yang megangin tas." id b17_003b
 
     else:
-        ## Varian G4 = C — adegan POV Yara singkat
+
         show yara fokus at pos_center with dissolve
 
         "Yara merekam sendiri sore itu. Mikrofon mengarah ke rel yang mulai basah, dan dia menunggu dengan sabar seperti pemburu yang tahu mangsanya pasti lewat." id b17_002c
 
         yara_hati "Rekam dulu. Hasilnya biar dia dengar belakangan." id b17_003c
 
-    ## Adegan 17-2 — Kereta lewat
     play sound sfx_kereta_lewat
     "Klakson melengking membelah suara hujan. Tanah bergetar pelan. Lokomotif tua merah-biru yang kusam melintas lambat, menarik gerbong-gerbong barang yang berderit nyaring. Ketukan besi lawan besi itu pekat sekali: berbaur dengan deru diesel yang parau dan hujan yang menghantam atap seng warung." id b17_007
 
@@ -71,9 +61,8 @@ label bab_17:
         show yara ceria at pos_right
         yara "Keretanya barusan lewat. {i}(mengangkat perekamnya){/i} Tapi suaranya dapat. Duduk aja — aku juga baru mau pesan makan." id b17_010b
 
-    ## Adegan 17-3 (G4=A/B) vs Adegan 17-4 (khusus G4=C — m12 tidak muncul)
     if get_major_choice(4) != "C":
-        ## Adegan 17-3 — Warung rawon ◆ m12
+
         play sound sfx_hujan_deras loop fadein 0.6
         show kai biasa at pos_left
         show yara ceria at pos_right
@@ -85,7 +74,6 @@ label bab_17:
         show npc_pemilik_warung at pos_center with dissolve
         pemilik_warung "Rawonnya dua, Nduk? Sambalnya dipisah?" id b17_013
 
-        ## GERBANG MINOR m12 (hanya muncul pada G4 = A atau B)
         menu:
             "Makan di mana?"
 
@@ -121,7 +109,7 @@ label bab_17:
         kai_hati "Aneh ya. Duduk makan begini saja… aku nggak kepikiran sama sekali besok bakal kayak apa. Nggak butuh kaset buat tahu hari ini baik atau buruk. Hari ini memang baik. Titik." id b17_021
 
     else:
-        ## Adegan 17-4 — Hasil rekaman [khusus G4 = C]
+
         scene bg_warung_rawon with fade
         show kai biasa at pos_left with dissolve
         show yara biasa at pos_right with dissolve
@@ -139,15 +127,9 @@ label bab_17:
     stop sound fadeout 0.6
     return
 
-
-################################################################################
-## BAB 18 — Pita Merah dan Rekaman Tanpa Ramalan
-################################################################################
-
 label bab_18:
     $ chapter_autosave("bab_18", "Bab 18 — Pita Merah dan Rekaman Tanpa Ramalan", "Ch. 18 — Red Tape and Unforetold Recordings")
 
-    ## Adegan 18-1 — Emperan warung, gerimis reda
     scene bg_warung_rawon with dissolve
     play music bgm_senja loop fadein 1.2
     show kai biasa at pos_left with dissolve
@@ -176,7 +158,7 @@ label bab_18:
     yara "Dasar. Pak Ageng itu memang suka biarin orang tersesat sama asumsi mereka sendiri." id b18_008
 
     $ hide_item()
-    ## Adegan 18-2 — Harga kaset merah Yara
+
     kai "Tapi, Yar… kaset merah itu harganya bukan uang. Pak Ageng minta ingatan paling bahagia sebagai bayaran. Kamu beneran—" id b18_009
 
     show yara fokus at pos_right
@@ -197,7 +179,6 @@ label bab_18:
     show yara fokus at pos_right
     yara "{i}(menatap Kai langsung){/i} Aku nukar kenanganku bukan buat ngintip besok, Kai. Biar aku punya media paling bagus buat nyimpan momen-momen yang lagi kejadian sekarang. Ngerekam masa kini itu jauh lebih penting daripada ngeramal masa depan yang belum tentu ada." id b18_016
 
-    ## Adegan 18-3 — Versi lembut [callback m11]
     show yara ceria at pos_right
     "Yara membuka daftar rekaman di perekamnya, seperti teringat sesuatu." id b18_017
 
@@ -225,13 +206,11 @@ label bab_18:
     show yara biasa at pos_right
     yara "{i}(mengangguk){/i} Semua suara yang kamu benci itu cuma belum kamu dengar dari jarak yang bener." id b18_021
 
-    ## Adegan 18-4 — File suara panci ◆ m13 [hanya muncul jika m10 = A]
     if item_file_panci:
         "Kai menatap perekamnya sendiri — lebih tepatnya, HP-nya. Di dalamnya ada satu file yang dia rekam di kantin: suara panci mendidih, rekaman pertamanya." id b18_022
 
         kai_hati "File panci itu. Rekamannya kasar, banyak bocornya. Tapi itu pertama kalinya aku ngerekam sesuatu bukan karena takut… cuma karena suaranya bagus." id b18_023
 
-        ## GERBANG MINOR m13 (hanya tampil bila item_file_panci dimiliki dari m10=A)
         menu:
             "Apa yang Kai lakukan dengan file suara panci itu?"
 
@@ -260,15 +239,9 @@ label bab_18:
     stop music fadeout 1.2
     return
 
-
-################################################################################
-## BAB 19 — Debu yang Mengendap di Atas Rak
-################################################################################
-
 label bab_19:
     $ chapter_autosave("bab_19", "Bab 19 — Debu yang Mengendap di Atas Rak", "Ch. 19 — Dust Settling on the Shelves")
 
-    ## Adegan 19-1 — Kamar Kai, sore
     scene bg_kamar_kai with dissolve
     show kai biasa at pos_center with dissolve
 
@@ -282,7 +255,6 @@ label bab_19:
 
     "Gerimis tipis membasahi Malang sore itu. Kai mengambil jaketnya. Bukan karena cemas. Bukan karena butuh jaminan besok. Dia cuma… kangen toko itu." id b19_004
 
-    ## Adegan 19-2 — Kembali ke Gema Masa
     play sound sfx_lonceng_pintu
     scene bg_toko_dalam with dissolve
     play music bgm_toko loop fadein 1.5
@@ -303,11 +275,9 @@ label bab_19:
     show ageng biasa at pos_right
     ageng "Itu karena kamu sudah menemukan sauhmu, Nak. Orang yang terus lihat ke depan itu biasanya karena nggak punya tempat berpijak di masa kini. Begitu kamu nemu sesuatu — atau seseorang — yang bikin masa kinimu berharga, besok nggak lagi terasa kayak ancaman." id b19_010
 
-    ## Adegan 19-3 — Rak yang berdebu ◆ m14
     stop sound fadeout 0.6
     "Kai melirik rak di samping konter. Debu halus mengendap di atas barisan kotak kaset — toko ini ikut menua dengan tenang. Pak Ageng mengikuti arah pandangannya." id b19_011
 
-    ## GERBANG MINOR m14
     menu:
         "Apa yang Kai lakukan?"
 
@@ -336,7 +306,6 @@ label bab_19:
             ageng "{i}(mengintip, lalu mengibaskan tangan){/i} Ambil saja. Gratis. Pita kusut itu sudah nggak bisa nyimpan apa-apa — cocok buat kamu sekarang. Kamu kan sudah nggak nyimpan-nyimpan ketakutan lagi." id b19_013c
             $ renpy.notify(ui_tr("notify_item_kaset_rusak"))
 
-    ## Adegan 19-4 — Tidak membeli jaminan
     show ageng biasa at pos_right
     ageng "{i}(menunjuk lemari kaca di sampingnya, tempat kaset-kaset ramalan Type I berjejer rapi){/i} Jadi… kurasa hari ini kamu nggak datang buat beli jaminan hari esok?" id b19_018
 
@@ -350,15 +319,9 @@ label bab_19:
 
     return
 
-
-################################################################################
-## BAB 20 — Keserakahan yang Terputus
-################################################################################
-
 label bab_20:
     $ chapter_autosave("bab_20", "Bab 20 — Keserakahan yang Terputus", "Ch. 20 — Severed Greed")
 
-    ## Adegan 20-1 — Tamu yang tidak diundang
     scene bg_toko_dalam with dissolve
     stop music fadeout 0.6
     play sound sfx_lonceng_pintu
@@ -381,7 +344,6 @@ label bab_20:
 
     kai_hati "Enam bulan…? Aku pakai kaset ini buat ngadepin ulangan matematika sama rasa malu di kelas. Orang ini mau pakai buat… pasar saham?" id b20_006
 
-    ## Adegan 20-2 — ◆ G5 (GERBANG UTAMA G5, posisi 5 string 12 huruf)
     menu:
         "Kai ada di ruangan itu. Apa yang dia lakukan?"
 
@@ -403,7 +365,6 @@ label bab_20:
             $ record_major_choice(5, "C")
             "Kai diam — tapi bukan karena lumpuh. Dia mendengarkan. Semua. Karena sebagian kecil di kepalanya, bagian yang dulu tiap sore membeli rasa aman di konter ini, ingin tahu: masa depan itu sebenarnya dihargai berapa oleh orang seperti ini?" id b20_007c
 
-    ## Adegan 20-3 — Penolakan
     ageng "{i}(menatap tumpukan uang itu dengan pandangan sedingin es; tidak ada setitik pun binar tertarik){/i} Toko ini tidak melayani pembelian masa depan untuk ditukar dengan angka-angka di atas kertas, Tuan. Gema Masa ada untuk membantu jiwa-jiwa yang tersesat mencari ketenangan. Bukan untuk memuaskan keserakahan." id b20_012
 
     show kaya biasa at pos_center
@@ -421,7 +382,6 @@ label bab_20:
 
     ageng "{i}(tidak meninggikan suara sama sekali){/i} Silakan pergi, Tuan." id b20_018
 
-    ## Adegan 20-4 — Pita yang putus
     "Pria kaya itu mendesis geram. Matanya menangkap satu kaset yang tergeletak di dekat tangan Pak Ageng. Tanpa peringatan, dia menyambarnya." id b20_019
 
     kaya "Kalau kamu tidak mau menjualnya, aku ambil sendiri!" id b20_020
@@ -438,7 +398,6 @@ label bab_20:
     play sound sfx_lonceng_pintu
     "Dengan tangan gemetar dan napas terengah, pria itu menyambar kembali gepok-gepok uangnya dan berlari keluar, menembus gerimis yang mulai menderas di gang buntu." id b20_024
 
-    ## Adegan 20-5 — Setelahnya
     stop music fadeout 1.0
     play music bgm_toko loop fadein 1.5
     play sound sfx_hujan_deras loop fadein 0.8
@@ -454,7 +413,7 @@ label bab_20:
     stop sound fadeout 0.6
 
     if get_major_choice(5) == "C":
-        ## Khusus G5 = C — malam harinya
+
         stop music fadeout 1.0
         scene bg_kamar_kai_malam with fade
         show kai cemas at pos_center with dissolve

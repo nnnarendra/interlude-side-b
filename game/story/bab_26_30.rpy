@@ -1,18 +1,6 @@
-## Interlude / Side B — Batch 7 (Bab 26–30: Gerbang G9 & Tiga Rute)
-## Sumber verbatim: NASKAH-VN-MASTER-Interlude-Side-B.md (baris 2037–2562)
-## Gerbang: G9 (Bab 26 — A: Rute Merah, B: Rute Tunda -> Sehat, C: Rute Sehat),
-##          K1 (kondisional, hanya bila G9=A), m16 (Bab 27 Merah), m17 (Bab 30 Merah)
-## CG, Kaset, & Pencapaian: cg_barter (Bab 26-2A), kaset_tangis_yara (Bab 27-1),
-##                          ach_barter / ach_penunda / ach_penolak (via record_major_choice(9, ...))
-
-################################################################################
-## BAB 26 — Barter yang Merampas Jiwa ◆ G9
-################################################################################
-
 label bab_26:
     $ chapter_autosave("bab_26", "Bab 26 — Barter yang Merampas Jiwa", "Ch. 26 — The Barter That Claims a Soul")
 
-    ## Adegan 26-1 — Lemari kaca (SEMUA RUTE)
     scene bg_toko_dalam_malam with dissolve
     play music bgm_cemas loop fadein 1.5
     play sound sfx_lonceng_pintu
@@ -57,14 +45,12 @@ label bab_26:
     kai_hati "Dan kepalaku langsung memutar semuanya. Rawon hangat di pinggir rel pas hujan. Angin di puncak Bukit Banyak. Air mendidih di kantin. Dan yang paling atas… perpustakaan kota. Buku-buku jatuh." id b26_016
     kai_hati "Debu beterbangan kena cahaya senja. Dan Yara berdiri di sana — detik aku sadar aku nggak jadi mati. Itu jangkar hidupku. Itu yang bikin aku berubah dari hantu penakut jadi… orang." id b26_016_p2
 
-    ## GERBANG UTAMA G9 (posisi 9 string 12 huruf — percabangan 3 rute penuh + ach_barter/penunda/penolak)
     menu:
         "Kaset Merah. Kai menatap lemari kaca itu. Apa yang dia lakukan?"
 
         "\"Tukar.\"":
             $ record_major_choice(9, "A")
 
-            ## Adegan 26-2A — [G9=A] Barter ◆ K1
             play sound sfx_klik_play
             show kai sedih at pos_left
             kai "{i}(suaranya nyaris berbisik){/i} …Saya setuju, Pak." id b26_017a
@@ -78,7 +64,6 @@ label bab_26:
 
             ageng "Sebelum pitanya bekerja, kamu yang memilih. Kenangan mana yang kamu serahkan? Pita ini nggak mengambil sembarangan — dia mengambil yang kamu tunjuk." id b26_021a
 
-            ## GERBANG KONDISIONAL K1 (hanya muncul bila G9=A; tidak mengubah ending)
             menu:
                 "Kenangan mana yang ditukar Kai?"
 
@@ -100,7 +85,6 @@ label bab_26:
             else:
                 kai_hati "Bukit Banyak. Angin pertama yang nerpa muka kami pas sampai puncak. Dia teriak kecil, megangin tripod biar nggak jatuh, terus ketawa. Dunia rasanya luas dan aku nggak takut. {i}(memejamkan mata){/i} Ambil. Ambil saja." id b26_k1c
 
-            ## CG Kanonik #3: cg_barter (Bab 26 barter kaset merah — aset_manifest.json)
             play sound sfx_desis_pita
             $ show_cg_and_unlock("cg_barter", dissolve)
 
@@ -120,7 +104,6 @@ label bab_26:
         "\"Beri saya waktu.\"":
             $ record_major_choice(9, "B")
 
-            ## Adegan 26-2B — [G9=B] "Beri saya waktu."
             show kai cemas at pos_left
             kai "Pak… saya… {i}(tangannya gemetar, menjauh dari lemari){/i} Beri saya waktu. Saya belum bisa mutusin sekarang. Temenan, Pak. Saya takut salah pilih." id b26_017b
 
@@ -140,7 +123,6 @@ label bab_26:
         "\"Nggak, Pak. Biar saya nggak tahu.\"":
             $ record_major_choice(9, "C")
 
-            ## Adegan 26-2C — [G9=C] "Nggak, Pak. Biar saya nggak tahu."
             stop music fadeout 1.0
             play music bgm_toko loop fadein 1.5
             show kai biasa at pos_left
@@ -159,15 +141,9 @@ label bab_26:
 
     return
 
-
-################################################################################
-## [RUTE TUNDA] — Jumat Berikutnya (khusus G9=B)
-################################################################################
-
 label bab_26_tunda:
     $ chapter_autosave("bab_26_tunda", "Bab 26 (Tunda) — Jumat Berikutnya", "Ch. 26 (Delay) — Next Friday")
 
-    ## Adegan T-1 — Empat hari
     scene bg_kamar_kai_malam with dissolve
     play music bgm_cemas loop fadein 1.2
     show kai cemas at pos_center with dissolve
@@ -189,7 +165,6 @@ label bab_26_tunda:
     show kai sedih at pos_center with dissolve
     "Kamis malam, ia menulis dua kalimat di kertas sobekan, melipatnya, dan membuangnya. Kalimat pertama: {i}\"Saya tukar, Pak.\"{/i} Kalimat kedua: {i}\"Nggak jadi, Pak.\"{/i} Dua-duanya masuk tempat sampah. Dua-duanya terasa bohong." id bt_006
 
-    ## Adegan T-2 — Jumat, gang yang sama
     scene bg_gang_hujan with dissolve
     play sound sfx_hujan_deras loop fadein 0.8
     show kai cemas at pos_center with dissolve
@@ -197,7 +172,7 @@ label bab_26_tunda:
     kai_hati "Aku datang lebih sore dari biasanya. Separuh berharap tokonya sudah tutup. Separuh lagi… nggak tahu. Pokoknya kakiku jalan sendiri ke gang ini." id bt_007
 
     if get_major_choice(5) == "A":
-        ## Khusus G5 = A — pria kaya mengenali Kai
+
         show kai panik at pos_left with dissolve
         show kaya senyum at pos_right with dissolve
         "Di mulut gang, seorang pria berjas rapi baru saja keluar dari arah toko, membawa kantong kertas kecil. Langkahnya berhenti waktu melihat Kai." id bt_008a
@@ -212,10 +187,9 @@ label bab_26_tunda:
         kai_hati "Kantong kertas. Ukuran kaset. Dadaku langsung dingin." id bt_012a
 
     else:
-        ## Jika G5 != A — Kai datang setelah semuanya selesai
+
         "Gang sepi. Tidak ada siapa-siapa selain kucing oranye di bawah pot, yang menatap Kai seperti biasa. Tapi pintu toko terbuka, dan dari dalam terdengar suara kursi goyang — pelan, seperti habis ada tamu penting." id bt_008b
 
-    ## Adegan T-3 — Laci yang kosong
     stop sound fadeout 0.5
     play sound sfx_lonceng_pintu
     scene bg_toko_dalam with dissolve
@@ -277,15 +251,9 @@ label bab_26_tunda:
     stop music fadeout 1.2
     return
 
-
-################################################################################
-## BAB 27 — Tangis yang Tersedot Magnetik [RUTE MERAH]
-################################################################################
-
 label bab_27_merah:
     $ chapter_autosave("bab_27_merah", "Bab 27 — Tangis yang Tersedot Magnetik", "Ch. 27 — Tears Drawn Into Tape")
 
-    ## Adegan 27-1 — Enam puluh detik dari 1 Agustus
     scene bg_toko_dalam_malam with dissolve
     stop music fadeout 0.8
     play sound sfx_klik_play
@@ -304,7 +272,6 @@ label bab_27_merah:
 
     kai_hati "Itu… itu Yara. Itu suara Yara nangis." id b27r_005
 
-    ## Pemutaran kaset merah 1 Agustus via komponen pemutar kaset Fase 2 + transkrip penuh
     call play_cassette(
         cassette_id="kaset_tangis_yara",
         label_title=_("Kaset Merah — 1 Agustus"),
@@ -317,7 +284,6 @@ label bab_27_merah:
         allow_skip=True,
     )
 
-    ## Adegan 27-2 — Headphone diturunkan ◆ m16
     play sound sfx_klik_play
     show kai menangis at pos_left with vpunch
     "Keheningan toko kembali. Kai menurunkan headphone pelan-pelan. Tangannya gemetar hebat — alat itu hampir jatuh ke konter. Wajahnya pucat. Tenaganya seperti habis disedot mesin pemutar barusan." id b27r_006
@@ -328,7 +294,6 @@ label bab_27_merah:
 
     kai_hati "Aku bayar pakai kenangan terindahku… buat ini. Buat dengar dia nangis. Buat dengar \"selamat tinggal\". Kepastian yang aku kejar-kejar ternyata isinya begini." id b27r_009
 
-    ## GERBANG MINOR m16 (khusus Rute Merah — menentukan nada pembuka Bab 28)
     menu:
         "Kai masih memegang kaset merah itu. Apa yang dia lakukan di toko, sebelum pulang?"
 
@@ -352,15 +317,9 @@ label bab_27_merah:
     stop music fadeout 1.0
     return
 
-
-################################################################################
-## BAB 27 — Pengumuman [RUTE SEHAT & lanjutan RUTE TUNDA]
-################################################################################
-
 label bab_27_sehat:
     $ chapter_autosave("bab_27_sehat", "Bab 27 — Pengumuman", "Ch. 27 — The Announcement")
 
-    ## Adegan 27S-1 — Teras toko, sore biasa
     scene bg_teras_toko with dissolve
     play music bgm_senja loop fadein 1.5
     show kai biasa at pos_left with dissolve
@@ -389,7 +348,6 @@ label bab_27_sehat:
 
     kai "Aku tahu. Kelihatan kok, dari cara kamu ngumpulin suara kayak ngumpulin bekal." id b27s_010
 
-    ## Adegan 27S-2 — Bekal suara
     yara "Ngomong-ngomong soal bekal. {i}(mengangkat perekamnya){/i} Aku mau bikin satu rekaman terakhir sebelum berangkat. Semacam… peta suara Malang. Semua tempat yang kita datangi. Biar di Yogya nanti, kalau kangen, aku tinggal putar." id b27s_011
 
     kai "Kita?" id b27s_012
@@ -421,11 +379,6 @@ label bab_27_sehat:
     stop music fadeout 1.2
     return
 
-
-################################################################################
-## BAB 28 — Lubang di Peta Ingatan [KHUSUS RUTE MERAH — varian K1-A/B/C + m16]
-################################################################################
-
 label bab_28_merah:
     $ chapter_autosave("bab_28_merah", "Bab 28 — Lubang di Peta Ingatan", "Ch. 28 — A Hole in the Memory Map")
 
@@ -434,7 +387,7 @@ label bab_28_merah:
     show kai datar at pos_center with dissolve
 
     if cond_k1 == "A":
-        ## Adegan 28-1A — [K1-A] Pagi pertama tanpa perpustakaan
+
         "Kai terbangun dengan sentakan, seperti baru jatuh dari tempat tinggi. Kamarnya sama persis: kertas-kertas di meja, jam digital, dan wadah mika merah tergeletak di sampingnya." id b28_001a
 
         kai_hati "Ada yang salah. Aku tahu ada yang salah sebelum aku tahu apanya." id b28_002a
@@ -452,7 +405,7 @@ label bab_28_merah:
         kai_hati "Aku nukar rasa debar yang bikin aku hidup… sama rekaman dia bilang selamat tinggal. {i}(duduk merosot di kursi, menatap keluar jendela){/i} Mahal banget. Mahal banget, Kai." id b28_008a
 
     elif cond_k1 == "B":
-        ## Adegan 28-1B — [K1-B] Pagi pertama tanpa rawon di rel
+
         "Kai terbangun dengan sentakan. Wadah mika merah di samping jam digital. Dan satu kekosongan yang bentuknya aneh — bukan di awal cerita, tapi di tengah-tengahnya." id b28_001b
 
         kai_hati "Aku tahu kami pernah makan rawon di pinggir rel. Faktanya ada: warung tenda, hujan deras, kereta lewat bikin sendok bergetar. Yara cerita itu terus." id b28_002b
@@ -461,14 +414,13 @@ label bab_28_merah:
         kai "{i}(duduk merosot, menatap wadah kaset){/i} Jadi ini yang aku bayar. Sore paling hangat yang aku punya… buat dengar dia nangis. {i}(jeda panjang){/i} Pantes Pak Ageng bilang mahal." id b28_003b
 
     else:
-        ## Adegan 28-1C — [K1-C] Pagi pertama tanpa Bukit Banyak
+
         "Kai terbangun dengan sentakan. Wadah mika merah di samping jam digital. Di luar jendela, angin pagi menggerakkan tirai — dan di situlah kosongnya terasa." id b28_001c
 
         kai_hati "Bukit Banyak. Aku tahu kami pernah ke sana. Fotonya ada di HP-ku — aku lihat sendiri: aku, dia, tripod, kota di bawah. {i}(menatap foto itu lama){/i} Tapi anginnya… teriakan kecilnya waktu hampir jatuh, megangin tripod… rasa lega pas sadar dunia itu luas dan aku nggak takut… {i}(jeda){/i} Nggak ada. Yang tersisa cuma fotonya. Bukti tanpa rasa." id b28_002c
 
         kai "{i}(menatap wadah kaset di meja){/i} Aku nukar hari aku berani… sama rekaman hari dia pergi. {i}(tertawa pendek, getir){/i} Dagang yang bagus, Kai. Dagang yang bagus sekali." id b28_003c
 
-    ## Callback nada m16 (dari Bab 27 Rute Merah)
     if get_minor_choice("m16") == "A":
         kai_hati "Semalam di toko, aku cuci muka sampai airnya habis dinginnya. Pagi ini kepalaku jernih — dan justru karena jernih, lubang ini kelihatan jelas banget bentuknya." id b28_009a
     elif get_minor_choice("m16") == "B":
@@ -478,15 +430,9 @@ label bab_28_merah:
 
     return
 
-
-################################################################################
-## BAB 29 — Menjauh Demi Melindungi [RUTE MERAH]
-################################################################################
-
 label bab_29_merah:
     $ chapter_autosave("bab_29_merah", "Bab 29 — Menjauh Demi Melindungi", "Ch. 29 — Pulling Away to Protect")
 
-    ## Adegan 29-1 — Kepala di atas meja
     scene bg_kelas with dissolve
     play music bgm_cemas loop if_changed
     show kai datar at pos_left with dissolve
@@ -512,7 +458,6 @@ label bab_29_merah:
     hide yara with dissolve
     "Yara mematung beberapa detik. Hening di antara mereka kali ini bukan hening yang membisukan karena kagum — ini hening yang dingin dan tajam, dan sesuatu retak pelan-pelan di dalamnya. Tanpa satu kata lagi, Yara berbalik dan pergi. Derap sepatunya berat." id b29r_009
 
-    ## Adegan 29-2 — Gerbang belakang sekolah
     scene bg_gerbang_sekolah with dissolve
     play sound sfx_hujan_deras loop fadein 0.8
     show kai datar at pos_left with dissolve
@@ -542,15 +487,9 @@ label bab_29_merah:
     stop sound fadeout 0.8
     return
 
-
-################################################################################
-## BAB 29 — Menghindari Topik Itu [RUTE SEHAT]
-################################################################################
-
 label bab_29_sehat:
     $ chapter_autosave("bab_29_sehat", "Bab 29 — Menghindari Topik Itu", "Ch. 29 — Avoiding That Topic")
 
-    ## Adegan 29S-1 — Koridor kelas sebelah
     scene bg_koridor_sekolah with dissolve
     play music bgm_sekolah loop fadein 1.2
     play sound sfx_kelas loop fadein 0.6
@@ -570,7 +509,6 @@ label bab_29_sehat:
     stop sound fadeout 0.5
     "Besoknya: jadwal kereta. Lusanya: formulir pendaftaran ulang. Setiap topik yang berbau Yogya, Kai punya pintu keluar. Dan Yara — yang biasanya merekam semua suara — mulai merekam juga pola yang satu ini: suara langkah Kai yang pergi." id b29s_005
 
-    ## Adegan 29S-2 — Teras toko, pengakuan kecil
     scene bg_teras_toko with dissolve
     stop music fadeout 0.8
     play music bgm_senja loop fadein 1.5
@@ -594,15 +532,9 @@ label bab_29_sehat:
     stop music fadeout 1.0
     return
 
-
-################################################################################
-## BAB 30 — Rekaman yang Kehilangan Detak [RUTE MERAH]
-################################################################################
-
 label bab_30_merah:
     $ chapter_autosave("bab_30_merah", "Bab 30 — Rekaman yang Kehilangan Detak", "Ch. 30 — Recordings That Lost Their Pulse")
 
-    ## Adegan 30-1 — Kamar Yara (POV Yara)
     scene bg_kamar_yara with dissolve
     play music bgm_cemas loop if_changed
     show yara sedih at pos_center with dissolve
@@ -611,7 +543,6 @@ label bab_30_merah:
 
     yara "{i}(melepas headphone kasar, melemparnya ke meja; berbisik ke kamar yang sunyi){/i} Dia kaku sekali. Kayak ada bagian dari dirinya yang mendadak… hilang. {i}(jeda){/i} Orang nggak berubah sedingin itu dalam semalam. Kecuali ada yang diambil dari dia. Atau dia ngambil sesuatu." id b30r_002
 
-    ## Adegan 30-2 — Parkiran sekolah ◆ m17 (penutup)
     scene bg_gerbang_sekolah with dissolve
     show kai datar at pos_left with dissolve
     show yara sedih at pos_right with dissolve
@@ -637,7 +568,6 @@ label bab_30_merah:
 
     kai_hati "Kaset kosong. Terhapus. {i}(duduk lama, lalu mengambil perekam kecil pinjaman dari Yara yang belum sempat ia kembalikan){/i} …Kalau aku sudah kayak kaset kosong, harusnya gampang dibuktiin. Kosong itu bunyinya kayak apa, sih?" id b30r_010
 
-    ## GERBANG MINOR m17 (callback dibayar di Bab 33-2)
     menu:
         "Kai dan perekam kecil itu, malam ini."
 
@@ -660,15 +590,9 @@ label bab_30_merah:
 
     return
 
-
-################################################################################
-## BAB 30 — Toko yang Sepi, Dengan Cara yang Benar [RUTE SEHAT]
-################################################################################
-
 label bab_30_sehat:
     $ chapter_autosave("bab_30_sehat", "Bab 30 — Toko yang Sepi, Dengan Cara yang Benar", "Ch. 30 — A Shop Quiet in the Right Way")
 
-    ## Adegan 30S-1 — Gang yang kering
     scene bg_gang_kering with dissolve
     play music bgm_toko loop fadein 1.5
     show kai biasa at pos_center with dissolve
@@ -684,7 +608,6 @@ label bab_30_sehat:
 
     kai "{i}(tersenyum kecil, masuk){/i} Bapak bisa saja." id b30s_003
 
-    ## Adegan 30S-2 — Menata rak
     "Tidak ada pelanggan lain sore itu. Kai membantu Pak Ageng menata ulang rak kaset biasa — pekerjaan lambat yang tidak menuntut apa-apa dari kepalanya." id b30s_004
 
     ageng "Yang Type I di kiri. Yang labelnya tulisan tangan, jangan dicampur sama cetakan pabrik. {i}(jeda, menatap Kai){/i} Kamu kelihatan lebih ringan akhir-akhir ini. Masih ke sini tiap hari, tapi nggak kayak orang ngejar sesuatu." id b30s_005

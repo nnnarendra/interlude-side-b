@@ -1,9 +1,3 @@
-## Interlude / Side B — Komponen Pemutar Kaset yang Dipakai Ulang (PRD §4.8 & Fase 2)
-## - Memutar berkas dari `game/audio/kaset/` sesuai `aset_manifest.json` pada kanal `"kaset"`.
-## - Transkrip teks SELALU tampil di layar (audio bukan satu-satunya pembawa isi).
-## - Skip dan Auto-Play WAJIB berhenti saat memasuki adegan pemutaran kaset.
-
-## Registri 5 kaset kanonik (nama berkas persis sesuai aset_manifest.json).
 define CASSETTE_CATALOG = {
     "kaset_besok_busarah": {
         "file": "audio/kaset/kaset_besok_busarah.ogg",
@@ -153,7 +147,6 @@ init -8 python:
                 "completed_unskipped": completed_unskipped,
             }
 
-
 screen cassette_player(
     cassette_id,
     label_title=None,
@@ -175,7 +168,6 @@ screen cassette_player(
     default elapsed_sec = 0
     default completed_unskipped = False
 
-    ## Wajib hentikan skip & auto-play segera saat layar kaset muncul (PRD §4.4).
     on "show" action Function(stop_skip_and_auto)
     on "hide" action Function(_cassette_stop_playback)
 
@@ -196,7 +188,6 @@ screen cassette_player(
             yfill True
             spacing 24
 
-            ## Header dek pemutar kaset
             hbox:
                 xfill True
                 spacing 22
@@ -225,7 +216,6 @@ screen cassette_player(
                     else:
                         text ui_tr("cassette_status_ready") size 22 color UI_TEXT_MUTED
 
-                ## Penghitung waktu pita (MM:SS / MM:SS)
                 text (format_tape_mmss(elapsed_sec) + " / " + format_tape_mmss(_dur)):
                     size 28
                     bold True
@@ -233,14 +223,12 @@ screen cassette_player(
                     xalign 1.0
                     yalign 0.5
 
-            ## Bilah progres pita kaset
             bar value StaticValue(elapsed_sec, _dur):
                 xfill True
                 ysize 16
                 left_bar Solid("#d49a58")
                 right_bar Solid("#3d2e24")
 
-            ## Tombol kendali pemutar kaset (Putar / Berhenti / Selesai)
             hbox:
                 xfill True
                 spacing 16
@@ -262,7 +250,6 @@ screen cassette_player(
                     sensitive _can_close
                     action CassetteFinishAction(cassette_id, _lines, is_overlay_preview=is_overlay_preview)
 
-            ## Area transkrip teks — SELALU tampil agar cerita utuh meski tanpa suara (PRD §4.8)
             frame:
                 xfill True
                 yfill True
@@ -309,10 +296,6 @@ screen cassette_player(
     if is_overlay_preview:
         key "game_menu" action CassetteFinishAction(cassette_id, _lines, is_overlay_preview=True)
 
-
-## Label pembantu yang dipakai ulang oleh adegan cerita pada fase berikutnya:
-## Contoh pemanggilan di naskah:
-##     call play_cassette("kaset_besok_busarah", label_title="...", transcript_lines=[...])
 label play_cassette(cassette_id, label_title=None, transcript_lines=None, duration_sec=None, allow_skip=True):
     $ stop_skip_and_auto()
     call screen cassette_player(

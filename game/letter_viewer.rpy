@@ -1,11 +1,5 @@
-## Interlude / Side B — Penampil Surat Terbuka Fullscreen (CG + Teks di Atas Kertas)
-## Menampilkan CG surat terbuka layar penuh TANPA kotak dialog bawah, dengan isi surat
-## dirender langsung di dalam batas kertas tiap CG (mendukung dwibahasa ID & EN otomatis,
-## tercatat di Riwayat, serta otomatis membuka CG di Galeri CG).
-
 init -5 python:
-    ## Koordinat area aman kertas untuk tiap CG (kanvas 1920x1080) hasil pengukuran piksel langsung:
-    ## Dijamin 100% berada di dalam batas kertas & bebas dari amplop/pena di pinggir.
+
     LETTER_LAYOUTS = {
         "cg_surat_lama": {
             "xpos": 520, "ypos": 215, "xsize": 890, "ysize": 640,
@@ -49,10 +43,8 @@ screen letter_viewer(cg_id, letter_title, paragraphs, centered_mode=False, paper
     $ _bw = _lay["xsize"]
     $ _bh = _lay["ysize"]
 
-    ## Latar CG surat terbuka layar penuh.
     add cg_id xysize (1920, 1080) fit "cover"
 
-    ## Klik/tap di mana saja di layar (atau Space/Enter) untuk menutup surat dan lanjut cerita.
     button:
         xpos 0
         ypos 0
@@ -67,8 +59,6 @@ screen letter_viewer(cg_id, letter_title, paragraphs, centered_mode=False, paper
     key "K_KP_ENTER" action Return(True)
     key "K_ESCAPE" action Return(True)
 
-    ## Area teks terikat tepat di dalam batas kertas tiap CG (tanpa kotak latar artifisial;
-    ## clipping True mencegah teks meluap keluar kertas meski skala huruf dibesarkan).
     fixed:
         xpos _bx
         ypos _by
@@ -109,14 +99,12 @@ screen letter_viewer(cg_id, letter_title, paragraphs, centered_mode=False, paper
                     for p in paragraphs:
                         text p size scaled_font_size(_lay["font_size"]) italic True color _lay["ink"] line_spacing _lay["line_spacing"] substitute False
 
-    ## Petunjuk tipis di bagian bawah layar.
     frame:
         xalign 0.5
         yalign 0.968
         background Solid("#16100cc8")
         padding (28, 10)
         text ui_tr("letter_continue_hint") size 21 color "#e6d5be"
-
 
 label show_letter(cg_id, letter_title="", paragraphs=None, centered_mode=False, paper_bg=None):
     $ stop_skip_and_auto()

@@ -1,24 +1,14 @@
-## Interlude / Side B — Variabel Persisten & Katalog Kanonik (PRD §2, §4.5, §4.6, §4.7)
-## Semua data lintas-playthrough memakai `default persistent.*`.
-
-## --- Bahasa Ganda Independen (bawaan: id + id) ---
 default persistent.ui_lang = "id"
 default persistent.story_lang = "id"
 
-## --- Progres Persisten: Ending, Pencapaian, CG ---
-## unlocked_endings: { "H1": {"unlocked_at": "YYYY-MM-DD", "sample_choices": "AAAAAAAAAAAA"}, ... }
 default persistent.unlocked_endings = {}
 
-## achievements: { "ach_first_tape": {"unlocked_at": "YYYY-MM-DD"}, ... }
 default persistent.achievements = {}
 
-## seen_cgs: set berisi ID CG kanonik yang pernah tampil (mis. "cg_perpustakaan_debu")
 default persistent.seen_cgs = set()
 
-## Bonus Bab 48 di galeri CG bila tamat dengan K2 = B (PRD §4.7)
 default persistent.bonus_ch48_unlocked = False
 
-## --- Preferensi Mode Baca & Perangkat (PRD §4.4, §4.5) ---
 default persistent.base_text_cps = 45
 default persistent.base_afm_time = 5
 default persistent.afm_v2_migrated = False
@@ -26,7 +16,6 @@ default persistent.read_speed_2x = False
 default persistent.font_size_scale = 1.0
 default persistent.android_vibration = False
 
-## --- Katalog Kanonik (konstanta, bukan state yang disimpan) ---
 define ENDINGS_CATALOG = [
     {"id": "H1", "ach_id": "ach_ending_h1", "title_key": "ending_h1_title", "tag_key": "ending_h1_tag"},
     {"id": "H2", "ach_id": "ach_ending_h2", "title_key": "ending_h2_title", "tag_key": "ending_h2_tag"},
@@ -57,7 +46,6 @@ define ACHIEVEMENTS_CATALOG = [
     "ach_semua_ending",
 ]
 
-## 12 CG kanonik persis sesuai aset_manifest.json (plus slot bonus Bab 48 di layar galeri).
 define CG_CATALOG = [
     {"id": "cg_perpustakaan_debu", "file": "images/cg/cg_perpustakaan_debu.jpg", "title_key": "cg_perpustakaan_debu"},
     {"id": "cg_headphone",         "file": "images/cg/cg_headphone.jpg",         "title_key": "cg_headphone"},
@@ -77,7 +65,6 @@ define CG_CATALOG = [
     {"id": "cg_surat_balasan_yara","file": "images/cg/cg_surat_balasan_yara.jpg","title_key": "cg_surat_balasan_yara"},
 ]
 
-## 6 BGM kanonik persis sesuai aset_manifest.json untuk Ruang Musik (PRD §4.7).
 define BGM_CATALOG = [
     {"id": "bgm_toko",    "file": "audio/bgm/bgm_toko.ogg",    "title_key": "bgm_toko",    "loop": True},
     {"id": "bgm_sekolah", "file": "audio/bgm/bgm_sekolah.ogg", "title_key": "bgm_sekolah", "loop": True},
@@ -243,7 +230,7 @@ init -15 python:
         else:
             _preferences.text_cps = base_cps
             _preferences.afm_time = base_afm
-        ## Pastikan skip selalu berhenti di setiap pilihan (PRD §4.4).
+
         _preferences.skip_after_choices = False
 
     class ToggleAutoForward(Action, DictEquality):

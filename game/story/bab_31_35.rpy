@@ -1,14 +1,5 @@
-## Interlude / Side B — Batch 8 (Bab 31–35)
-## Sumber verbatim: NASKAH-VN-MASTER-Interlude-Side-B.md (baris 2601–2945)
-## Gerbang: m18 (Bab 32 semua rute), G10 versi sehat (Bab 32S — posisi 10 + ach_jujur bila A),
-##          callback m17 (Bab 33), varian [K1-A/B/C] (Bab 34 Merah), callback m18 & m19 (Bab 35)
-
-################################################################################
-## BAB 31 — Dari Duka yang Mengendap (Dua Versi Rute + Blok Inti Siti Bersama)
-################################################################################
-
 label bab_31_inti_siti:
-    ## Adegan 31-2 — Kaset bernama Siti (dipakai bersama oleh Rute Merah & Rute Sehat)
+
     play sound sfx_klik_play
     $ show_item("item_kaset_siti")
     "Pak Ageng berjalan ke lemari kayu tua di sudut ruangan. Bukan lemari kaca tempat kaset merah — lemari pribadi, yang selalu terkunci. Kunci kuningannya sudah berkarat. Dari dalamnya dia mengeluarkan satu kaset usang, labelnya menguning. Tulisannya tinta hitam yang sudah pudar: {i}Siti, 1994{/i}." id b31_005
@@ -23,7 +14,6 @@ label bab_31_inti_siti:
 
     ageng "Terus suatu hari dia pergi. Sakit. Cepat sekali. Saya bahkan belum sempat merekam suaranya baik-baik di kaset. Habis dia nggak ada, rumah kami jadi sunyi. Sunyi banget. Sampai saya hampir— {i}(berhenti, menggeleng pelan){/i} …ya, segitunya." id b31_009
 
-    ## Adegan 31-3 — Gema dari duka sendiri
     "Dia kembali ke balik konter, meletakkan kaset bernama Siti itu di meja, di depan Kai." id b31_010
 
     ageng "Habis itu saya jadi terobsesi. Semua ilmu rekayasa frekuensi yang saya punya saya pakai. Sirkuit perekam saya modifikasi. Pita magnetik terbaik saya cari ke mana-mana. Buat satu tujuan yang sebenarnya gila: saya mau menangkap sisa getaran suara Siti yang masih tertinggal di dunia ini. Dengar suaranya sekali lagi. Sekali saja." id b31_011
@@ -40,11 +30,9 @@ label bab_31_inti_siti:
 
     return
 
-
 label bab_31_merah:
     $ chapter_autosave("bab_31_merah", "Bab 31 — Dari Duka yang Mengendap", "Ch. 31 — From Settled Grief")
 
-    ## Adegan 31-1 — Toko yang terlalu sepi [RUTE MERAH]
     scene bg_toko_dalam_malam with dissolve
     play music bgm_toko loop fadein 1.5
     show kai sedih at pos_left with dissolve
@@ -60,10 +48,8 @@ label bab_31_merah:
 
     kai_hati "…Duka? Pak Ageng nggak pernah cerita soal dirinya sendiri. Nggak pernah." id b31r_005
 
-    ## Dialog inti Siti (Adegan 31-2 & 31-3)
     call bab_31_inti_siti
 
-    ## Adegan 31-4 — Perbaiki pitanya [RUTE MERAH]
     scene bg_toko_dalam_malam with dissolve
     show kai menangis at pos_left with dissolve
     show ageng iba at pos_right with dissolve
@@ -79,11 +65,9 @@ label bab_31_merah:
     stop music fadeout 1.2
     return
 
-
 label bab_31_sehat:
     $ chapter_autosave("bab_31_sehat", "Bab 31 — Dari Duka yang Mengendap", "Ch. 31 — From Settled Grief")
 
-    ## Adegan 31S-1 — Menata toko [RUTE SEHAT]
     scene bg_toko_dalam with dissolve
     play music bgm_toko loop if_changed
     show kai biasa at pos_left with dissolve
@@ -98,10 +82,8 @@ label bab_31_sehat:
 
     kai_hati "…Duka? Pak Ageng nggak pernah cerita soal dirinya sendiri. Nggak pernah." id b31s_004
 
-    ## Dialog inti Siti (Adegan 31-2 & 31-3 — identik dengan versi merah)
     call bab_31_inti_siti
 
-    ## Adegan 31S-2 — Penutup versi sehat [RUTE SEHAT]
     scene bg_toko_dalam with dissolve
     show kai cemas at pos_left with dissolve
     show ageng iba at pos_right with dissolve
@@ -117,15 +99,9 @@ label bab_31_sehat:
     stop music fadeout 1.2
     return
 
-
-################################################################################
-## BAB 32 — Kabar Gembira di Tengah Sunyi
-################################################################################
-
 label bab_32:
     $ chapter_autosave("bab_32", "Bab 32 — Kabar Gembira di Tengah Sunyi", "Ch. 32 — Good News in the Quiet")
 
-    ## Adegan 32-1 — Judul portofolio ◆ m18 (kedua rute)
     scene bg_koridor_sekolah with dissolve
     play music bgm_sekolah loop fadein 1.2
     play sound sfx_kelas loop fadein 0.6
@@ -140,7 +116,6 @@ label bab_32:
 
     yara "Justru itu. Kamu dengar semua rekamannya dari yang paling mentah. Udah, pilih satu. Yang paling \"aku\", menurutmu." id b32_004
 
-    ## GERBANG MINOR m18 (judul tercetak di selebaran sekolah pada Bab 35-1)
     menu:
         "Judul portofolio Yara:"
 
@@ -162,7 +137,7 @@ label bab_32:
     stop sound fadeout 0.5
 
     if get_major_choice(9) == "A":
-        ## Adegan 32-2 — Papan pengumuman [RUTE MERAH]
+
         stop music fadeout 0.8
         play music bgm_cemas loop fadein 1.2
         scene bg_koridor_sekolah with dissolve
@@ -176,7 +151,6 @@ label bab_32:
 
         kai_hati "Dia nyari aku. Aku tahu dia nyari aku." id b32r_004
 
-        ## Adegan 32-3 — Koridor lab biologi [RUTE MERAH]
         show kai panik at pos_left with dissolve
         show yara ceria at pos_right with dissolve
 
@@ -194,7 +168,6 @@ label bab_32:
 
         "Yara mempercepat larinya, mengabaikan tatapan heran adik-adik kelas yang berpapasan. Tapi Kai lebih cepat. Di belokan koridor bawah, jaket abu-abu itu menghilang." id b32r_010
 
-        ## Adegan 32-4 — Dasar tangga [RUTE MERAH]
         scene bg_gerbang_sekolah with dissolve
         show yara sedih at pos_center with dissolve
 
@@ -203,7 +176,7 @@ label bab_32:
         yara "{i}(pelan, pada koridor yang sepi){/i} Kenapa, Kai? …Kenapa pas duniaku akhirnya mulai terdengar indah, kamu justru milih jadi tuli?" id b32r_012
 
     else:
-        ## Adegan 32S-1 — Kabar itu disampaikan langsung [RUTE SEHAT & TUNDA]
+
         scene bg_koridor_sekolah with dissolve
         show kai biasa at pos_left with dissolve
         show yara ceria at pos_right with dissolve
@@ -214,7 +187,6 @@ label bab_32:
 
         kai_hati "Yogya. Jauh. Dia bakal pergi. {i}(jeda){/i} Dadaku langsung sesak — tapi dia berdiri di depanku, sebahagia ini, dan dia lari ke aku duluan. Bukan ke ruang guru. Ke aku." id b32s_003
 
-        ## GERBANG UTAMA G10 — RUTE SEHAT (posisi 10 string 12 huruf; A memicu ach_jujur)
         menu:
             "Apa yang keluar dari mulut Kai?"
 
@@ -245,15 +217,9 @@ label bab_32:
     stop music fadeout 1.2
     return
 
-
-################################################################################
-## BAB 33 — Benang-Benang yang Kusut [KHUSUS RUTE MERAH]
-################################################################################
-
 label bab_33:
     $ chapter_autosave("bab_33", "Bab 33 — Benang-Benang yang Kusut", "Ch. 33 — Tangled Threads")
 
-    ## Adegan 33-1 — Kamar, malam: penyesalan
     scene bg_kamar_kai_malam with dissolve
     play music bgm_cemas loop fadein 1.2
     show kai sedih at pos_center with dissolve
@@ -264,7 +230,6 @@ label bab_33:
 
     kai "{i}(bisik, ke kegelapan){/i} Aku harus perbaiki ini." id b33_003
 
-    ## Adegan 33-2 — Di depan loker (callback m17)
     scene bg_koridor_sekolah with dissolve
     play sound sfx_kelas loop fadein 0.6
     show kai cemas at pos_left with dissolve
@@ -276,7 +241,6 @@ label bab_33:
 
     yara "{i}(menatap botol itu, lalu wajah Kai; tidak ada marah di matanya — cuma lelah){/i} Terima kasih, Kai. Tapi aku lagi nggak pengin minum susu." id b33_006
 
-    ## BLOK KONDISIONAL m17 (callback dari Bab 30 Rute Merah)
     if get_minor_choice("m17") == "A":
         yara "{i}(sebelum berbalik, pelan){/i} Rekaman detak jantungmu itu… kudengar semalam. Kedengarannya kayak orang yang lagi lari dari sesuatu. {i}(jeda){/i} Ternyata beneran lari, ya." id b33_007a
     elif get_minor_choice("m17") == "B":
@@ -294,7 +258,6 @@ label bab_33:
     show kai sedih at pos_center with dissolve
     kai_hati "Semua kata yang kuucapin hari ini kedengaran sumbang. Semua usahaku buat dekat malah kedengaran kayak gangguan." id b33_011
 
-    ## Adegan 33-3 — Pita yang berputar sendiri
     scene bg_kamar_kai_malam with dissolve
     show kai panik at pos_center with dissolve
     play sound sfx_pita_kusut
@@ -311,15 +274,9 @@ label bab_33:
 
     return
 
-
-################################################################################
-## BAB 34 — Musik Tanpa Nyawa (Dua Versi Rute + Varian [K1-A/B/C] di Rute Merah)
-################################################################################
-
 label bab_34_merah:
     $ chapter_autosave("bab_34_merah", "Bab 34 — Musik Tanpa Nyawa", "Ch. 34 — Lifeless Music")
 
-    ## Adegan 34-1 — Walkman perak [RUTE MERAH]
     scene bg_kamar_kai_malam with dissolve
     play music bgm_cemas loop if_changed
     show kai datar at pos_center with dissolve
@@ -338,9 +295,8 @@ label bab_34_merah:
 
     "Nggak ada apa-apa. Suara Yara jernih, indah — tapi datar. Kayak lagu asing di radio pusat perbelanjaan. Indah, tapi nggak ada hubungannya sama dia." id b34r_005
 
-    ## Adegan 34-2 — Suaranya sendiri [RUTE MERAH — menyesuaikan varian K1-A / K1-B / K1-C]
     if cond_k1 == "B":
-        ## Varian [K1-B] — kenangan rawon di rel yang ditukar
+
         kai_kaset "Untuk Kai yang ngunci diri di kamar dan nulis surat-surat perpisahan konyol… Letakkan pulpenmu. Kamu nggak akan mati hari Jumat ini. Kamu justru akan mulai benar-benar hidup setelah kuah hitam dan bunyi rel itu…" id b34r_006b
 
         kai_hati "\"Kuah hitam dan bunyi rel itu\". Aku tahu itu maksudnya sore penting. Aku tahu — secara logika tahu — kami pernah duduk makan rawon di pinggir rel bersama." id b34r_007b
@@ -348,7 +304,7 @@ label bab_34_merah:
         kai_hati "Tapi aku nggak bisa ngebayanginnya. Nggak ingat hangat kuah rawonnya waktu hujan deras itu. Nggak ingat dia tertawa kepedesan di sampingku. Kosong. Kayak ada halaman yang disobek dari tengah buku." id b34r_008b
 
     elif cond_k1 == "C":
-        ## Varian [K1-C] — kenangan Bukit Banyak yang ditukar
+
         kai_kaset "Untuk Kai yang ngunci diri di kamar dan nulis surat-surat perpisahan konyol… Letakkan pulpenmu. Kamu nggak akan mati hari Jumat ini. Kamu justru akan mulai benar-benar hidup setelah angin pertama di Bukit Banyak itu…" id b34r_006c
 
         kai_hati "\"Angin pertama di Bukit Banyak\". Aku tahu tempat itu. Aku tahu — secara logika tahu — kami pernah naik ke sana membawa tripod." id b34r_007c
@@ -356,7 +312,7 @@ label bab_34_merah:
         kai_hati "Tapi aku nggak bisa ngebayanginnya. Nggak ingat pernah duduk bersamanya di puncak itu. Nggak ingat teriakan kecilnya atau rasa lega di dadaku hari itu. Kosong. Kayak ada halaman yang disobek dari tengah buku." id b34r_008c
 
     else:
-        ## Varian [K1-A] (sumber utama) — kenangan perpustakaan yang ditukar
+
         kai_kaset "Untuk Kai yang ngunci diri di kamar dan nulis surat-surat perpisahan konyol… Letakkan pulpenmu. Kamu nggak akan mati hari Jumat ini. Kamu justru akan mulai benar-benar hidup setelah tumpukan buku itu jatuh…" id b34r_006a
 
         kai_hati "\"Tumpukan buku itu jatuh\". Aku tahu itu maksudnya peristiwa penting. Aku tahu — secara logika tahu — itu yang mempertemukan aku sama Yara." id b34r_007a
@@ -371,11 +327,9 @@ label bab_34_merah:
     stop music fadeout 1.2
     return
 
-
 label bab_34_sehat:
     $ chapter_autosave("bab_34_sehat", "Bab 34 — Mixtape yang Utuh", "Ch. 34 — The Intact Mixtape")
 
-    ## Adegan 34S-1 — Mixtape yang utuh [RUTE SEHAT & TUNDA]
     scene bg_kamar_kai_malam with dissolve
     play music bgm_senja loop fadein 1.5
     show kai biasa at pos_center with dissolve
@@ -398,15 +352,9 @@ label bab_34_sehat:
     stop music fadeout 1.2
     return
 
-
-################################################################################
-## BAB 35 — Debu di Gang yang Kering (SEMUA RUTE MENYATU)
-################################################################################
-
 label bab_35:
     $ chapter_autosave("bab_35", "Bab 35 — Debu di Gang yang Kering", "Ch. 35 — Dust in the Dry Alley")
 
-    ## Adegan 35-1 — Selebaran sekolah (callback m18)
     scene bg_koridor_sekolah with dissolve
     play sound sfx_kelas loop fadein 0.6
     show kai biasa at pos_center with dissolve
@@ -422,7 +370,6 @@ label bab_35:
 
     kai_hati "Judul itu… aku yang milih. {i}(jeda){/i} Kecil sih. Tapi namaku — maksudku, pilihanku — ikut tercetak di jalannya dia. Aneh rasanya. Senang, tapi ada sesaknya juga." id b35_003
 
-    ## Adegan 35-2 — Gang yang kering ◆ m19
     stop sound fadeout 0.5
     scene bg_gang_kering with dissolve
     play music bgm_cemas loop fadein 1.5
@@ -432,7 +379,6 @@ label bab_35:
 
     kai_hati "…Kok kering? Gang ini nggak pernah kering. {i}(mempercepat langkah){/i} Pak Ageng…" id b35_005
 
-    ## GERBANG MINOR m19 (callback komentar Pak Ageng di awal Bab 36)
     menu:
         "Di tengah gang yang kering itu, Kai berhenti sebentar. Apa yang dia lakukan?"
 
@@ -449,7 +395,6 @@ label bab_35:
             $ record_minor_choice("m19", "C")
             "Nggak ada waktu buat gang. Ada firasat buruk yang lebih keras dari rasa penasaran, dan kaki Kai memilih lari." id b35_006c
 
-    ## Adegan 35-3 — Pintu yang terkunci
     scene bg_toko_luar with dissolve
     show kai panik at pos_center with dissolve
 
@@ -460,7 +405,6 @@ label bab_35:
 
     "Nggak ada jawaban. Sunyi dari dalam toko terasa pekat dan mati — beda dengan hening hangat yang biasa menyelimuti ruangan penuh kaset itu. Kai menempelkan telinganya ke celah pintu. Nggak ada derit kursi goyang. Nggak ada langkah lambat. Nggak ada apa-apa." id b35_009
 
-    ## Adegan 35-4 — Jendela samping
     "Lalu terdengar: batuk. Kering, berat, dari jendela samping yang terhubung ke rumah tinggal Pak Ageng di belakang toko. Lemah sekali. Tiap tarikan napasnya kedengaran kayak perjuangan." id b35_010
 
     kai "{i}(beralih ke jendela, mengetuk kacanya panik){/i} Pak Ageng? Bapak sakit? Pak, tolong buka jendelanya!" id b35_011

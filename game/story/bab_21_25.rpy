@@ -1,17 +1,6 @@
-## Interlude / Side B — Batch 6 (Bab 21–25)
-## Sumber verbatim: NASKAH-VN-MASTER-Interlude-Side-B.md (baris 1635–2005)
-## Gerbang: G6 (Bab 21 — A mengunci flag_g6_cermin), m15 (Bab 22 — ach_kolektor_suara bila m10=A),
-##          G7 (Bab 23 — termasuk sub-pilihan rasa bukan gerbang), G8 (Bab 24–25)
-## Kaset: kaset_tawa_siti (Bab 24-3 via komponen pemutar kaset Fase 2)
-
-################################################################################
-## BAB 21 — Rahasia di Balik Gulungan Pita
-################################################################################
-
 label bab_21:
     $ chapter_autosave("bab_21", "Bab 21 — Rahasia di Balik Gulungan Pita", "Ch. 21 — Secret Behind the Spool")
 
-    ## Adegan 21-1 — Setelah pria kaya pergi
     scene bg_toko_dalam with dissolve
     play music bgm_toko loop if_changed
     show kai biasa at pos_left with dissolve
@@ -27,14 +16,12 @@ label bab_21:
 
     kai "…Kenapa toko ini ada?" id b21_005
 
-    ## GERBANG UTAMA G6 (posisi 6 string 12 huruf; opsi A mengunci flag_g6_cermin untuk G10)
     menu:
         "Seberapa jauh Kai mau mendengar jawaban Pak Ageng?"
 
         "\"Duduk, Pak. Ceritakan semuanya. Saya nggak buru-buru.\"":
             $ record_major_choice(6, "A")
 
-            ## Adegan 21-2 — Cermin ◆ jalur G6=A (utuh)
             play sound sfx_derit_kursi_goyang loop fadein 0.8
             ageng "{i}(mengambil cangkir tehnya, menyesap, memandang deretan lemari kaca){/i} Pertanyaan bagus, Kai. Menurutmu sendiri, buat apa toko ini berdiri di ujung gang buntu yang hampir nggak pernah dilewati orang?" id b21_006a
 
@@ -66,7 +53,6 @@ label bab_21:
 
             ageng "{i}(terkekeh){/i} Aku cuma muter pitanya, Nak. Hatimulah yang milih mau dengar ketakutan, atau harapan. Dan hari ini… aku senang lihat kamu akhirnya berhenti dengar masa depan, dan mulai dengar detik ini." id b21_017a
 
-            ## Flag kalimat "toko ini cermin" terkunci untuk modal dialog pengakuan penuh di G10
             $ flag_g6_cermin = True
 
             "Kursi goyang itu berderit pelan. Di luar, gang buntu basah seperti biasa. Tapi untuk pertama kalinya, Kai duduk di toko itu tanpa merasa dikejar-kejar besok." id b21_018a
@@ -75,7 +61,6 @@ label bab_21:
         "\"Ceritakan, Pak. Tapi… saya nggak bisa lama-lama.\"":
             $ record_major_choice(6, "B")
 
-            ## Adegan 21-3 — Separuh cerita ◆ jalur G6=B
             ageng "{i}(menyesap tehnya, memandang lemari kaca){/i} Menurutmu, buat apa toko ini berdiri di gang buntu yang nggak pernah dilewati orang?" id b21_006b
 
             kai "Dulu saya pikir ini penyelamat, Pak. Buat orang cemas kayak saya, kaset-kaset itu kayak pegangan. Tapi belakangan… saya mulai ragu sendiri." id b21_007b
@@ -104,7 +89,6 @@ label bab_21:
         "\"…Nggak jadi, Pak. Saya cuma mau beli kaset yang biasa.\"":
             $ record_major_choice(6, "C")
 
-            ## Adegan 21-4 — Nggak jadi bertanya ◆ jalur G6=C
             ageng "Hmm?" id b21_006c
 
             show kai cemas at pos_left
@@ -123,15 +107,9 @@ label bab_21:
     stop music fadeout 1.2
     return
 
-
-################################################################################
-## BAB 22 — Air yang Jatuh, Detik yang Singgah
-################################################################################
-
 label bab_22:
     $ chapter_autosave("bab_22", "Bab 22 — Air yang Jatuh, Detik yang Singgah", "Ch. 22 — Falling Water, Lingering Seconds")
 
-    ## Adegan 22-1 — Lari dari hujan
     scene bg_gang_hujan with dissolve
     play sound sfx_hujan_deras loop fadein 0.8
 
@@ -153,13 +131,11 @@ label bab_22:
 
     "Nggak ada yang mengetuk pintu itu. Nggak ada yang manggil Pak Ageng. Teras dua meter persegi ini — diam-diam mereka sepakat — sudah cukup. Ini seluruh dunia yang mereka butuhkan sore ini." id b22_007
 
-    ## Adegan 22-2 — Merekam hujan ◆ m15
     "Yara merogoh saku jaketnya, mengeluarkan perekam saku kecil. Kali ini tanpa mikrofon panjang — cuma alat kecil itu, diletakkan di lututnya yang ditekuk." id b22_008
 
     show yara ceria at pos_right
     yara "Hujan kayak gini sayang kalau nggak direkam. {i}(menatap sekeliling teras){/i} Menurutmu, paling enak nangkapnya dari mana?" id b22_009
 
-    ## GERBANG MINOR m15 (menyimpan flag item_file_hujan & memicu ach_kolektor_suara bila m10=A)
     menu:
         "Rekam hujan dari mana?"
 
@@ -179,7 +155,6 @@ label bab_22:
     yara "{i}(memejamkan mata sebentar){/i} Nah. Ini dia." id b22_011
     $ renpy.notify(ui_tr("notify_item_hujan"))
 
-    ## Adegan 22-3 — Satu headphone berdua
     play music bgm_senja loop fadein 1.5
     show yara ceria at pos_right
     yara "{i}(menyodorkan satu sisi headphone besarnya, tanpa menoleh){/i} Mau dengar?" id b22_012
@@ -197,15 +172,9 @@ label bab_22:
     stop sound fadeout 0.8
     return
 
-
-################################################################################
-## BAB 23 — Gema untuk Masa Lalu
-################################################################################
-
 label bab_23:
     $ chapter_autosave("bab_23", "Bab 23 — Gema untuk Masa Lalu", "Ch. 23 — Echoes for the Past")
 
-    ## Adegan 23-1 — Bukan buat masa depan
     scene bg_teras_toko with dissolve
     play music bgm_senja loop if_changed
     show kai biasa at pos_left with dissolve
@@ -233,14 +202,12 @@ label bab_23:
     show yara fokus at pos_right
     yara "Kita kirim pesan buat diri kita yang dulu. Buat bukti… kalau kita berhasil lewat. {i}(menatap Kai lurus){/i} Gimana?" id b23_009
 
-    ## GERBANG UTAMA G7 (posisi 7 string 12 huruf)
     menu:
         "Kai ikut merekam, atau tidak?"
 
         "\"Ikut. Buat diriku yang dulu.\"":
             $ record_major_choice(7, "A")
 
-            ## Adegan 23-2 — Merekam berdua ◆ jalur G7=A
             play sound sfx_klik_play
             "Yara mengulurkan mikrofon kecil, diposisikan tepat di antara wajah mereka berdua. Dia menekan tombol record. Lampu indikator merah kecil berkedip — pita di dalam mulai berjalan." id b23_010a
 
@@ -252,7 +219,6 @@ label bab_23:
 
             kai_hati "Oke. Buat Kai yang dulu. Yang ngunci diri di kamar. Yang nulis surat-surat konyol itu. {i}(menarik napas){/i} Ngomong apa, ya…" id b23_013a
 
-            ## SUB-PILIHAN RASA — Kalimat pertama rekaman Kai (BUKAN gerbang; tidak memengaruhi ending)
             menu:
                 "Kalimat pertama rekaman Kai"
 
@@ -279,7 +245,6 @@ label bab_23:
         "\"Aku dengerin aja, Yar. Kamu dulu.\"":
             $ record_major_choice(7, "B")
 
-            ## Adegan 23-3 — Mendengarkan saja ◆ jalur G7=B
             show kai cemas at pos_left
             kai "Aku… dengerin aja, Yar. Kamu dulu. Aku belum tahu mau ngomong apa." id b23_010b
 
@@ -301,7 +266,6 @@ label bab_23:
         "\"Nggak. Masa lalu biar di sana.\"":
             $ record_major_choice(7, "C")
 
-            ## Adegan 23-4 — Menolak ◆ jalur G7=C
             show kai sedih at pos_left
             kai "{i}(menggeleng pelan){/i} Nggak, Yar. Masa lalu… biar di sana saja. Aku nggak mau ngomong sama dia." id b23_010c
 
@@ -320,15 +284,9 @@ label bab_23:
     stop music fadeout 1.2
     return
 
-
-################################################################################
-## BAB 24 — Bisikan yang Kembali Menggoda
-################################################################################
-
 label bab_24:
     $ chapter_autosave("bab_24", "Bab 24 — Bisikan yang Kembali Menggoda", "Ch. 24 — Whispers That Tempt Again")
 
-    ## Adegan 24-1 — Kamar Kai, malam
     scene bg_kamar_kai_malam with dissolve
     play music bgm_cemas loop fadein 1.5
     show kai cemas at pos_center with dissolve
@@ -347,20 +305,17 @@ label bab_24:
 
     kai_hati "Kaset merah. Enam bulan ke depan. Kalau aku beli… aku bisa dengar. Tawa Yara masih ada di sana, atau nggak. Kalau masih ada, aku bisa napas lega. Kalau nggak ada… {i}(jeda){/i} …setidaknya aku bisa siap-siap patah hati dari sekarang." id b24_007
 
-    ## Adegan 24-2 — Di depan pintu toko ◆ G8 disiapkan (posisi 8 string 12 huruf; dampaknya berlanjut ke Bab 25)
     scene bg_toko_luar with dissolve
     show kai cemas at pos_center with dissolve
 
     "Sore harinya, dengan langkah ragu yang sudah terlalu akrab, Kai berdiri lagi di depan pintu kayu toko itu. Tangannya gemetar di gagang pintu." id b24_008
 
-    ## GERBANG UTAMA G8 (posisi 8 string 12 huruf)
     menu:
         "Apa yang Kai lakukan dengan ketakutannya?"
 
         "Masuk. Curhat ke Pak Ageng.":
             $ record_major_choice(8, "A")
 
-            ## Adegan 24-3 — Curhat ◆ jalur G8=A
             play sound sfx_lonceng_pintu
             scene bg_toko_dalam with dissolve
             show kai cemas at pos_left with dissolve
@@ -384,7 +339,6 @@ label bab_24:
             show ageng biasa at pos_right
             ageng "Dengerin dulu. Baru putuskan." id b24_016a
 
-            ## Pemutaran kaset tawa Siti via komponen pemutar kaset Fase 2 + transkrip
             stop music fadeout 0.8
             call play_cassette(
                 cassette_id="kaset_tawa_siti",
@@ -417,7 +371,6 @@ label bab_24:
         "Nggak jadi masuk. Besok, di Bukit Banyak, coba bicara ke Yara.":
             $ record_major_choice(8, "B")
 
-            ## Adegan 24-4 — Berbalik dari pintu ◆ jalur G8=B
             "Tangan Kai sudah menyentuh gagang pintu. Lonceng kecil di atasnya bergoyang sedikit — tapi nggak sampai berbunyi." id b24_009b
 
             kai_hati "Nggak. Nggak hari ini. {i}(melepaskan gagang pintu){/i} Kalau memang harus ngomong… ngomongnya ke orangnya langsung. Bukan ke kaset." id b24_010b
@@ -427,7 +380,6 @@ label bab_24:
         "Pulang. Pendam sendiri.":
             $ record_major_choice(8, "C")
 
-            ## Adegan 24-4 — Berbalik dari pintu ◆ jalur G8=C (menggantikan dua baris pertama G8=B)
             show kai sedih at pos_center
             kai_hati "Nggak. Ngapain cerita-cerita. Pak Ageng juga paling cuma bakal senyum-senyum saja. {i}(melepaskan gagang pintu){/i} Biar aku saja yang mikir. Sendiri. Kayak biasanya." id b24_009c
 
@@ -436,16 +388,11 @@ label bab_24:
     stop music fadeout 1.2
     return
 
-
-################################################################################
-## BAB 25 — Bayangan di Ujung Senja
-################################################################################
-
 label bab_25:
     $ chapter_autosave("bab_25", "Bab 25 — Bayangan di Ujung Senja", "Ch. 25 — Shadows at Dusk's Edge")
 
     if get_major_choice(8) in ("A", "B"):
-        ## Adegan 25-1 — Bukit Banyak, senja ◆ jalur utama (G8=A / G8=B)
+
         scene bg_bukit with dissolve
         play music bgm_senja loop fadein 1.5
         show kai cemas at pos_left with dissolve
@@ -463,7 +410,6 @@ label bab_25:
 
         yara "Oh iya — dengerin ini dulu. {i}(mengeluarkan perekam sakunya, memutar dengan volume kecil){/i} Yang kemarin, di teras toko itu. Hujan yang kita rekam." id b25_005
 
-        ## Memutar kembali file rekaman hujan terpilih dari m15 (talang / daun / payung)
         play sound sfx_hujan_deras loop fadein 0.5
         $ renpy.notify(ui_tr("notify_playing_rain_" + (item_file_hujan or "talang")))
 
@@ -490,7 +436,7 @@ label bab_25:
         kai "Iya. Bagus. Bagus banget. {i}(suaranya serak; matanya beralih ke lampu kota yang mulai kabur){/i} Aku cuma… aku cuma takut duniaku balik sunyi habis kamu pergi. Takut nggak bisa dengar \"musik\" itu lagi kalau kamu nggak ada di sampingku." id b25_013
 
         if get_major_choice(8) == "B":
-            ## Adegan 25-2 — Kalimat yang nggak selesai ◆ khusus G8=B
+
             "Yara menatapnya lama. Dan Kai — yang kemarin berdiri di depan pintu toko dan memilih untuk bicara ke orangnya langsung — menarik napas." id b25_014b
 
             kai "Yar. Ada yang mau kubilang—" id b25_015b
@@ -510,7 +456,6 @@ label bab_25:
 
             kai_hati "Dia nulis apa? {i}(jeda){/i} Kenapa aku nggak bisa ngomong satu kalimat saja, sih." id b25_021b
 
-        ## Adegan 25-3 — Bersandar
         show yara biasa at pos_right
         yara "{i}(menggeser duduk, merapat sampai bahu mereka bersentuhan; bersandar di bahu Kai){/i} Dunia ini nggak akan pernah sunyi, Kai. Bahkan habis aku nggak di sini, suara-suaranya tetap ada. Kamu cuma perlu janji satu hal: jangan pernah nutup telingamu lagi." id b25_022
 
@@ -519,7 +464,7 @@ label bab_25:
         kai_hati "Jatuh cinta itu ternyata begini. Kecemasan paling indah… sekaligus paling nyakitin yang pernah kurekam." id b25_024
 
     else:
-        ## Adegan 25-4 — Bukit yang sepi ◆ khusus G8=C
+
         scene bg_bukit with dissolve
         play music bgm_cemas loop fadein 1.5
         show kai sedih at pos_center with dissolve

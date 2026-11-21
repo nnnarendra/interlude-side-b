@@ -1,15 +1,5 @@
-## Interlude / Side B — Terjemahan Bahasa Inggris untuk Menu Pilihan & Transkrip Kaset
-## Menggunakan Ren'Py Translation Framework (`translate en strings:`).
-## Seluruh 20 nama peran karakter sudah ada di `game/tl/en/script.rpy` (tanpa duplikasi).
-## Istilah Jawa & nama lokal (rawon, warung, UKS, Bukit Banyak, Pak Ageng, Walkman) dipertahankan.
-
 translate en strings:
 
-    ## =========================================================================
-    ## MENU PILIHAN (Bab 1–48 — 148 string unik)
-    ## =========================================================================
-
-    ## Bab 1 — m01
     old "Kaset mana yang diambil Kai?"
     new "Which cassette does Kai pick?"
 
@@ -22,7 +12,6 @@ translate en strings:
     old "Yang bergambar gang pagi hari."
     new "The one with a morning alley."
 
-    ## Bab 2 — m02 & m03
     old "Bagaimana Kai membayar?"
     new "How does Kai pay?"
 
@@ -44,7 +33,6 @@ translate en strings:
     old "Lewat jalan besar."
     new "Take the main road."
 
-    ## Bab 4 — G1
     old "Kai menatap kaset itu. Apa yang dia putuskan soal kebiasaan barunya?"
     new "Kai stares at the cassette. What does he decide about this new habit?"
 
@@ -57,7 +45,6 @@ translate en strings:
     old "\"Ini yang terakhir, Pak. Saya berhenti. Ini nggak sehat.\""
     new "\"This is the last one, Pak. I'm stopping. This isn't healthy.\""
 
-    ## Bab 5 — m04
     old "Kai memutar kaset itu bagaimana?"
     new "How does Kai play the cassette?"
 
@@ -67,7 +54,6 @@ translate en strings:
     old "Lewat speaker Walkman."
     new "Through the Walkman speaker."
 
-    ## Bab 6 — m05
     old "Apa yang Kai lakukan?"
     new "What does Kai do?"
 
@@ -80,7 +66,6 @@ translate en strings:
     old "Tidak melakukan apa-apa."
     new "Do nothing."
 
-    ## Bab 7 — G2
     old "Apa kata Kai?"
     new "What does Kai say?"
 
@@ -93,14 +78,12 @@ translate en strings:
     old "\"Lupakan, Pak. Anggap nggak pernah terjadi.\""
     new "\"Forget it, Pak. Pretend it never happened.\""
 
-    ## Bab 8 — m06
     old "Membaca satu surat lama itu."
     new "Read that one old letter."
 
     old "Tidak menyentuh surat orang."
     new "Don't touch someone else's letter."
 
-    ## Bab 9 — m07
     old "Kai berdiri di ambang ruang keluarga. Apa yang dia lakukan?"
     new "Kai stands at the doorway of the living room. What does he do?"
 
@@ -113,7 +96,6 @@ translate en strings:
     old "Menyingkir ke kamar."
     new "Slip back to his bedroom."
 
-    ## Bab 10 — m08
     old "Ke mana Kai bersembunyi menunggu jam 16.00?"
     new "Where does Kai hide while waiting for 4:00 PM?"
 
@@ -126,7 +108,6 @@ translate en strings:
     old "Ke atap sekolah."
     new "Head up to the school rooftop."
 
-    ## Bab 12 — m09
     old "Di mana Kai duduk?"
     new "Where does Kai sit?"
 
@@ -139,7 +120,6 @@ translate en strings:
     old "Makan sambil berdiri di luar kantin."
     new "Eat standing up outside the canteen."
 
-    ## Bab 13 — G3
     old "Apa yang Kai putuskan soal gadis di perpustakaan itu?"
     new "What does Kai decide about the girl from the library?"
 
@@ -152,7 +132,6 @@ translate en strings:
     old "\"Jangan ke perpustakaan lagi. Titik.\""
     new "\"Never go back to the library. Period.\""
 
-    ## Bab 14 — m10
     old "Apa yang Kai lakukan selagi Yara menyiapkan jawaban?"
     new "What does Kai do while Yara prepares her answer?"
 
@@ -165,7 +144,6 @@ translate en strings:
     old "Refleks membantu ibu penjual mengangkat panci."
     new "Instinctively help the stall vendor lift the pot."
 
-    ## Bab 15 — m11
     old "Suara apa yang paling dibenci Kai?"
     new "What sound does Kai hate the most?"
 
@@ -178,7 +156,6 @@ translate en strings:
     old "\"Suara diam.\""
     new "\"The sound of silence.\""
 
-    ## Bab 16 — G4
     old "Apa jawaban Kai?"
     new "How does Kai answer?"
 
@@ -191,7 +168,6 @@ translate en strings:
     old "\"Itu duniamu. Aku dengerin aja hasilnya.\""
     new "\"That's your world. I'll just listen to the recordings.\""
 
-    ## Bab 17 — m12
     old "Makan di mana?"
     new "Where to eat?"
 
@@ -201,7 +177,6 @@ translate en strings:
     old "Bungkus, makan di toko."
     new "Get it to go, eat at the shop."
 
-    ## Bab 18 — m13
     old "Apa yang Kai lakukan dengan file suara panci itu?"
     new "What does Kai do with the boiling pot sound file?"
 
@@ -214,7 +189,6 @@ translate en strings:
     old "Hapus, rekamannya jelek."
     new "Delete it, the recording is bad."
 
-    ## Bab 19 — m14
     old "Bantu Pak Ageng membersihkan rak."
     new "Help Pak Ageng clean the shelves."
 
@@ -224,7 +198,6 @@ translate en strings:
     old "Tawar kaset rusak di pojok rak."
     new "Ask about the broken cassette in the corner of the shelf."
 
-    ## Bab 20 — G5
     old "Kai ada di ruangan itu. Apa yang dia lakukan?"
     new "Kai is in the room. What does he do?"
 
@@ -237,7 +210,6 @@ translate en strings:
     old "Dengarkan tawarannya sampai habis."
     new "Listen to his offer all the way through."
 
-    ## Bab 21 — G6
     old "Seberapa jauh Kai mau mendengar jawaban Pak Ageng?"
     new "How far is Kai willing to listen to Pak Ageng's answer?"
 
@@ -250,7 +222,6 @@ translate en strings:
     old "\"…Nggak jadi, Pak. Saya cuma mau beli kaset yang biasa.\""
     new "\"…Never mind, Pak. I just want to buy a regular cassette.\""
 
-    ## Bab 22 — m15
     old "Rekam hujan dari mana?"
     new "Where to record the rain?"
 
@@ -263,7 +234,6 @@ translate en strings:
     old "Di payung lipat yang dibuka setengah."
     new "On a half-open folding umbrella."
 
-    ## Bab 23 — G7 & sub-pilihan kalimat rekaman
     old "Kai ikut merekam, atau tidak?"
     new "Does Kai join in recording, or not?"
 
@@ -288,7 +258,6 @@ translate en strings:
     old "\"Nggak. Masa lalu biar di sana.\""
     new "\"No. Leave the past where it is.\""
 
-    ## Bab 24 — G8
     old "Apa yang Kai lakukan dengan ketakutannya?"
     new "What does Kai do with his fear?"
 
@@ -301,7 +270,6 @@ translate en strings:
     old "Pulang. Pendam sendiri."
     new "Go home. Bottle it up alone."
 
-    ## Bab 26 — G9 & K1
     old "Kaset Merah. Kai menatap lemari kaca itu. Apa yang dia lakukan?"
     new "The Red Cassette. Kai stares at the glass cabinet. What does he do?"
 
@@ -326,7 +294,6 @@ translate en strings:
     old "\"Nggak, Pak. Biar saya nggak tahu.\""
     new "\"No, Pak. Better I don't know.\""
 
-    ## Bab 27 — m16
     old "Kai masih memegang kaset merah itu. Apa yang dia lakukan di toko, sebelum pulang?"
     new "Kai is still holding the red cassette. What does he do in the shop before going home?"
 
@@ -339,7 +306,6 @@ translate en strings:
     old "Memutar satu kaset biasa. Asal ada suara."
     new "Play a regular cassette. Just to have some sound."
 
-    ## Bab 30 — m17
     old "Kai dan perekam kecil itu, malam ini."
     new "Kai and that little recorder, tonight."
 
@@ -352,7 +318,6 @@ translate en strings:
     old "Tidak merekam apa-apa."
     new "Don't record anything."
 
-    ## Bab 32 — m18 & G10-SEHAT
     old "Judul portofolio Yara:"
     new "Title for Yara's portfolio:"
 
@@ -377,7 +342,6 @@ translate en strings:
     old "Berubah dingin, beralasan sibuk."
     new "Turn cold, make excuses about being busy."
 
-    ## Bab 35 — m19
     old "Di tengah gang yang kering itu, Kai berhenti sebentar. Apa yang dia lakukan?"
     new "In the middle of the dry alley, Kai pauses for a second. What does he do?"
 
@@ -390,7 +354,6 @@ translate en strings:
     old "Langsung masuk, tidak berhenti."
     new "Walk straight in, without stopping."
 
-    ## Bab 36 — G10-MERAH
     old "\"Yar. Ada yang harus kamu tahu. Semuanya.\""
     new "\"Yar. There's something you need to know. Everything.\""
 
@@ -400,7 +363,6 @@ translate en strings:
     old "Diam dan pergi."
     new "Stay silent and walk away."
 
-    ## Bab 38 — G11
     old "Surat ini dibalas, atau tidak?"
     new "Reply to this letter, or not?"
 
@@ -413,7 +375,6 @@ translate en strings:
     old "Tidak balas."
     new "Don't reply."
 
-    ## Bab 39 — m20
     old "Suara apa yang di-solo-kan di tengah mix Yara?"
     new "Which sound should be soloed in the middle of Yara's mix?"
 
@@ -426,7 +387,6 @@ translate en strings:
     old "Desis pita kosong."
     new "Blank tape hiss."
 
-    ## Bab 40 — m21
     old "Apa yang Kai selipkan ke bingkisan untuk Yara?"
     new "What does Kai slip into the package for Yara?"
 
@@ -439,7 +399,6 @@ translate en strings:
     old "Nggak usah diselipkan apa-apa. Kasetnya saja."
     new "Don't slip anything in. Just the cassette."
 
-    ## Bab 42 — G12
     old "Sore ini, Kai…"
     new "This afternoon, Kai…"
 
@@ -452,7 +411,6 @@ translate en strings:
     old "Tidak datang."
     new "Don't show up."
 
-    ## Bab 43 — m22
     old "Pola komunikasi jarak jauh mereka:"
     new "Their long-distance routine:"
 
@@ -465,7 +423,6 @@ translate en strings:
     old "Tukar surat suara."
     new "Swap voice letters."
 
-    ## Bab 45 — K2
     old "Kaset berlabel kosong itu ada di tangan Kai."
     new "The blank-labeled cassette sits in Kai's hand."
 
@@ -475,7 +432,6 @@ translate en strings:
     old "\"Simpan. Belum.\""
     new "\"Keep it. Not yet.\""
 
-    ## Bab 47 — m23
     old "Pesanan pertama Kai di kedai kopi bekas toko itu:"
     new "Kai's first order at the coffee shop that used to be the store:"
 
@@ -487,12 +443,6 @@ translate en strings:
 
     old "Tidak pesan, hanya duduk."
     new "Don't order anything, just sit."
-
-    ## =========================================================================
-    ## TRANSKRIP PEMUTAR KASET (`_()` di `game/story/` — 21 string non-duplikat)
-    ## Catatan: "Bu Sarah (dari kaset)", "Yara (dari kaset)", "Pak Ageng (dari kaset)"
-    ## sudah terdefinisi di `game/tl/en/script.rpy`.
-    ## =========================================================================
 
     old "Kaset Hari Jumat"
     new "Friday's Cassette"
@@ -575,7 +525,6 @@ translate en strings:
     old "Sabar, Yar, ini koreknya macet. Nah, ayo tiup bareng-bareng! Satu… dua… tiga!"
     new "Hold on, Yar, this lighter's jammed. There — let's blow it out together! One… two… three!"
 
-    ## Penampil Surat Terbuka Fullscreen (Bab 8 & Bab 38)
     old "Surat Tua — Toko Gema Masa"
     new "Old Letter — Toko Gema Masa"
 

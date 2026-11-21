@@ -1,9 +1,3 @@
-## Interlude / Side B — Sistem Tampilan & Inspeksi Item/Makanan
-## - `screen item_popup(item_id)`: kartu ilustrasi klik-able di tengah-atas layar.
-## - `screen item_detail_card(item_id)`: kartu penjelasan lengkap (dwibahasa ID & EN)
-##   saat item diklik/ketuk, tanpa memajukan dialog cerita.
-## Seluruh berkas berada di `game/images/items/*.png` (512x512 RGBA PNG transparan).
-
 init -7 python:
     ITEM_CATALOG = {
         "item_teh_melati": {
@@ -137,7 +131,6 @@ init -7 python:
         if renpy.get_screen("item_popup"):
             renpy.hide_screen("item_popup")
 
-
     _CHAR_SPRITE_TAGS = ("kai", "yara", "ageng", "kaya")
 
     def _item_popup_pos():
@@ -154,7 +147,6 @@ init -7 python:
             pass
         return (0.5, 42)
 
-
 transform item_popup_anim:
     alpha 0.0
     yoffset 16
@@ -164,7 +156,6 @@ transform item_detail_anim:
     alpha 0.0
     zoom 0.96
     easein 0.18 alpha 1.0 zoom 1.0
-
 
 screen item_popup(item_id):
     zorder 80
@@ -213,7 +204,6 @@ screen item_popup(item_id):
                     xalign 0.5
                     substitute False
 
-
 screen item_detail_card(item_id):
     modal True
     zorder 110
@@ -226,7 +216,6 @@ screen item_detail_card(item_id):
         $ _it_desc = _it["desc_en"] if _is_en else _it["desc_id"]
         $ _close_lbl = "Close" if _is_en else "Tutup"
 
-        ## Latar gelap semi-transparan; klik di luar kartu langsung menutup detail.
         button:
             xpos 0
             ypos 0
@@ -238,7 +227,6 @@ screen item_detail_card(item_id):
 
         key "K_ESCAPE" action Hide("item_detail_card")
 
-        ## Kartu detail item di tengah layar.
         frame at item_detail_anim:
             align (0.5, 0.48)
             xsize 980
@@ -259,7 +247,6 @@ screen item_detail_card(item_id):
                         spacing 34
                         xfill True
 
-                        ## Kiri: ilustrasi item besar.
                         frame:
                             xsize 284
                             ysize 284
@@ -268,7 +255,6 @@ screen item_detail_card(item_id):
                             padding (14, 14)
                             add _it["file"] xysize (256, 256) fit "contain" align (0.5, 0.5)
 
-                        ## Kanan: kategori, judul, penjelasan, dan tombol tutup.
                         vbox:
                             spacing 14
                             xfill True

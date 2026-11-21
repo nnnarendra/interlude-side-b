@@ -1,19 +1,6 @@
-## Interlude / Side B — Batch 10 (Bab 40–44 + 5 Varian Penutup Ending)
-## Sumber verbatim: NASKAH-VN-MASTER-Interlude-Side-B.md (baris 3344–3727)
-## Gerbang: callback m20 (Bab 40), m21 (Bab 40 — opsi kaset mini hanya bila item_kaset_kosong_mini),
-##          G12 (Bab 42 — posisi 12), TITIK EVALUASI 12 GERBANG (`evaluate_current_ending`),
-##          m22 (Bab 43 Happy-True -> callback Bab 44)
-## CG & Kaset: cg_peron (Bab 44-1), cg_jendela_kereta & cg_tombol_play (Gantung),
-##             kaset_hening_60detik (Sad-Ironis)
-
-################################################################################
-## BAB 40 — Bingkisan di Batas Waktu ◆ m21
-################################################################################
-
 label bab_40:
     $ chapter_autosave("bab_40", "Bab 40 — Bingkisan di Batas Waktu", "Ch. 40 — A Parcel at the Edge of Time")
 
-    ## Adegan 40-1 — Keset anyaman, pagi 1 Agustus
     scene bg_kamar_kai with dissolve
     play music bgm_senja loop fadein 1.5
     show kai biasa at pos_center with dissolve
@@ -27,7 +14,6 @@ label bab_40:
     show kai cemas at pos_center
     kai_hati "Tulisan tangan Yara. {i}(menelan ludah){/i} …Sejak kapan ini di sini?" id b40_004
 
-    ## Adegan 40-2 — Kaset dari Yara (callback m20)
     scene bg_kamar_kai with dissolve
     show kai cemas at pos_center with dissolve
 
@@ -39,7 +25,6 @@ label bab_40:
     queue sound sfx_desis_pita
     "Tawa. Kompilasi tawa mereka berdua. Tawa Yara waktu mereka hampir kepleset lumpur di pinggir sawah dekat Bukit Banyak. Tawa Kai sendiri — lepas, asing, kayak suara orang lain — waktu mereka berhasil merekam lengking klakson kereta tua. Desau angin malam. Gemercik hujan di teras toko Pak Ageng. Gesekan ranting." id b40_007
 
-    ## CALLBACK m20 — satu suara terdengar menonjol di tengah mix sesuai pilihan Bab 39
     if get_minor_choice("m20") == "A":
         play sound sfx_panci
         "Di sela tawa itu, bunyi panci mendidih di kantin naik paling depan, jernih sekali — suara pertama yang pernah Kai rekam buat Yara." id b40_008a
@@ -67,10 +52,8 @@ label bab_40:
 
     kai_hati "Enam bulan aku lari dari hari ini. Enam bulan. {i}(berdiri){/i} Cukup. Aku nggak mau kehilangan dia tanpa ngelakuin apa-apa. Nggak lagi." id b40_014
 
-    ## Adegan 40-3 — Bingkisan balasan ◆ m21
     "Kai membuka laci mejanya. Ada satu kaset kosong yang belum pernah dia pakai — dia mau Yara membawa sesuatu darinya juga, bukan cuma sebaliknya. Tangannya berhenti. Ada beberapa hal yang bisa dia selipkan sekalian." id b40_015
 
-    ## GERBANG MINOR m21 (opsi A HANYA tampil bila item_kaset_kosong_mini dimiliki dari m02=A)
     menu:
         "Apa yang Kai selipkan ke bingkisan untuk Yara?"
 
@@ -92,15 +75,9 @@ label bab_40:
     stop music fadeout 1.0
     return
 
-
-################################################################################
-## BAB 41 — Memotong Pita Takdir [HANYA MAIN PENUH BILA G12 != C]
-################################################################################
-
 label bab_41:
     $ chapter_autosave("bab_41", "Bab 41 — Memotong Pita Takdir", "Ch. 41 — Cutting the Tape of Fate")
 
-    ## Adegan 41-1 — Jam dua siang
     scene bg_kamar_kai with dissolve
     play music bgm_peron noloop fadein 1.5
     show kai biasa at pos_center with dissolve
@@ -114,7 +91,6 @@ label bab_41:
 
     kai_hati "Aku nggak peduli lagi sama pita kusut di meja itu. Nggak peduli sama ingatanku yang bolong. Yang ada sekarang cuma satu: Yara. Keretanya berangkat sore ini." id b41_004
 
-    ## Adegan 41-2 — Hujan di jalanan Malang
     scene bg_gang_hujan with dissolve
     play sound sfx_hujan_deras loop fadein 0.6
     show kai cemas at pos_center with dissolve
@@ -132,16 +108,9 @@ label bab_41:
     stop sound fadeout 0.6
     return
 
-
-################################################################################
-## BAB 42 — Pertemuan di Batas Peron ◆ G12 + TITIK EVALUASI 12 GERBANG
-################################################################################
-
 label bab_42_g12_dan_evaluasi:
     $ chapter_autosave("bab_42", "Bab 42 — Pertemuan di Batas Peron", "Ch. 42 — Meeting at the Platform Edge")
 
-    ## GERBANG UTAMA G12 (posisi 12 — melengkapi string 12 huruf playthrough).
-    ## Diambil sebelum Bab 41 sehingga G12=C melewati Bab 41 & Adegan 42-1 sesuai penanda naskah.
     menu:
         "Sore ini, Kai…"
 
@@ -154,11 +123,9 @@ label bab_42_g12_dan_evaluasi:
         "Tidak datang.":
             $ record_major_choice(12, "C")
 
-    ## Bab 41 & Adegan inti peron 42-1 hanya dimainkan penuh bila G12 != C (penanda naskah Bab 41–42).
     if get_major_choice(12) != "C":
         call bab_41
 
-        ## Adegan 42-1 — Aula Stasiun Malang Kota Lama [hanya bila G12 != C]
         scene bg_stasiun with dissolve
         play sound sfx_hujan_deras loop fadein 0.5
         show kai panik at pos_center with dissolve
@@ -179,12 +146,6 @@ label bab_42_g12_dan_evaluasi:
 
         "Beberapa meter jarak di antara mereka. Di titik ini, seluruh pilihan Kai sejak hari pertama di toko itu — semua kaset, semua diam, semua lari — ditimbang." id b42_007
 
-    ## =========================================================================
-    ## TITIK EVALUASI ENDING KANONIK (5 LAPIS — PORT PERSIS `ending_sim.py`)
-    ## TEGAS: Varian penutup ditentukan oleh hasil evaluasi seluruh 12 gerbang
-    ## (`evaluate_current_ending()` -> `nilai_ending(string12)`),
-    ## BUKAN oleh huruf G12 semata!
-    ## =========================================================================
     $ _ending_res = evaluate_current_ending(unlock=True)
     $ _ending_id = _ending_res["id"]
 
@@ -199,17 +160,10 @@ label bab_42_g12_dan_evaluasi:
     else:
         call ending_s2_sad_ironis
 
-    ## Tampilkan kartu penutup ending lalu kembali ke Menu Utama (progres persisten tetap utuh).
     stop sound fadeout 0.8
     stop music fadeout 1.5
     call screen ending_card(ending_id=_ending_id, choice_code=_ending_res["string"])
     return
-
-
-################################################################################
-## [PENUTUP — HAPPY-TRUE] "Simfoni yang Kita Tulis Sendiri" (H1)
-## Lanjut: Bab 43 -> Bab 44 -> Bab 45 (K2) -> Bab 46 True -> Bab 47 (m23) -> [Bab 48 bila K2=A]
-################################################################################
 
 label ending_h1_happy_true:
     scene bg_stasiun with dissolve
@@ -218,7 +172,6 @@ label ending_h1_happy_true:
 
     "Yara masih terpaku, gagang koper di tangannya melemas. Dan Kai — untuk pertama kalinya setelah enam bulan — nggak mundur." id b42_h1_001
 
-    ## CALLBACK m21 — bingkisan dari Bab 40
     if get_minor_choice("m21") == "A":
         $ show_item("item_kaset_kosong_mini")
         "Sambil melangkah mendekat, Kai mengangkat bingkisan kecil itu. Di dalamnya, kaset kosong mini dari Pak Ageng ikut bergetar pelan kena langkahnya." id b42_h1_002a
@@ -237,12 +190,6 @@ label ending_h1_happy_true:
     if cond_k2 == "A":
         call bab_48
     return
-
-
-################################################################################
-## [PENUTUP — HAPPY-SEHAT] "Pita yang Tak Pernah Ditukar" (H2)
-## Lanjut: Bab 46 Varian Sehat -> Bab 47 (m23)
-################################################################################
 
 label ending_h2_happy_sehat:
     scene bg_stasiun with dissolve
@@ -284,11 +231,6 @@ label ending_h2_happy_sehat:
     call epilog_h2_kaset_ultah
     return
 
-
-################################################################################
-## [PENUTUP — GANTUNG] "Sisi B Belum Selesai" (G)
-################################################################################
-
 label ending_g_gantung:
     scene bg_stasiun with dissolve
     play music bgm_peron noloop if_changed
@@ -299,7 +241,6 @@ label ending_g_gantung:
 
     kai "{i}(berlari di samping kereta yang mulai bergerak, menepuk-nepuk udara){/i} Yara! YARA!" id b42_g_002
 
-    ## CG Kanonik #5: cg_jendela_kereta (Ending Gantung — aset_manifest.json)
     $ show_cg_and_unlock("cg_jendela_kereta", dissolve)
 
     "Di balik jendela yang berembun, satu wajah berbalik. Yara. Matanya membesar. Dia menempelkan telapak tangan ke kaca. Kereta berjalan makin cepat — Kai berlari, lalu setengah berlari, lalu cuma bisa jalan cepat sambil terengah." id b42_g_003
@@ -317,7 +258,6 @@ label ending_g_gantung:
     show kai sedih at pos_center with dissolve
     "Kereta melesat keluar stasiun, membawa kalimat itu pergi sebelum sempat jadi apa-apa. Kai berdiri di ujung peron, kuyup, sendirian, menatap rel yang kosong. Nggak ada putus. Nggak ada janji. Nggak ada apa-apa yang selesai." id b42_g_008
 
-    ## CG Kanonik #6: cg_tombol_play (Penutup Gantung: jari melayang di atas tombol PLAY tanpa pilihan)
     stop music fadeout 1.2
     scene bg_kamar_kai_malam with fade
     $ show_cg_and_unlock("cg_tombol_play", dissolve)
@@ -344,11 +284,6 @@ label ending_g_gantung:
     "— Side B selesai." id b42_g_010
 
     return
-
-
-################################################################################
-## [PENUTUP — SAD-IRONIS] "Hening Enam Puluh Detik" (S2)
-################################################################################
 
 label ending_s2_sad_ironis:
     scene bg_stasiun with dissolve
@@ -391,7 +326,6 @@ label ending_s2_sad_ironis:
 
     "Di rumah, tengah malam, Kai akhirnya memutar kaset kosong pemberian Pak Ageng. Kaset yang katanya merekam potensi kebahagiaan." id b42_s2_013
 
-    ## Pemutaran kaset hening 60 detik (aset manifest `kaset_hening_60detik.ogg` — Sad-Ironis)
     call play_cassette(
         cassette_id="kaset_hening_60detik",
         label_title=_("Kaset Kosong — 60 Detik Hening"),
@@ -406,11 +340,6 @@ label ending_s2_sad_ironis:
     "Hening. Tepat enam puluh detik. Lalu klik. Potensi kebahagiaan yang nggak pernah jadi apa-apa." id b42_s2_014
 
     return
-
-
-################################################################################
-## [PENUTUP — SAD-PASIF] "Desis Statis" (S1)
-################################################################################
 
 label ending_s1_sad_pasif:
     stop sound fadeout 0.5
@@ -433,7 +362,6 @@ label ending_s1_sad_pasif:
     "Sore itu lewat begitu saja. Malamnya, Kai memutar kaset merah. Desis. Tangis. \"Selamat tinggal.\" Dia putar lagi. Desis. Tangis. \"Selamat tinggal.\" Lagi." id b42_s1_005
     "Sampai suatu malam — entah malam keberapa — Walkman-nya mengeluarkan bunyi gemeretak kasar. Pitanya kusut. Melilit. Rusak permanen. Dan Kai cuma menatapnya, tanpa terkejut, seperti orang yang memang sudah menunggu itu terjadi." id b42_s1_005_p2
 
-    ## Epilog Sad-Pasif: bertahun kemudian, di seberang kedai kopi bekas Toko Gema Masa
     stop music fadeout 1.2
     scene bg_kafe with fade
     play music bgm_cemas loop fadein 1.5
@@ -449,15 +377,9 @@ label ending_s1_sad_pasif:
 
     return
 
-
-################################################################################
-## BAB 43 — Jarak yang Menjelma Suara [KHUSUS HAPPY-TRUE] ◆ m22
-################################################################################
-
 label bab_43:
     $ chapter_autosave("bab_43", "Bab 43 — Jarak yang Menjelma Suara", "Ch. 43 — Distance Turned Into Sound")
 
-    ## Adegan 43-1 — Pengakuan
     scene bg_stasiun with dissolve
     play music bgm_peron noloop if_changed
     show kai menangis at pos_left with dissolve
@@ -491,7 +413,6 @@ label bab_43:
 
     yara "{i}(mengusap air mata kasar pakai lengan jaket denimnya){/i} Jogja itu cuma beberapa jam naik kereta ini, Kai. Kereta ini jalan tiap hari. Suara relnya itu — kita bisa dengerin bareng lewat telepon tiap malam, kalau kamu mau. Kenapa sih kamu bikin ribet sesuatu yang sebenarnya sesederhana itu?" id b43_012
 
-    ## Adegan 43-2 — Janji jarak jauh ◆ m22
     "Kai menatap rel di balik pintu peron, lalu menatap Yara lagi. Buat pertama kalinya, \"jarak\" nggak kedengaran kayak vonis. Kedengaran kayak… jadwal. Sesuatu yang bisa diatur." id b43_013
 
     kai "Kalau gitu… kita atur beneran. Jangan cuma \"nanti ya, nanti ya\". Nanti-nanti itu bahaya buat aku, Yar. Kamu tahu sendiri." id b43_014
@@ -499,7 +420,6 @@ label bab_43:
     show yara ceria at pos_right
     yara "{i}(tersenyum kecil){/i} Hmm. Oke. Gimana maumu, Tuan Perencana?" id b43_015
 
-    ## GERBANG MINOR m22 (khusus Happy-True — menentukan montase komunikasi di Bab 44)
     menu:
         "Pola komunikasi jarak jauh mereka:"
 
@@ -523,15 +443,9 @@ label bab_43:
 
     return
 
-
-################################################################################
-## BAB 44 — Jeda, Bukan Akhir [KHUSUS HAPPY-TRUE]
-################################################################################
-
 label bab_44:
     $ chapter_autosave("bab_44", "Bab 44 — Jeda, Bukan Akhir", "Ch. 44 — A Pause, Not an End")
 
-    ## Adegan 44-1 — Pelukan di peron (CG Kanonik #4: cg_peron)
     scene bg_stasiun with dissolve
     play sound sfx_kereta_lewat
     show kai senyum at pos_left with dissolve
@@ -549,7 +463,6 @@ label bab_44:
 
     kai_hati "Ini dia. Ini yang ditakutin kaset itu berbulan-bulan. {i}(jeda){/i} …Ternyata rasanya gini. Nggak serem. Sedih, iya. Tapi nggak serem." id b44_005
 
-    ## Adegan 44-2 — "Selamat tinggal"
     scene bg_stasiun with dissolve
     play sound sfx_hujan_deras loop fadein 0.6
     show kai menangis at pos_left with dissolve
@@ -578,7 +491,6 @@ label bab_44:
 
     "Di kepalanya, kata-kata Pak Ageng akhirnya utuh: kaset merekam suara, bukan perasaan. \"Selamat tinggal\" itu bukan titik. Dia koma. Koma yang manis — janji kalau lagu mereka masih lanjut, cuma pindah ke pita yang baru." id b44_012
 
-    ## Adegan 44-3 — Montase jarak [CALLBACK m22]
     stop sound fadeout 0.6
     stop music fadeout 1.0
     play music bgm_epilog loop fadein 1.5

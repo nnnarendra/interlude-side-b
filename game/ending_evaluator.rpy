@@ -1,9 +1,5 @@
-## Interlude / Side B — Penilai Ending Kanonik & Mode Debug (Fase 2: Sistem Inti)
-## Port PERSIS dari `ending_sim.py` (5 lapis, 12 gerbang utama, 531.441 kombinasi).
-## DILARANG mengubah bobot atau urutan 5 lapis aturan di bawah ini.
-
 init -12 python:
-    ## Urutan skor per gerbang: (H1 Happy-True, H2 Happy-Sehat, G Gantung, S1 Sad-Pasif, S2 Sad-Ironis)
+
     ENDING_GERBANG = [
         ("G1",  {"A": (1, 0, 0, 1, 1), "B": (0, 1, 1, 0, 0), "C": (0, 2, 0, 0, 0)}),
         ("G2",  {"A": (1, 0, 0, 1, 0), "B": (1, 1, 0, 0, 0), "C": (0, 0, 1, 1, 0)}),
@@ -57,17 +53,14 @@ init -12 python:
         if rangkaian is None:
             raise ValueError("Rangkaian harus 12 huruf A/B/C")
 
-        # Lapis 1 — jumlahkan skor tertimbang 12 gerbang
         skor = [0] * 5
         for (_kode, tabel), huruf in zip(ENDING_GERBANG, rangkaian):
             poin = tabel[huruf]
             skor = [s + p for s, p in zip(skor, poin)]
 
-        # Lapis 2 — pola khusus klimaks: (G9, G10, G12) = (A, C, B) -> Sad-Ironis kanonik
         if (rangkaian[8], rangkaian[9], rangkaian[11]) == ("A", "C", "B"):
             return 4, skor
 
-        # Lapis 3 — masker kelayakan dari gerbang kaset merah (G9)
         layak = [True] * 5
         if rangkaian[8] != "A":
             layak[0] = False
@@ -75,7 +68,6 @@ init -12 python:
         if rangkaian[8] == "A":
             layak[1] = False
 
-        # Lapis 4 — aturan kritis penutup: menjauh (G10=C) DAN tidak datang (G12=C) menutup semua happy
         if rangkaian[9] == "C" and rangkaian[11] == "C":
             layak[0] = False
             layak[1] = False
@@ -83,7 +75,6 @@ init -12 python:
         kandidat = sorted(((skor[i], i) for i in range(5) if layak[i]), reverse=True)
         (skor1, e1), (skor2, e2) = kandidat[0], kandidat[1]
 
-        # Lapis 5 — difusi: dua skor teratas seri persis -> Gantung, kecuali pola true lengkap
         pola_true = (
             rangkaian[5] == "A"
             and rangkaian[8] == "A"
@@ -107,7 +98,6 @@ init -12 python:
 
         idx, skor = nilai_ending_raw(rangkaian)
 
-        ## Catatan diagnostik lapis (read-only, tidak mengubah hasil `nilai_ending_raw`).
         pola_khusus_acb = (rangkaian[8], rangkaian[9], rangkaian[11]) == ("A", "C", "B")
         layak = [True] * 5
         if rangkaian[8] != "A":
@@ -160,7 +150,6 @@ init -12 python:
             unlock_ending(res["id"], choice_string=res["string"])
         return res
 
-    ## InputValue khusus untuk layar Mode Debug Penilai Ending.
     class EndingDebugInputValue(InputValue):
         def __init__(self):
             self.default = False
@@ -210,11 +199,6 @@ init -12 python:
 
 default _debug_ending_input = "AAAAAAAAAAAA"
 
-
-################################################################################
-## Layar Mode Debug Penilai Ending (PRD §3 & Fase 2)
-################################################################################
-
 screen ending_debug():
     tag menu
 
@@ -225,7 +209,6 @@ screen ending_debug():
 
     use game_menu(ui_tr("debug_ending_title"), scroll="viewport"):
 
-        ## Bagian 1: Input 12 huruf + Preset uji cepat
         frame:
             xfill True
             background Solid(UI_BG_CARD)
@@ -251,7 +234,6 @@ screen ending_debug():
 
                     text ui_tr("debug_char_count", count=len(_raw_str)) size 24 color (gui.accent_color if _valid_str else "#e07a68") yalign 0.5
 
-                ## Tombol preset pengujian resmi
                 hbox:
                     spacing 12
                     box_wrap True
@@ -264,7 +246,6 @@ screen ending_debug():
                     if not main_menu and validasi_string12(get_choice_string()):
                         textbutton ui_tr("debug_use_current") style "pill_button" action SetDebugString(get_choice_string())
 
-        ## Bagian 2: Matriks pilih cepat G1..G12 (A / B / C)
         frame:
             xfill True
             background Solid(UI_BG_CARD)
@@ -302,7 +283,6 @@ screen ending_debug():
                                         text_xalign 0.5
                                         action SetDebugGateChar(idx, ch)
 
-        ## Bagian 3: Hasil Penilaian 5 Lapis
         frame:
             xfill True
             background Solid(UI_BG_CARD)
@@ -330,7 +310,6 @@ screen ending_debug():
                                 text ui_tr(_eval_res["title_key"]) size 32 bold True color gui.selected_color
                             text ui_tr(_eval_res["reason_key"]) size 23 color gui.text_color
 
-                    ## Tabel skor 5 ember & status kelayakan
                     grid 5 1:
                         xfill True
                         spacing 14
@@ -351,14 +330,12 @@ screen ending_debug():
                                     text str(_eval_res["scores"][i]) size 34 bold True color (gui.selected_color if _is_winner else gui.text_color) xalign 0.5
                                     text (ui_tr("debug_eligible_yes") if _is_elig else ui_tr("debug_eligible_no")) size 18 color (gui.accent_color if _is_elig else "#c96e5d") xalign 0.5
 
-                    ## Ringkasan flag lapis khusus
                     hbox:
                         spacing 32
                         text ui_tr("debug_flag_acb", val=(ui_tr("confirm_yes") if _eval_res["pola_khusus_acb"] else ui_tr("confirm_no"))) size 22 color UI_TEXT_MUTED
                         text ui_tr("debug_flag_cc", val=(ui_tr("confirm_yes") if _eval_res["aturan_kritis_cc"] else ui_tr("confirm_no"))) size 22 color UI_TEXT_MUTED
                         text ui_tr("debug_flag_true", val=(ui_tr("confirm_yes") if _eval_res["pola_true"] else ui_tr("confirm_no"))) size 22 color UI_TEXT_MUTED
 
-        ## Bagian 4: Status Variabel Playthrough Aktif & Uji Pemutar Kaset (Teknis, non-cerita)
         frame:
             xfill True
             background Solid(UI_BG_CARD)

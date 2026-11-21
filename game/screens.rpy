@@ -1,12 +1,4 @@
-## Interlude / Side B — Kerangka Layar Antarmuka (Fase 1: Fondasi)
-## Resolusi: 1920x1080 · Semua teks antarmuka WAJIB melalui `ui_tr(...)`.
-## Tidak menggunakan aset gambar di luar `aset_manifest.json`.
-
 init offset = -1
-
-################################################################################
-## Gaya dasar (Styles)
-################################################################################
 
 style default:
     font gui.text_font
@@ -218,14 +210,9 @@ transform chapter_banner_anim:
     pause 2.4
     easeout 0.45 alpha 0.0 xoffset -16
 
-################################################################################
-## Layar Dialog (Say), Pilihan Bergambar (Choice), Input, Quick Menu
-################################################################################
-
 screen say(who, what):
     style_prefix "say"
 
-    ## Penanda status AUTO & Mode 2x di sudut kanan atas (PRD §4.4).
     if persistent.read_speed_2x or _preferences.afm_enable:
         hbox:
             align (0.98, 0.03)
@@ -243,8 +230,6 @@ screen say(who, what):
                     padding (18, 8)
                     text ui_tr("badge_2x_active") size 21 bold True color "#fff8ed"
 
-    ## Kotak dialog bawah + nameplate nama penutur di bagian atas agar dialog Kai
-    ## (lisan maupun batin) tidak pernah rancu dengan narasi.
     vbox:
         xfill True
         yalign 1.0
@@ -271,8 +256,6 @@ screen say(who, what):
 
             text what id "what" style "say_dialogue" size scaled_font_size(gui.text_size)
 
-    ## Zona sentuh/klik sisi kiri (~20% layar, di atas quick_menu) = Kembali (Rollback);
-    ## klik tengah atau kanan layar otomatis melanjutkan cerita.
     button:
         xpos 0
         ypos 0
@@ -281,7 +264,6 @@ screen say(who, what):
         background None
         hover_background None
         action Rollback()
-
 
 screen quick_menu():
     zorder 100
@@ -304,16 +286,14 @@ screen quick_menu():
             textbutton ui_tr("qm_hide") style "quick_button" action HideInterface()
             textbutton ui_tr("qm_settings") style "quick_button" action ShowMenu("preferences")
 
-
 init python:
     if "quick_menu" not in config.overlay_screens:
         config.overlay_screens.append("quick_menu")
 
 default quick_menu = True
 
-
 screen choice(items):
-    ## Wajib hentikan skip & auto-play serta tutup popup item di setiap menu pilihan (PRD §4.4).
+
     on "show" action [Function(stop_skip_and_auto), Function(hide_item)]
 
     $ _banner_text, _banner_accent = get_menu_gate_banner(items)
@@ -326,10 +306,8 @@ screen choice(items):
     $ _card_h = _inner_h + 12
     $ _card_gap = 48 if _count <= 2 else 30
 
-    ## Lapisan gelap halus agar kartu pilihan bergambar menonjol tanpa menutup prompt di bawah.
     add Solid("#0d090794")
 
-    ## Tajuk Gerbang / Pilihan di bagian atas.
     vbox:
         xalign 0.5
         ypos 42
@@ -346,7 +324,6 @@ screen choice(items):
 
         text ui_tr("choice_hint") size 21 color UI_TEXT_MUTED xalign 0.5
 
-    ## Baris kartu pilihan bergambar (2 atau 3 kartu sejajar).
     hbox:
         xalign 0.5
         ypos 148
@@ -373,7 +350,6 @@ screen choice(items):
                     vbox:
                         spacing 0
 
-                        ## Area ilustrasi kartu pilihan (dipotong rapi via viewport).
                         fixed:
                             xsize _art_w
                             ysize _art_h
@@ -400,7 +376,6 @@ screen choice(items):
                                         add Solid("#1a130f")
                                         add _meta["img"] xysize (148, 148) fit "contain" align (0.5, 0.5)
 
-                            ## Pita label atas kartu (ID gerbang + huruf opsi).
                             frame:
                                 xsize _art_w
                                 ysize 46
@@ -424,10 +399,8 @@ screen choice(items):
                                             padding (12, 2)
                                             text _meta["letter"] size 19 bold True color "#1a120d" substitute False
 
-                        ## Garis aksen pemisah gambar & teks pilihan.
                         add Solid(_card_accent) xsize _art_w ysize 3
 
-                        ## Area teks pilihan di bagian bawah kartu.
                         frame:
                             xsize _art_w
                             ysize _cap_h
@@ -440,7 +413,6 @@ screen choice(items):
                                 text_align 0.5
                                 size scaled_font_size(24)
                                 substitute False
-
 
 screen chapter_banner(title_id, title_en):
     zorder 140
@@ -463,7 +435,6 @@ screen chapter_banner(title_id, title_en):
 
     timer 3.3 action Hide("chapter_banner")
 
-
 screen input(prompt):
     window:
         align (0.5, 0.5)
@@ -477,18 +448,11 @@ screen input(prompt):
             text prompt size 30 color gui.text_color xalign 0.5
             input id "input" size 30 color gui.accent_color xalign 0.5
 
-
-################################################################################
-## Menu Utama / Homepage (PRD §4.1)
-################################################################################
-
 screen main_menu():
     tag menu
 
-    ## Latar placeholder dari aset_manifest.json.
     add "images/ui/ui_latar_menu.jpg" xysize (1920, 1080) fit "cover"
 
-    ## Panel kiri: 8 tombol wajib persis urutan PRD §4.1 (opacity diturunkan 40% agar BG terlihat lega).
     frame:
         xpos 0
         ypos 0
@@ -517,10 +481,8 @@ screen main_menu():
                 if renpy.variant("pc") or renpy.variant("android"):
                     textbutton ui_tr("menu_quit") style "main_menu_button" action Quit(confirm=True)
 
-            ## Informasi versi ringan di bagian bawah panel kiri.
             text "v[config.version]" size 20 color UI_TEXT_DIM yalign 1.0
 
-    ## Area kanan: Logo placeholder + 5 indikator titik kaset ending (PRD §4.1).
     frame:
         xpos 540
         ypos 0
@@ -534,7 +496,6 @@ screen main_menu():
 
             add "images/ui/ui_logo_judul.png" xalign 0.5
 
-            ## 5 indikator titik kaset yang menyala sesuai ending yang sudah dibuka.
             vbox:
                 xalign 0.5
                 spacing 14
@@ -564,11 +525,6 @@ screen main_menu():
 
     if config.developer:
         key "shift_K_d" action ShowMenu("ending_debug")
-
-
-################################################################################
-## Navigasi & Kerangka Sub-Layar (Game Menu)
-################################################################################
 
 screen navigation():
     vbox:
@@ -602,14 +558,12 @@ screen navigation():
             null height 24
             textbutton ui_tr("nav_return") style "nav_button" action Return()
 
-
 screen game_menu(title, scroll=None, yinitial=0.0):
     style_prefix "game_menu"
 
     add "images/ui/ui_latar_menu.jpg" xysize (1920, 1080) fit "cover"
     add Solid("#120d0ad9")
 
-    ## Sidebar kiri.
     frame:
         xpos 0
         ypos 0
@@ -636,7 +590,6 @@ screen game_menu(title, scroll=None, yinitial=0.0):
 
             use navigation
 
-    ## Area konten kanan.
     frame:
         xpos 380
         ypos 0
@@ -650,14 +603,12 @@ screen game_menu(title, scroll=None, yinitial=0.0):
             yfill True
             spacing 24
 
-            ## Header judul layar.
             vbox:
                 spacing 12
                 xfill True
                 text title size 44 bold True color gui.text_color
                 add Solid(UI_BORDER_ACCENT) ysize 3 xsize 140
 
-            ## Badan konten (scrollable atau fixed).
             if scroll == "viewport":
                 viewport:
                     id "vp"
@@ -683,23 +634,14 @@ screen game_menu(title, scroll=None, yinitial=0.0):
 
     key "game_menu" action Return()
 
-
-################################################################################
-## Layar Save & Load (PRD §4.2)
-## 3 halaman x 6 slot manual + Autosave + Quick Save/Load, thumbnail,
-## tanggal-jam, nama bab, 12-huruf string pilihan, konfirmasi timpa & hapus.
-################################################################################
-
 screen save():
     tag menu
     on "show" action If(FileCurrentPage() in ("auto", "quick"), FilePage(1), NullAction())
     use file_slots(title=ui_tr("save_title"), is_save=True)
 
-
 screen load():
     tag menu
     use file_slots(title=ui_tr("load_title"), is_save=False)
-
 
 screen file_slots(title, is_save=False):
     use game_menu(title):
@@ -708,7 +650,6 @@ screen file_slots(title, is_save=False):
             yfill True
             spacing 22
 
-            ## Bar pilih halaman: 3 halaman manual + Autosave + Cepat (pada Muat).
             hbox:
                 spacing 14
 
@@ -724,7 +665,6 @@ screen file_slots(title, is_save=False):
             elif FileCurrentPage() == "auto":
                 text ui_tr("save_auto_readonly") style "pref_note"
 
-            ## Grid 3 kolom x 2 baris = 6 slot per halaman.
             grid gui.file_slot_cols gui.file_slot_rows:
                 xfill True
                 spacing 24
@@ -748,7 +688,6 @@ screen file_slots(title, is_save=False):
                             yfill True
                             spacing 10
 
-                            ## Area klik utama (Simpan / Muat).
                             button:
                                 xfill True
                                 ysize 286
@@ -761,7 +700,6 @@ screen file_slots(title, is_save=False):
                                     xfill True
                                     spacing 8
 
-                                    ## Thumbnail 16:9.
                                     frame:
                                         xsize 384
                                         ysize 216
@@ -774,19 +712,16 @@ screen file_slots(title, is_save=False):
                                         else:
                                             text ui_tr("slot_empty") size 24 color UI_TEXT_DIM align (0.5, 0.5)
 
-                                    ## Tanggal-jam.
                                     text FileTime(slot, format="%d/%m/%Y  %H:%M", empty=ui_tr("slot_empty")):
                                         size 20
                                         color (gui.accent_color if _has_file else UI_TEXT_DIM)
 
-                                    ## Nama bab.
                                     if _has_file:
                                         text (_chapter_text if _chapter_text else ui_tr("slot_chapter_none")):
                                             size 21
                                             color gui.text_color
                                             substitute False
 
-                            ## Baris bawah: 12-huruf pilihan + tombol Hapus.
                             hbox:
                                 xfill True
                                 yalign 1.0
@@ -809,17 +744,11 @@ screen file_slots(title, is_save=False):
                                         text_color "#ffded8"
                                         action FileDelete(slot, confirm=True)
 
-
-################################################################################
-## Layar Pengaturan / Settings (PRD §4.4 & §4.5)
-################################################################################
-
 screen preferences():
     tag menu
 
     use game_menu(ui_tr("settings_title"), scroll="viewport"):
 
-        ## 1. BAHASA GANDA INDEPENDEN (Bahasa UI vs Bahasa Cerita)
         frame:
             xfill True
             background Solid(UI_BG_CARD)
@@ -854,7 +783,6 @@ screen preferences():
                 $ _story_code = (persistent.story_lang or "id").upper()
                 text ui_tr("lang_status_note", ui=_ui_code, story=_story_code) style "pref_note" substitute False
 
-        ## 2. AUDIO (Master, Musik, SFX, Kaset / VO + Bisukan Semua)
         frame:
             xfill True
             background Solid(UI_BG_CARD)
@@ -894,7 +822,6 @@ screen preferences():
                     spacing 16
                     textbutton ui_tr("lbl_mute_all") style "pill_button" action Preference("all mute", "toggle")
 
-        ## 3. MODE BACA & TEKS (Kecepatan, Instan, Auto, 1x/2x, Skip, Ukuran Huruf)
         frame:
             xfill True
             background Solid(UI_BG_CARD)
@@ -951,7 +878,6 @@ screen preferences():
                             textbutton ui_tr("skip_read_only") style "pill_button" action Preference("skip", "seen")
                             textbutton ui_tr("skip_all_text") style "pill_button" action Preference("skip", "all")
 
-                ## Ukuran huruf + pratinjau langsung.
                 vbox:
                     spacing 10
                     $ _font_pct = int(round((persistent.font_size_scale or 1.0) * 100))
@@ -966,7 +892,6 @@ screen preferences():
                         padding (20, 14)
                         text ui_tr("font_preview_sample") size scaled_font_size(gui.text_size) color gui.text_color
 
-        ## 4. TAMPILAN & PERANGKAT (Mode Layar & Getar Android)
         frame:
             xfill True
             background Solid(UI_BG_CARD)
@@ -998,11 +923,6 @@ screen preferences():
                             textbutton ui_tr("state_off") style "pill_button" action SetAndroidVibration(False)
                             textbutton ui_tr("state_on") style "pill_button" action SetAndroidVibration(True)
 
-
-################################################################################
-## Layar Riwayat / History (PRD §4.3)
-################################################################################
-
 screen history():
     tag menu
     predict False
@@ -1028,26 +948,18 @@ screen history():
                         $ _what_text = renpy.filter_text_tags(h.what, allow=gui.history_allow_tags) if hasattr(gui, "history_allow_tags") else h.what
                         text _what_text size scaled_font_size(gui.text_size - 2) color gui.text_color substitute False
 
-
-################################################################################
-## Layar Galeri (Kerangka Kosong terhubung Persisten — PRD §4.7)
-## 3 tab: Galeri Ending (5 kartu), Galeri CG (6 CG + 1 bonus), Ruang Musik (6 BGM).
-################################################################################
-
 screen gallery():
     tag menu
     default gallery_tab = "endings"
 
     use game_menu(ui_tr("gallery_title"), scroll="viewport"):
 
-        ## Tab switcher.
         hbox:
             spacing 16
             textbutton ui_tr("tab_endings") style "tab_button" action SetScreenVariable("gallery_tab", "endings") selected (gallery_tab == "endings")
             textbutton ui_tr("tab_cg") style "tab_button" action SetScreenVariable("gallery_tab", "cg") selected (gallery_tab == "cg")
             textbutton ui_tr("tab_music") style "tab_button" action SetScreenVariable("gallery_tab", "music") selected (gallery_tab == "music")
 
-        ## TAB 1: Galeri Ending (5 kartu kanonik)
         if gallery_tab == "endings":
             hbox:
                 xfill True
@@ -1095,7 +1007,6 @@ screen gallery():
                                     text ui_tr("unknown_title") size 30 bold True color UI_TEXT_DIM
                                     text ui_tr("locked") size 22 color UI_TEXT_DIM
 
-        ## TAB 2: Galeri CG (12 CG kanonik + 1 slot bonus Bab 48)
         elif gallery_tab == "cg":
             text ui_tr("gallery_cg_hint") style "pref_note"
 
@@ -1134,7 +1045,6 @@ screen gallery():
                                     add "images/ui/ui_ikon_kaset.png" xysize (64, 64) fit "contain" align (0.5, 0.5) alpha 0.25
                                 text ui_tr("unknown_title") size 22 color UI_TEXT_DIM
 
-            ## Slot Bonus Bab 48 (PRD §4.7 — terbuka bila K2=B di Happy-True; dapat diputar ulang dari galeri).
             frame:
                 xfill True
                 background Solid(UI_BG_CARD if persistent.bonus_ch48_unlocked else UI_BG_CARD_LOCKED)
@@ -1156,7 +1066,6 @@ screen gallery():
                             yalign 0.5
                             action (Start("bab_48_bonus") if main_menu else Confirm(ui_tr("cg_bonus_confirm_start"), Start("bab_48_bonus")))
 
-        ## TAB 3: Ruang Musik (6 BGM sesuai aset_manifest.json)
         else:
             python:
                 _playing_file = renpy.music.get_playing(channel="music")
@@ -1199,7 +1108,6 @@ screen gallery():
                                 xalign 1.0
                                 action PlayGalleryBGM(track["file"], loop=track["loop"])
 
-
 screen cg_viewer(cg_file, cg_title_key):
     modal True
     zorder 200
@@ -1218,11 +1126,6 @@ screen cg_viewer(cg_file, cg_title_key):
             textbutton ui_tr("btn_close") style "pill_button" action Hide("cg_viewer")
 
     key "game_menu" action Hide("cg_viewer")
-
-
-################################################################################
-## Layar Pencapaian / Achievements (Kerangka Kosong 17 Kanonik — PRD §4.6)
-################################################################################
 
 screen achievements():
     tag menu
@@ -1278,7 +1181,6 @@ screen achievements():
                                 text ui_tr("unknown_title") size 28 bold True color UI_TEXT_DIM
                                 text ui_tr(ach_id + "_hint") size 22 color UI_TEXT_MUTED
 
-
 screen achievement_toast(ach_id):
     zorder 250
 
@@ -1297,11 +1199,6 @@ screen achievement_toast(ach_id):
                 text ui_tr(ach_id + "_name") size 26 bold True color gui.text_color
 
     timer 4.0 action Function(_show_next_achievement_toast)
-
-
-################################################################################
-## Layar Kredit & Tentang (PRD §4.1 & Fase 7)
-################################################################################
 
 screen credits():
     tag menu
@@ -1362,7 +1259,6 @@ screen credits():
                     padding (0, 0)
                     background Solid(UI_BORDER_SUBTLE)
 
-                ## Daftar 5 nama ending kanonik (hanya tampilan daftar; ending TIDAK bisa dipilih manual).
                 text ui_tr("credits_endings_heading") size 26 bold True color gui.accent_color
 
                 vbox:
@@ -1377,7 +1273,6 @@ screen credits():
 
                 null height 10
                 text ui_tr("credits_note") style "pref_note"
-
 
 screen changelog():
     tag menu
@@ -1460,7 +1355,6 @@ screen changelog():
                     text ui_tr("changelog_v100_title") size 27 bold True color gui.accent_color
                     text ui_tr("changelog_v100_body") size 24 color gui.text_color line_spacing 8
 
-
 screen about():
     tag menu
 
@@ -1518,7 +1412,6 @@ screen about():
                     text ui_tr("credits_version_label") size 24 bold True color gui.accent_color xminimum 240
                     text "[config.version]" size 24 color gui.text_color
 
-
 screen glossary():
     tag menu
 
@@ -1558,8 +1451,6 @@ screen glossary():
                         text item["term"] size 27 bold True color gui.selected_color substitute False
                         text item[_gl_lang] size 23 color gui.text_color line_spacing 6 substitute False
 
-
-## Kartu Penutup Ending (hanya ditampilkan otomatis saat playthrough mencapai akhir cerita).
 screen ending_card(ending_id, choice_code):
     modal True
     zorder 190
@@ -1608,11 +1499,6 @@ screen ending_card(ending_id, choice_code):
                 xalign 0.5
                 action Return()
 
-
-################################################################################
-## Modal Konfirmasi, Notifikasi, & Indikator Skip
-################################################################################
-
 screen confirm(message, yes_action, no_action):
     modal True
     zorder 300
@@ -1644,7 +1530,6 @@ screen confirm(message, yes_action, no_action):
 
     key "game_menu" action no_action
 
-
 screen notify(message):
     zorder 240
 
@@ -1655,7 +1540,6 @@ screen notify(message):
         text ui_confirm_text(message) size 24 color gui.selected_color
 
     timer 3.0 action Hide("notify")
-
 
 screen skip_indicator():
     zorder 150

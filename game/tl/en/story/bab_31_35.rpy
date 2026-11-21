@@ -1,9 +1,3 @@
-## Interlude / Side B — English Translation (Chapters 31–35)
-
-################################################################################
-## CHAPTER 31 — From Settled Grief
-################################################################################
-
 translate en b31_005:
     "Pak Ageng walks over to an old wooden cabinet in the corner of the room. Not the glass cabinet with the red tapes — a private one, always kept locked. Its brass key is rusted. From inside, he pulls out a worn cassette with a yellowed label. The faded black ink reads: {i}Siti, 1994{/i}."
 
@@ -90,10 +84,6 @@ translate en b31s_007:
 
 translate en b31s_008:
     ageng "Fix your tape… while it hasn't snapped yet — durung."
-
-################################################################################
-## CHAPTER 32 — Good News in the Quiet
-################################################################################
 
 translate en b32_001:
     "That morning, before any announcements go up, Yara catches Kai in the hallway. In her hands is a folder with her portfolio — the school asked for one final copy for the archives, complete with an official title."
@@ -188,10 +178,6 @@ translate en b32s_005c:
 translate en b32s_006c:
     kai_hati "\"Stuff to do.\" What stuff? Nothing. I just… couldn't stand seeing her that happy about something that's going to take her away from here. So I walked away first. Easier that way."
 
-################################################################################
-## CHAPTER 33 — Tangled Threads [RED ROUTE]
-################################################################################
-
 translate en b33_001:
     "Kai can't sleep a wink that night. The room that used to be his hiding place feels like an interrogation cell. Every time he shuts his eyes, he sees Yara's face by the stairwell — a face that deserved to celebrate her dream, wilting instead because of how cold he'd been."
 
@@ -239,10 +225,6 @@ translate en b33_014:
 
 translate en b33_015:
     kai_hati "I tried to control the future. I destroyed my own present to do it. And now… my fate has lost its melody. All that's left is noise. Noise ruining everything."
-
-################################################################################
-## CHAPTER 34 — Lifeless Music / The Intact Mixtape
-################################################################################
 
 translate en b34r_001:
     "His bedroom feels like a graveyard for sound. The mess of tangled tape ribbons still lies scattered across the desk like dead cobwebs. With shaking hands, Kai reaches into his bottom drawer."
@@ -312,10 +294,6 @@ translate en b34s_005:
 
 translate en b34s_006:
     kai_hati "I used to think those future tapes were what kept me calm. Turns out they weren't. {i}(looking at the red plastic cassette){/i} This one doesn't tell the future at all. It's only the past. And weirdly… this is the one that calms me down."
-
-################################################################################
-## CHAPTER 35 — Dust in the Dry Alley
-################################################################################
 
 translate en b35_001:
     "At noon, flyers for the student showcase go up on the notice board and get passed around classrooms. On the student portfolio list, one title sits in official print:"

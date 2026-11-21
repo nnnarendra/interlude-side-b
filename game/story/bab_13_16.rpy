@@ -1,16 +1,6 @@
-## Interlude / Side B — Batch 4 (Bab 13–16)
-## Sumber verbatim: NASKAH-VN-MASTER-Interlude-Side-B.md (baris 933–1236)
-## Gerbang: G3 (Bab 13), m10 (Bab 14), m11 (Bab 15), G4 (Bab 16)
-## CG & Pencapaian: cg_headphone (Bab 16-1), ach_telinga_kedua (G4=A)
-
-################################################################################
-## BAB 13 — Mencari Gema di Kelas Sebelah
-################################################################################
-
 label bab_13:
     $ chapter_autosave("bab_13", "Bab 13 — Mencari Gema di Kelas Sebelah", "Ch. 13 — Searching for Echoes Next Door")
 
-    ## Adegan 13-1 — Kamar Kai, malam setelah perpustakaan ◆ G3
     scene bg_kamar_kai_malam with dissolve
     stop music fadeout 0.8
     play sound sfx_desis_pita
@@ -22,7 +12,6 @@ label bab_13:
 
     kai_hati "Besok di sekolah… gimana?" id b13_003
 
-    ## GERBANG UTAMA G3 (posisi 3 string 12 huruf)
     menu:
         "Apa yang Kai putuskan soal gadis di perpustakaan itu?"
 
@@ -36,7 +25,7 @@ label bab_13:
             $ record_major_choice(3, "C")
 
     if get_major_choice(3) == "A":
-        ## Adegan 13-2A — Kantin, jam istirahat [jika G3 = A]
+
         scene bg_kantin with dissolve
         play music bgm_sekolah loop fadein 1.2
         play sound sfx_kelas loop fadein 0.6
@@ -73,7 +62,7 @@ label bab_13:
         kai_hati "Beneran Yara. Oke. Besok aku sapa. Besok. Pasti." id b13_014a
 
     elif get_major_choice(3) == "B":
-        ## Adegan 13-2B — Koridor sekolah [jika G3 = B]
+
         scene bg_koridor_sekolah with dissolve
         play music bgm_sekolah loop fadein 1.2
         show kai biasa at pos_center with dissolve
@@ -86,7 +75,7 @@ label bab_13:
         "Tapi anehnya, seharian itu tidak ada tanda-tanda headphone besar atau mikrofon panjang di mana pun. Dan Kai pulang dengan perasaan yang tidak dia akui sebagai kecewa." id b13_006b
 
     else:
-        ## Adegan 13-2C — Seminggu menghindar [jika G3 = C]
+
         scene bg_koridor_sekolah with dissolve
         play music bgm_sekolah loop fadein 1.2
         show kai cemas at pos_center with dissolve
@@ -101,7 +90,6 @@ label bab_13:
 
         kai_hati "…Yah. Pindah jam. {i}(duduk, membuka buku tanpa benar-benar membaca){/i} Ya sudah. Memang itu mauku, kan?" id b13_007c
 
-    ## Adegan 13-3 — Depan kelas XI-Sosial [semua rute, nada menyesuaikan G3]
     scene bg_koridor_sekolah with dissolve
     play music bgm_sekolah loop if_changed
     play sound sfx_hujan_deras loop fadein 0.8
@@ -149,15 +137,9 @@ label bab_13:
     stop sound fadeout 0.6
     return
 
-
-################################################################################
-## BAB 14 — Melodi dari Panci yang Bergolak
-################################################################################
-
 label bab_14:
     $ chapter_autosave("bab_14", "Bab 14 — Melodi dari Panci yang Bergolak", "Ch. 14 — Melody from a Boiling Pot")
 
-    ## Adegan 14-1 — Kantin, siang
     scene bg_kantin with dissolve
     play music bgm_sekolah loop if_changed
     play sound sfx_kelas loop fadein 0.6
@@ -168,7 +150,6 @@ label bab_14:
     show yara fokus at pos_right with dissolve
     "Tapi di tengah kekacauan itu, Yara seperti pulau yang sunyi. Di pojok kantin, dekat stan mie, dia berjongkok. Headphone besarnya terpasang separuh — telinga kiri tertutup, telinga kanan terbuka. Tangannya terulur stabil, mengarahkan mikrofon kecil ke panci aluminium raksasa di atas kompor mawar. Uap putih mengepul tebal." id b14_002
 
-    ## Nada pembuka Bab 14 menyesuaikan G3
     if get_major_choice(3) == "A":
         kai_hati "Oke. Kemarin dia bilang: tanya langsung saja. {i}(menarik napas){/i} Langsung saja. Jangan muter-muter lagi." id b14_003a
     elif get_major_choice(3) == "B":
@@ -191,7 +172,6 @@ label bab_14:
     play sound sfx_panci loop fadein 0.6
     kai_hati "Bup… bup-bup… bup. Gelembungnya nabrak-nabrak dinding panci. Hampir semenit kami jongkok berdua di pojok kantin yang panas ini. Dan anehnya… aku nggak keberatan." id b14_009
 
-    ## Adegan 14-2 — "Kamu lagi" ◆ m10
     stop sound fadeout 0.4
     play sound sfx_klik_play
     show yara penasaran at pos_right
@@ -205,7 +185,6 @@ label bab_14:
     play sound sfx_panci loop fadein 0.5
     "Sebelum Yara menjawab, panci di kompor sebelah bergolak makin keras — dan ibu penjual mie mulai kewalahan mengangkat panci kedua yang lebih kecil." id b14_013
 
-    ## GERBANG MINOR m10 (opsi A memberi item file suara panci)
     menu:
         "Apa yang Kai lakukan selagi Yara menyiapkan jawaban?"
 
@@ -252,15 +231,9 @@ label bab_14:
 
     return
 
-
-################################################################################
-## BAB 15 — Kejujuran di Balik Kebisingan
-################################################################################
-
 label bab_15:
     $ chapter_autosave("bab_15", "Bab 15 — Kejujuran di Balik Kebisingan", "Ch. 15 — Honesty Beneath the Noise")
 
-    ## Adegan 15-1 — Portofolio
     scene bg_kantin with dissolve
     play music bgm_sekolah loop if_changed
     show kai biasa at pos_left with dissolve
@@ -291,7 +264,6 @@ label bab_15:
 
     kai "{i}(lirih, menerawang){/i} Tuli sama separuh kehidupan…" id b15_011
 
-    ## Adegan 15-2 — Suara yang paling dibenci ◆ m11
     show yara biasa at pos_right
     yara "{i}(berdiri, menepuk-nepuk rok abu-abunya yang kena debu lantai){/i} Kenapa? Kesindir?" id b15_012
 
@@ -306,7 +278,6 @@ label bab_15:
     show yara penasaran at pos_right
     yara "Setiap orang punya. Ayo. Yang pertama kepikiran saja, nggak usah dipikir lama-lama. Justru itu yang jujur." id b15_016
 
-    ## GERBANG MINOR m11 (callback dibayar di Bab 18-3)
     menu:
         "Suara apa yang paling dibenci Kai?"
 
@@ -348,15 +319,9 @@ label bab_15:
 
     return
 
-
-################################################################################
-## BAB 16 — Ketika Bising Menjelma Simfoni
-################################################################################
-
 label bab_16:
     $ chapter_autosave("bab_16", "Bab 16 — Ketika Bising Menjelma Simfoni", "Ch. 16 — When Noise Becomes a Symphony")
 
-    ## Adegan 16-1 — Headphone berdua
     scene bg_kantin with dissolve
     play music bgm_sekolah loop if_changed
     play sound sfx_kelas loop fadein 0.6
@@ -380,7 +345,6 @@ label bab_16:
 
     "Sebelum Kai sempat mencerna, Yara sudah melangkah mendekat dan memasangkan headphone hitam besarnya ke telinga Kai. Gerakannya cepat, tanpa permisi. Ada sisa kehangatan tipis di bantalan headphone itu — bekas dipakai Yara." id b16_007
 
-    ## CG Kanonik #2: cg_headphone (dipakai Bab 16 — aset_manifest.json)
     stop sound fadeout 0.6
     stop music fadeout 0.8
     $ show_cg_and_unlock("cg_headphone", dissolve)
@@ -414,7 +378,6 @@ label bab_16:
     show yara biasa at pos_right
     yara "Julukan bagus itu susah dibuang. {i}(mengemasi alatnya){/i} Lagipula kamu belum kasih aku alasan buat ganti." id b16_018
 
-    ## Adegan 16-2 — Tawaran ◆ G4
     "Yara menggendong tas kanvasnya yang berat — tripod, kabel-kabel, perekam cadangan — lalu melangkah pergi seperti biasa. Tapi tiga langkah kemudian dia berhenti." id b16_019
 
     yara "{i}(tanpa berbalik){/i} Besok aku ke kolong jembatan dekat stasiun. Gema suaranya unik di sana. {i}(jeda){/i} Lusa ke pasar. Besoknya… entah. Jadwal buruanku banyak." id b16_020
@@ -422,7 +385,6 @@ label bab_16:
     show kai cemas at pos_left
     kai_hati "Dia ngomong ke aku. Itu bukan obrolan basa-basi. Itu… {i}(menelan ludah){/i} Itu pintu. Pintu yang dia buka sedikit. Tinggal aku berani masuk atau nggak." id b16_021
 
-    ## GERBANG UTAMA G4 (posisi 4 string 12 huruf; opsi A memicu ach_telinga_kedua)
     menu:
         "Apa jawaban Kai?"
 
@@ -458,7 +420,6 @@ label bab_16:
             "Yara berjalan pergi sendirian, tas kanvas berat di pundaknya, boom mic teracung seperti biasa. Kantin kembali jadi sekadar bising di telinga Kai." id b16_024c
             kai_hati "…Aneh. Aku barusan nolak hal yang sebenarnya pengin banget kuikuti. Dan aku bahkan nggak tahu kenapa." id b16_025c
 
-    ## Adegan 16-3 — Penutup: dinamika baru [nada mengikuti G4]
     show kai biasa at pos_center with dissolve
     if get_major_choice(4) == "A":
         "Sejak siang itu, sepulang sekolah Kai punya tujuan baru. Bukan kamar, bukan gang basah itu — melainkan ke mana pun Yara dan mikrofonnya pergi. Dia membawa tas kanvas berat berisi tripod dan kabel ke kolong jembatan, ke pasar tradisional yang riuh, ke taman kota waktu senja." id b16_027a

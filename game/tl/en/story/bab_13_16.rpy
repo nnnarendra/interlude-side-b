@@ -1,9 +1,3 @@
-## Interlude / Side B — English Translation: Chapters 13–16
-
-################################################################################
-## CHAPTER 13 — Searching for Echoes Next Door
-################################################################################
-
 translate en b13_001:
     "Three days had passed since that afternoon in the library. Tomorrow's cassettes still played, still turned out right. But what kept looping in Kai's head now wasn't any prediction — it was the crash of a stack of books, and a girl with a boom mic staring flatly at him."
 
@@ -106,10 +100,6 @@ translate en b13_022:
 translate en b13_023:
     kai_hati "Yesterday I was walking toward the end of everything. Today… feels like I'm walking toward something new. Something noisy. {i}(smiles faintly){/i} And I want to learn what it's about."
 
-################################################################################
-## CHAPTER 14 — Melody from a Boiling Pot
-################################################################################
-
 translate en b14_001:
     "The canteen was ridiculously loud that afternoon. Clinking spoons, kids laughing in the corner, stall vendors shouting out orders — all piling on top of each other."
 
@@ -200,10 +190,6 @@ translate en b14_020:
 translate en b14_021:
     yara "You were asking around about me at the canteen yesterday, remember? {i}(smiles faintly){/i} Only fair I asked around too. — Everyone calls it noise. But to this recorder, it's an honest song."
 
-################################################################################
-## CHAPTER 15 — Honesty Beneath the Noise
-################################################################################
-
 translate en b15_001:
     "Yara coiled her mic cable with calm, practiced motions. Right in the middle of the noisy canteen, it was like she had her own pocket of quiet that nobody could break into."
 
@@ -287,10 +273,6 @@ translate en b15_023:
 
 translate en b15_024:
     yara "{i}(shrugs, smiling faintly){/i} You definitely will. Small school."
-
-################################################################################
-## CHAPTER 16 — When Noise Becomes a Symphony
-################################################################################
 
 translate en b16_001:
     "The next afternoon, without even planning it, Kai's feet carried him back to that same corner of the canteen. Yara was already there — not crouched this time, just standing and aiming her mic out into the crowd, like someone fishing in a rushing river."

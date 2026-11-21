@@ -1,9 +1,3 @@
-## Interlude / Side B — English Translation (Chapters 1–4)
-
-################################################################################
-## CHAPTER 1 — Tomorrow's Sound
-################################################################################
-
 translate en b01_001:
     "Malang, five in the afternoon. The sky was dark as night. Kai, seventeen, was on his way home from school — and the rain started pouring before he could make it back."
 
@@ -96,11 +90,6 @@ translate en b01_028c:
 
 translate en b01_029:
     "Kai held the cassette he chose. The plastic felt rough, the tape inside taut and intact. It was light — yet somehow his hands were shaking."
-
-
-################################################################################
-## CHAPTER 2 — The Price of Certainty
-################################################################################
 
 translate en b02_001:
     "Pak Ageng settled back into his rocking chair. The wood creaked in a slow, steady rhythm that almost made Kai sleepy — except his head was only getting louder."
@@ -204,11 +193,6 @@ translate en b02_026b:
 translate en b02_028:
     kai_hati "I've got Friday's sound sitting in my bag. I should be excited. Why do I feel... oh well. I'll just listen to it tonight."
 
-
-################################################################################
-## CHAPTER 3 — Echoes Made Real
-################################################################################
-
 translate en b03_001:
     "Kai's bedroom was cramped and full of old stuff: stacks of comics, posters peeling at the corners, and on his desk — his beat-up silver Walkman. The paint on the edges had chipped off long ago, but the buttons still had a solid click to them. Click."
 
@@ -253,11 +237,6 @@ translate en b03_014:
 
 translate en b03_015:
     kai_hati "I should feel calm now. I've got a way to peek at tomorrow. {i}(pause){/i} So why does it feel like someone's squeezing my throat?"
-
-
-################################################################################
-## CHAPTER 4 — Addicted to Tomorrow
-################################################################################
 
 translate en b04_001:
     "From that day on, the ever-wet alley became Kai's mandatory detour after school. Gema Masa turned into something like a pharmacy. And those cassettes — a heavy-duty tranquilizer for his anxiety."

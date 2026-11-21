@@ -1,18 +1,6 @@
-## Interlude / Side B — Batch 3 (Bab 9–12)
-## Sumber verbatim: NASKAH-VN-MASTER-Interlude-Side-B.md (baris 613–901)
-## Gerbang minor: m07 (Bab 9), m08 (Bab 10), m09 (Bab 12)
-## Callback dibayar: m05 (Bab 9-4), m07 (Bab 10-1), m08 (Bab 10-4 & Bab 11-2)
-## CG & Pencapaian: cg_perpustakaan_debu (Bab 11-4), ach_penunggu_mati (akhir Bab 11)
-## Pagar fakta Bible: nama "Yara" TIDAK dipakai di Bab 11 (tag penutur = `gadis`).
-
-################################################################################
-## BAB 9 — Bahagia yang Menikam Dada
-################################################################################
-
 label bab_09:
     $ chapter_autosave("bab_09", "Bab 9 — Bahagia yang Menikam Dada", "Ch. 9 — Joy That Pierces the Chest")
 
-    ## Adegan 9-1 — Depan Toko Gema Masa, sore, gerimis
     scene bg_gang_hujan with dissolve
     stop music fadeout 1.0
     play sound sfx_hujan_deras loop fadein 0.8
@@ -36,7 +24,6 @@ label bab_09:
 
     kai_hati "Dia habis dengar kaset. Dan dia nangis… bahagia. Dua-duanya barengan. Gimana bisa?" id b09_007
 
-    ## Adegan 9-2 — Gang buntu, hujan mulai deras
     play music bgm_cemas loop fadein 1.5
     play sound sfx_hujan_deras loop fadein 0.5
     show kai sedih at pos_center with ease
@@ -50,7 +37,6 @@ label bab_09:
 
     "Kai tidak jadi masuk. Ia tidak sanggup menghadapi tenangnya Pak Ageng sore ini. Ia berbalik dan berjalan menembus hujan yang mulai deras." id b09_011
 
-    ## Adegan 9-3 — Rumah Kai, malam ◆ m07
     stop sound fadeout 0.8
     scene bg_kamar_kai_malam with dissolve
     show kai sedih at pos_center with dissolve
@@ -81,7 +67,6 @@ label bab_09:
             kai "{i}(dari jauh){/i} Udah, Bu. Kenyang. Mau istirahat aja." id b09_014c
             "Bohong. Perutnya kosong sejak siang. Tapi kakinya sudah membawanya masuk kamar sebelum ada yang sempat menahan." id b09_015c
 
-    ## Adegan 9-4 — Kamar Kai, malam (callback m05)
     scene bg_kamar_kai_malam with dissolve
     show kai sedih at pos_center with dissolve
 
@@ -104,15 +89,9 @@ label bab_09:
 
     return
 
-
-################################################################################
-## BAB 10 — Pelarian ke Ruang Sunyi
-################################################################################
-
 label bab_10:
     $ chapter_autosave("bab_10", "Bab 10 — Pelarian ke Ruang Sunyi", "Ch. 10 — Escape to a Quiet Room")
 
-    ## Adegan 10-1 — Kamar Kai, Jumat, 05.00 (callback m07)
     scene bg_kamar_kai_malam with dissolve
     play music bgm_cemas loop if_changed
     show kai cemas at pos_center with dissolve
@@ -130,7 +109,6 @@ label bab_10:
 
     "Lega itu cuma bertahan tiga detik. Karena Kai tahu persis jam berapa \"kejadian\" di kaset itu: pukul 16.00. Masih ada sebelas jam membentang di depannya — seperti lorong eksekusi." id b10_004
 
-    ## Adegan 10-2 — Sekolah, pagi sampai siang
     scene bg_kelas with dissolve
     stop music fadeout 0.8
     play music bgm_sekolah loop fadein 1.2
@@ -153,7 +131,6 @@ label bab_10:
 
     kai_hati "Aku nggak mau matiku jadi tontonan. Kalau memang harus pergi hari ini… aku mau menghilang dengan tenang." id b10_010
 
-    ## Adegan 10-3 — Pulang sekolah ◆ m08
     stop sound fadeout 0.6
     scene bg_gerbang_sekolah with dissolve
     show kai cemas at pos_center with dissolve
@@ -184,7 +161,6 @@ label bab_10:
             kai_hati "…Tempat terbuka. Tinggi. Angin. Bodoh. Ini bukan tempat sembunyi. Ini undangan." id b10_013c
             "Ia turun lagi dengan napas pendek-pendek, lalu berjalan cepat ke Perpustakaan Kota." id b10_014c
 
-    ## Adegan 10-4 — Perpustakaan Kota, 15.30
     stop music fadeout 1.0
     scene bg_perpustakaan with dissolve
     play music bgm_cemas loop fadein 1.5
@@ -194,7 +170,6 @@ label bab_10:
 
     "Ia menyusuri lorong di antara rak-rak kayu jati yang menjulang tinggi hingga hampir menyentuh langit-langit. Terus berjalan, sampai sudut paling tersembunyi di perpustakaan ini: di balik barisan rak ensiklopedia yang jarang disentuh orang." id b10_016
 
-    ## Callback m08 (bagian 1 — kursi dekat jendela & tas peralatan)
     if get_minor_choice("m08") == "A":
         "Dalam perjalanan ke sudut itu, matanya sempat menangkap sesuatu di dekat jendela kaca besar di ujung ruangan: sebuah kursi kayu — dan di sampingnya, sebuah tas peralatan terbuka, tergeletak rapi. Seperti ada yang sudah lebih dulu menandai tempat itu." id b10_017a
         kai_hati "Ada orang lain…? {i}(menggeleng){/i} Biarin. Selama dia jauh dari sudutku, bukan urusanku." id b10_018a
@@ -205,15 +180,9 @@ label bab_10:
 
     return
 
-
-################################################################################
-## BAB 11 — Gema Jatuh yang Membisukan
-################################################################################
-
 label bab_11:
     $ chapter_autosave("bab_11", "Bab 11 — Gema Jatuh yang Membisukan", "Ch. 11 — The Falling Echo That Silences")
 
-    ## Adegan 11-1 — Sudut perpustakaan, 15.50
     scene bg_perpustakaan with dissolve
     play music bgm_cemas loop if_changed
     show kai cemas at pos_center with dissolve
@@ -224,7 +193,6 @@ label bab_11:
 
     kai_hati "Di kepalaku, aku sudah bilang selamat tinggal ke semuanya. Berulang-ulang. {i}(jeda){/i} Anehnya yang paling kusesali malah hal-hal kecil. Amplop putih itu — surat wasiat konyol yang kutulis sendiri. Umur tujuh belas, nulis surat wasiat. Kalau ada yang tahu, aku diketawain seumur hidup. …Kalau aku masih punya sisa umur, maksudnya." id b11_003
 
-    ## Adegan 11-2 — Gadis di ujung lorong
     "Sebuah pergerakan di ujung lorong rak menarik perhatiannya. Beberapa meter dari tempatnya duduk, seorang gadis sebaya berdiri dengan posisi yang sangat aneh." id b11_004
 
     show kai biasa at pos_left with dissolve
@@ -235,13 +203,11 @@ label bab_11:
 
     "Gadis itu tidak tampak takut. Ia justru sangat fokus — seolah sedang memburu sesuatu yang sangat berharga dari getaran kaca tersebut." id b11_006
 
-    ## Callback m08 (bagian 2 — sadar kursi & tas jendela milik gadis itu)
     if get_minor_choice("m08") == "A":
         kai_hati "…Kursi dekat jendela itu. Tas peralatan yang tadi kulihat. Punya dia. Dia sudah di sini dari tadi — sama kayak aku, \"bersembunyi\" di perpustakaan. Bedanya, dia nggak kelihatan takut sama sekali." id b11_007a
 
     kai_hati "Siapa dia? Di saat aku lagi hitung mundur detik-detik terakhirku, dia malah sibuk sama dunianya sendiri — penuh alat rekam. {i}(jeda){/i} Orang bisa beda banget, ya." id b11_008
 
-    ## Adegan 11-3 — Pukul 16.00
     hide yara with dissolve
     show kai panik at pos_center with dissolve
     stop music fadeout 1.0
@@ -250,7 +216,6 @@ label bab_11:
 
     kai_hati "Ini dia. {i}(memejamkan mata rapat-rapat; mencengkeram pinggiran kursi sampai buku-buku jarinya memutih){/i} Selamat tinggal. Selamat—" id b11_010
 
-    ## Dentuman tumpukan buku jatuh (tanpa SFX di luar manifest, getaran layar vpunch)
     show kai panik at pos_center with vpunch
     "Kai tersentak hebat di kursinya. Matanya terbuka cepat — dan ia masih bisa melihat cahaya matahari sore yang masuk lewat celah rak. Masih bisa merasakan dinginnya udara. Jantungnya berdegup begitu kencang hingga telinganya berdenging. Berdegup. Masih berdegup." id b11_011
 
@@ -258,7 +223,6 @@ label bab_11:
 
     "Di depan tempatnya duduk, tumpukan buku-buku tebal berserakan di lantai. Rupanya tumpukan itu jatuh dari meja di sampingnya — karena getaran truk tadi, atau tersenggol tanpa sengaja. Dan di balik tumpukan buku itu, berdiri gadis dengan boom mic tadi." id b11_013
 
-    ## Adegan 11-4 — Enam puluh detik (CG Kanonik #1: cg_perpustakaan_debu)
     $ show_cg_and_unlock("cg_perpustakaan_debu", dissolve)
 
     "Gadis itu membeku. Tangannya masih memegang tongkat mikrofon, tapi matanya yang jernih kini menatap langsung ke arah Kai. Waktu seolah benar-benar berhenti berputar. Debu-debu halus menari di udara dalam sorot cahaya jingga yang menyelinap di antara rak — pemandangan yang hampir terasa tidak nyata." id b11_014
@@ -271,7 +235,6 @@ label bab_11:
 
     kai_hati "Aku masih hidup. Aku benar-benar masih hidup." id b11_017
 
-    ## Adegan 11-5 — Tawa, dan Laki-laki Penunggu Mati
     scene bg_perpustakaan with dissolve
     show kai senyum at pos_left with dissolve
     show yara marah at pos_right with dissolve
@@ -302,7 +265,6 @@ label bab_11:
     show kai senyum at pos_center with dissolve
     kai_hati "\"Laki-laki Penunggu Mati\". {i}(jeda; lalu tersenyum kecil sendirian){/i} Julukan terburuk yang pernah kudapat. Dan entah kenapa… aku pengin dengar dia ngomong lagi." id b11_028
 
-    ## Adegan 11-6 — Di luar perpustakaan
     scene bg_perpustakaan with fade
     show kai senyum at pos_center with dissolve
 
@@ -310,20 +272,13 @@ label bab_11:
 
     kai_hati "Kaset itu nggak bohong. Enam puluh detik hening, jam empat, hari Jumat — semua benar. Cuma artinya… {i}(menggeleng, tersenyum){/i} artinya yang aku salah baca. Jauh banget salahnya." id b11_030
 
-    ## Bab 11 selesai -> picu pencapaian ach_penunggu_mati (PRD §4.6)
     $ hook_chapter_completed("bab_11")
 
     return
 
-
-################################################################################
-## BAB 12 — Manis di antara Kenyataan
-################################################################################
-
 label bab_12:
     $ chapter_autosave("bab_12", "Bab 12 — Manis di antara Kenyataan", "Ch. 12 — Sweetness Between Realities")
 
-    ## Adegan 12-1 — Kantin dekat perpustakaan ◆ m09
     scene bg_kantin with dissolve
     play music bgm_sekolah loop fadein 1.2
     show kai biasa at pos_center with dissolve
@@ -353,7 +308,6 @@ label bab_12:
             show kai senyum at pos_center
             kai_hati "Dunia nggak berhenti tadi. Cuma aku yang berhenti. …Dan sekarang jalan lagi." id b12_003c
 
-    ## Adegan 12-2 — Kembali ke Gema Masa
     stop music fadeout 1.0
     scene bg_gang_hujan with dissolve
     show kai biasa at pos_center with dissolve
@@ -386,7 +340,6 @@ label bab_12:
     show ageng biasa at pos_right
     ageng "Kaset itu merekam apa yang akan terjadi, Kai. Ia tidak pernah salah mencatat frekuensi. Yang salah adalah bagaimana hatimu menerjemahkan suara-suara itu." id b12_012
 
-    ## Adegan 12-3 — Diam yang lebih keras dari teriakan
     "Pak Ageng menatap ke arah jendela toko yang masih menyisakan bekas tetesan air hujan. Tatapannya menerawang, seolah melihat sesuatu yang jauh melampaui tembok gang buntu ini." id b12_013
 
     ageng "{i}(berbisik pelan){/i} Kadang, diam itu lebih keras dari teriakan. Ada momen di mana suara di sekitarmu mendadak hilang — bukan karena duniamu berhenti, tapi karena hatimu sedang dipaksa untuk mendengarkan sesuatu yang lebih nyaring daripada kata-kata." id b12_014
@@ -399,7 +352,6 @@ label bab_12:
     show ageng senyum at pos_right
     ageng "{i}(tersenyum tipis){/i} Memang begitu rasanya saat kita terpesona, Kai. Itu adalah jenis keheningan yang paling jujur. Tidak ada manipulasi, tidak ada kepura-puraan. Hanya kamu dan apa yang ada di depan matamu." id b12_017
 
-    ## Adegan 12-4 — Penutup bab
     ageng "{i}(menggodanya){/i} Jadi, apa rencana kamu untuk esok hari? Masih mau membeli kaset lagi?" id b12_018
 
     show kai senyum at pos_left

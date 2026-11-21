@@ -1,11 +1,3 @@
-## Interlude / Side B — Definisi Karakter Cerita (BIBLE-KARAKTER-DUNIA & NASKAH-VN-MASTER)
-## - `kai` & `kai_hati`: keduanya menampilkan nama di nameplate atas kotak dialog agar tidak
-##   rancu dengan narasi (`Kai` untuk dialog lisan; `Kai (hati)` / `Kai (thought)` untuk monolog batin).
-## - Setiap karakter terhubung ke `make_speaker_cb(...)` agar sprite yang TIDAK berbicara
-##   otomatis mendapat overlay hitam 25% (`speaker_dim` di `assets.rpy`).
-## - Nama peran ("Gadis", "Ibu", "Ayah", dll.) dibungkus `_()` agar mengikuti Bahasa Cerita (Ren'Py tl).
-## - Aturan mutlak Bible: nama "Yara" TIDAK dipakai sebelum Bab 13 (Bab 11 memakai `gadis`).
-
 define narrator = Character(None, callback=make_speaker_cb(None))
 
 define kai = Character("Kai", color="#9ec2dc", callback=make_speaker_cb("kai"))

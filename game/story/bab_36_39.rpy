@@ -1,14 +1,5 @@
-## Interlude / Side B — Batch 9 (Bab 36–39)
-## Sumber verbatim: NASKAH-VN-MASTER-Interlude-Side-B.md (baris 2977–3311)
-## Gerbang: callback m19 (Bab 36), G10 final Rute Merah (Bab 36 — A versi lengkap bila G6=A atau G8=B; ach_jujur),
-##          G11 (Bab 38 + callback G8=B di surat), m20 (Bab 39 — opsi panci hanya bila item_file_panci)
-
-################################################################################
-## BAB 36 — Dua Versi Rute (Kejujuran yang Terlambat / Kejujuran yang Tepat Waktu)
-################################################################################
-
 label bab_36_m19_callback:
-    ## Callback m19 dari Bab 35 (dibayar di awal Bab 36 pada semua rute bila m19=A/B)
+
     if get_minor_choice("m19") == "A":
         ageng "{i}(melihat foto di HP Kai){/i} Gang ini… kering. Sudah lama sekali saya nggak lihat dia kering." id b36_m19_a1
         kai "Iya, Pak. Rasanya aneh. Kayak bukan gang yang sama." id b36_m19_a2
@@ -18,11 +9,9 @@ label bab_36_m19_callback:
         kai "…Saya nggak sembunyi, Pak. Cuma— ya. Mungkin iya." id b36_m19_b2
     return
 
-
 label bab_36_merah:
     $ chapter_autosave("bab_36_merah", "Bab 36 — Kejujuran yang Terlambat", "Ch. 36 — Honesty Too Late")
 
-    ## Adegan 36R-1 — Toko Gema Masa, sore (membayar m19)
     scene bg_gang_kering with dissolve
     play sound sfx_lonceng_pintu
     scene bg_toko_dalam with dissolve
@@ -37,7 +26,6 @@ label bab_36_merah:
 
     "Pak Ageng tidak bertanya kenapa Kai datang. Ia hanya menyeduh teh, lalu duduk. Belakangan ini Kai lebih sering diam daripada bicara, dan Pak Ageng membiarkannya." id b36r_002
 
-    ## Adegan 36R-2 — Rumah Kai, malam. Ketukan yang tidak sabar
     stop music fadeout 1.0
     scene bg_kamar_kai_malam with fade
     play music bgm_cemas loop fadein 1.5
@@ -62,16 +50,14 @@ label bab_36_merah:
 
     "Tangan Kai mengepal rapat-rapat. Di kepalanya, semua alasan dingin itu — \"ini buat melindungi dia\" — runtuh satu-satu." id b36r_010
 
-    ## GERBANG UTAMA G10 — RUTE MERAH (final, posisi 10 string 12 huruf; A memicu ach_jujur)
     menu:
         "Apa yang Kai lakukan?"
 
         "\"Yar. Ada yang harus kamu tahu. Semuanya.\"":
             $ record_major_choice(10, "A")
 
-            ## Cabang G10-A — Pengakuan penuh (runtut bila G6=A atau G8=B; tersendat bila tidak)
             if flag_g6_cermin or get_major_choice(8) == "B":
-                ## Versi runtut (modal dialog G6=A atau G8=B terpenuhi)
+
                 show kai menangis at pos_left
                 kai "Karena aku takut, Yara. {i}(menarik napas dalam){/i} Duduk dulu. Aku cerita semuanya. Semua kegilaan yang selama ini aku sembunyiin dari kamu. Jangan potong dulu, ya. Soalnya kalau berhenti di tengah, aku nggak yakin bisa lanjut." id b36r_011a1
 
@@ -91,7 +77,7 @@ label bab_36_merah:
                 kai "Isi kaset satu Agustus itu cuma suara kamu nangis. Ngucapin selamat tinggal. Jadi otak bodohku mikir: kalau dari sekarang aku jauhin kamu, kalau kita nggak terlalu dekat, perpisahan itu nggak akan sesakit ini. Buat kamu. Buat aku. Aku kira aku lagi ngelindungin kamu. Ternyata aku cuma… matiin rasaku sendiri." id b36r_018a1
 
             else:
-                ## Versi tersendat (G6!=A dan G8!=B; skor G10=A tetap sama)
+
                 show kai menangis at pos_left
                 kai "Karena aku takut, Yara. {i}(jeda lama){/i} Aku… denger. Duduk. Duduk dulu. Aku cerita, tapi— pelan-pelan, ya. Aku nggak tahu mulai dari mana." id b36r_011a2
 
@@ -113,7 +99,6 @@ label bab_36_merah:
         "\"Maafin aku. Udah, itu aja.\"":
             $ record_major_choice(10, "B")
 
-            ## Cabang G10-B (melewati Bab 37, langsung lanjut ke Bab 38)
             show kai sedih at pos_left
             kai "{i}(menunduk lama){/i} …Maafin aku, Yara." id b36r_011b
 
@@ -136,7 +121,6 @@ label bab_36_merah:
         "Diam dan pergi.":
             $ record_major_choice(10, "C")
 
-            ## Cabang G10-C (melewati Bab 37, langsung lanjut ke Bab 38)
             show kai datar at pos_left
             kai "{i}(menggeleng pelan; mundur selangkah; tidak mengatakan apa-apa){/i}" id b36r_011c
 
@@ -149,11 +133,9 @@ label bab_36_merah:
     stop music fadeout 1.0
     return
 
-
 label bab_36_sehat:
     $ chapter_autosave("bab_36_sehat", "Bab 36 — Kejujuran yang Tepat Waktu", "Ch. 36 — Honesty Right on Time")
 
-    ## Adegan 36S-1 — Toko Gema Masa, sore [RUTE SEHAT & TUNDA]
     scene bg_toko_dalam with dissolve
     play sound sfx_lonceng_pintu
     play music bgm_toko loop fadein 1.5
@@ -161,7 +143,6 @@ label bab_36_sehat:
     show kai biasa at pos_left with dissolve
     show ageng biasa at pos_right with dissolve
 
-    ## Callback m19 bila pemain memotret / merekam gang kering di Bab 35
     if get_minor_choice("m19") in ("A", "B"):
         call bab_36_m19_callback
 
@@ -208,7 +189,6 @@ label bab_36_sehat:
 
     ageng "Toko saya kecil, Nak. {i}(tersenyum){/i} Wes, sana. Antar dia pulang. Keburu hujan — gang ini kalau sudah mendung nggak pakai lama." id b36s_016
 
-    ## Adegan 36S-2 — Gang buntu, perjalanan pulang
     hide ageng with dissolve
     play sound sfx_lonceng_pintu
     scene bg_gang_hujan with dissolve
@@ -244,15 +224,9 @@ label bab_36_sehat:
     stop music fadeout 1.2
     return
 
-
-################################################################################
-## BAB 37 — Logam yang Tak Punya Jiwa [KHUSUS RUTE MERAH + G10=A]
-################################################################################
-
 label bab_37:
     $ chapter_autosave("bab_37", "Bab 37 — Logam yang Tak Punya Jiwa", "Ch. 37 — Soulless Metal")
 
-    ## Adegan 37-1 — Ruang tamu Kai, lanjutan malam itu
     scene bg_kamar_kai_malam with dissolve
     play music bgm_cemas loop fadein 1.2
     show kai menangis at pos_left with dissolve
@@ -293,15 +267,9 @@ label bab_37:
     stop music fadeout 1.2
     return
 
-
-################################################################################
-## BAB 38 — Surat dari Sisa Waktu (SEMUA RUTE MENYATU) ◆ G11
-################################################################################
-
 label bab_38:
     $ chapter_autosave("bab_38", "Bab 38 — Surat dari Sisa Waktu", "Ch. 38 — A Letter from Remaining Time")
 
-    ## Adegan 38-1 — Sekolah, berminggu-minggu sesudahnya
     scene bg_koridor_sekolah with dissolve
     play music bgm_cemas loop fadein 1.5
     play sound sfx_kelas loop fadein 0.6
@@ -313,7 +281,6 @@ label bab_38:
 
     "Kalender di kamar Kai berganti lembaran. Sisa satu bulan menuju satu Agustus." id b38_003
 
-    ## Adegan 38-2 — Toko Gema Masa, sore
     stop sound fadeout 0.5
     scene bg_toko_dalam with dissolve
     stop music fadeout 0.8
@@ -329,7 +296,7 @@ label bab_38:
     "Kai tidak menjawab. Dia mengunyah onde-onde dingin itu lambat-lambat, tanpa benar-benar merasakan manis kacang hijaunya." id b38_006
 
     $ hide_item()
-    ## Adegan 38-3 — Amplop putih
+
     stop music fadeout 1.0
     scene bg_kamar_kai with dissolve
     show kai cemas at pos_center with dissolve
@@ -339,7 +306,6 @@ label bab_38:
 
     kai_hati "Tanganku gemetar. Amplop doang, padahal. Amplop doang." id b38_008
 
-    ## Adegan 38-4 — Isi surat Yara (tampil langsung di atas CG surat terbuka tanpa kotak dialog)
     play music bgm_senja loop fadein 1.5
     python:
         _yara_letter_paras = [
@@ -367,14 +333,12 @@ label bab_38:
     kai_hati "Satu Agustus. Sore. Kereta. Nyata. Semuanya nyata. {i}(jeda lama){/i} Kalau aku balas… kalau aku datang ke stasiun itu… aku bakal dengar dia nangis. Aku bakal dengar \"selamat tinggal\" itu, beneran, pakai telingaku sendiri." id b38_014
     kai_hati "{i}(lebih pelan){/i} Jangan balas. Kalau aku nggak datang, mungkin dia nggak nangis buat aku. Mungkin dia pergi tenang-tenang aja, tanpa harus lihat muka pengecut ini lagi." id b38_014_p2
 
-    ## GERBANG UTAMA G11 (posisi 11 string 12 huruf)
     menu:
         "Surat ini dibalas, atau tidak?"
 
         "Balas malam ini.":
             $ record_major_choice(11, "A")
 
-            ## Cabang G11-A — Balas malam ini
             scene bg_kamar_kai_malam with dissolve
             show kai biasa at pos_center with dissolve
 
@@ -394,7 +358,6 @@ label bab_38:
         "Balas tiga hari kemudian.":
             $ record_major_choice(11, "B")
 
-            ## Cabang G11-B — Balas tiga hari kemudian
             "Tiga hari surat itu tergeletak di meja. Tiga hari Kai melewatinya, menatapnya, lalu melakukan hal lain. Di hari ketiga, malam-malam, dia akhirnya menulis balasan pendek — terlalu pendek untuk semua yang seharusnya dikatakan, tapi terkirim juga." id b38_015b
 
             "Balasannya datang seminggu kemudian. Amplop kecil. Satu lembar. Satu baris di tengah halaman, sisanya kosong." id b38_016b
@@ -416,7 +379,6 @@ label bab_38:
         "Tidak balas.":
             $ record_major_choice(11, "C")
 
-            ## Cabang G11-C — Tidak balas
             "Kai melipat surat itu dan memasukkannya ke laci meja — tepat di samping gulungan pita-pita kaset yang kusut. Tetangga yang cocok, pikirnya. Benda-benda yang tidak sanggup dia hadapi, disimpan berdekatan." id b38_015c
 
             "HP-nya dia matikan dan dia taruh di laci yang sama. Seminggu penuh benda itu tidak menyala. Di sekolah dia menunduk. Di rumah dia tidur lebih awal. Satu bulan menuju satu Agustus, Kai memutuskan tenggelam sepenuhnya dalam sunyi yang dia ciptakan sendiri — mengabaikan uluran tangan terakhir dari gadis yang sudah menghidupkan dunianya." id b38_016c
@@ -424,15 +386,9 @@ label bab_38:
     stop music fadeout 1.2
     return
 
-
-################################################################################
-## BAB 39 — Spektrum Suara Tanpa Jiwa ◆ m20
-################################################################################
-
 label bab_39:
     $ chapter_autosave("bab_39", "Bab 39 — Spektrum Suara Tanpa Jiwa", "Ch. 39 — A Spectrum of Soulless Sound")
 
-    ## Adegan 39-1 — Toko Gema Masa, tiga minggu kemudian
     scene bg_gang_kering with dissolve
     play sound sfx_lonceng_pintu
     scene bg_toko_dalam with dissolve
@@ -471,7 +427,6 @@ label bab_39:
     show kai cemas at pos_left
     "Kai tertegun seperti baru dihantam godam. Selama ini dia cuma mendengar frekuensi — tidak pernah mencoba memahami jiwa di balik suara itu. Dia sudah menyerah kalah bahkan sebelum memahami arti melodi yang dia dengar." id b39_013
 
-    ## Adegan 39-2 — Kilas balik sisipan ◆ m20 (beberapa minggu sebelumnya, sebelum jarak itu ada)
     stop music fadeout 1.0
     scene bg_kelas with fade
     play music bgm_senja loop fadein 1.5
@@ -483,7 +438,6 @@ label bab_39:
 
     yara "Satu lagi. Bagian tengahnya kosong. Harus ada satu suara yang berdiri sendiri di sini. {i}(menoleh){/i} Menurut kamu yang mana?" id b39_015
 
-    ## GERBANG MINOR m20 (opsi A HANYA tampil bila item_file_panci dimiliki dari m10=A)
     menu:
         "Suara apa yang di-solo-kan di tengah mix Yara?"
 

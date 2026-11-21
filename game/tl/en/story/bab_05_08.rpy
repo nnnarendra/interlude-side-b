@@ -1,9 +1,3 @@
-## Interlude / Side B — English Translation (Chapters 5–8)
-
-################################################################################
-## CHAPTER 5 — Silence
-################################################################################
-
 translate en b05_001:
     "Thursday afternoon. Drizzling again. Kai walked down the same dead-end alley, the shoulders of his jacket damp. He knew the routine by heart now: step in, hand over the cash, take the cassette, head home."
 
@@ -76,11 +70,6 @@ translate en b05_022:
 translate en b05_023:
     kai_hati "Those tapes always record tomorrow. Always. If tomorrow there's no voice of mine... no breath... {i}(swallows hard){/i} ...that means tomorrow I'm gone. Tomorrow I die."
 
-
-################################################################################
-## CHAPTER 6 — Proof of Life
-################################################################################
-
 translate en b06_001:
     "The bedroom suddenly felt airtight. The word \"die\" buzzed inside Kai's head, over and over, like a jammed tape."
 
@@ -140,11 +129,6 @@ translate en b06_015c:
 
 translate en b06_016:
     "That night stretched on forever. Kai curled up on his bedroom floor, clutching his knees tight. Knowing the schedule of your own death, it turned out, was the cruelest curse he had ever bought — and he'd bought it with his allowance."
-
-
-################################################################################
-## CHAPTER 7 — Silent Reading of a Pause
-################################################################################
 
 translate en b07_001:
     "Morning had barely broken when Kai was already sprinting through the lingering mist. His breath came in gasps, his chest ready to burst — he didn't care. He shoved the shop door open so hard the bell jangled in panic."
@@ -238,11 +222,6 @@ translate en b07_022:
 
 translate en b07_023:
     "Behind Kai, Pak Ageng's rocking chair started creaking again. Slow. Steady. Like time in that shop really did move at its own pace — and for this morning, that pace was just enough to help Kai walk home."
-
-
-################################################################################
-## CHAPTER 8 — Letters Never Read
-################################################################################
 
 translate en b08_001:
     "Before actually heading out, Kai stopped near a low shelf beside the counter. Sitting there, tied with frayed raffia string, was a bundle of old letters. Yellowed paper, handwritten envelopes. The very top envelope was slightly open."
