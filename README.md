@@ -44,6 +44,16 @@ Seluruh aset merujuk pada jalur tetap di dalam `game/images/` dan `game/audio/`.
 4. `S1` — *Desis Statis* (Sad-Pasif)
 5. `S2` — *Hening Enam Puluh Detik* (Sad-Ironis)
 
+###  Unduh Paket Siap Main / Download Playable Builds (v1.0.4)
+
+Unduh versi rilis siap main melalui tab **[Releases](https://github.com/nnnarendra/interlude-side-b/releases/tag/v1.0.4)**:
+
+| Platform | Format | Keterangan / Notes |
+| --- | --- | --- |
+| 🪟 **PC (Windows / Linux)** | `.zip` | Ekstrak lalu jalankan `interlude-side-b.exe` atau `interlude-side-b.sh` |
+| 🌐 **Web (HTML5 / PWA)** | `.zip` | Ekstrak ke web server lokal / hosting static |
+| 📱 **Android** | `.apk` | Pasang langsung di perangkat Android |
+
 ### Kredit
 - **Cerita:** Roo
 - **Engine:** Ren'Py
@@ -89,6 +99,16 @@ All assets point to fixed paths inside `game/images/` and `game/audio/`. To swap
 3. `G` — *Side B Unfinished* (Open)
 4. `S1` — *Static Hiss* (Sad-Passive)
 5. `S2` — *Sixty Seconds of Silence* (Sad-Ironic)
+
+###  Download Playable Builds (v1.0.4)
+
+Download the full playable builds from the **[Releases](https://github.com/nnnarendra/interlude-side-b/releases/tag/v1.0.4)** tab:
+
+| Platform | Format | Instructions |
+| --- | --- | --- |
+| 🪟 **PC (Windows / Linux)** | `.zip` | Extract and run `interlude-side-b.exe` or `interlude-side-b.sh` |
+| 🌐 **Web (HTML5 / PWA)** | `.zip` | Extract to any static hosting or local web server |
+| 📱 **Android** | `.apk` | Install directly on your Android device |
 
 ### Credits
 - **Story:** Roo
