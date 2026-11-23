@@ -44,15 +44,17 @@ Seluruh aset merujuk pada jalur tetap di dalam `game/images/` dan `game/audio/`.
 4. `S1` — *Desis Statis* (Sad-Pasif)
 5. `S2` — *Hening Enam Puluh Detik* (Sad-Ironis)
 
-###  Unduh Paket Siap Main / Download Playable Builds (v1.0.4)
+### Mainkan Langsung di Browser (Versi Web) & Unduh Paket Rilis
 
-Unduh versi rilis siap main melalui tab **[Releases](https://github.com/nnnarendra/interlude-side-b/releases/tag/v1.0.4)**:
+- **Main Langsung Online (itch.io):** **[nnnaren.itch.io/interlude-side-b](https://nnnaren.itch.io/interlude-side-b)** *(versi Web `v1.0.5`, langsung jalan di browser desktop & HP tanpa perlu unduh)*
+- **Unduh Paket Offline:** Tersedia di tab **[Releases](https://github.com/nnnarendra/interlude-side-b/releases)**
 
-| Platform | Format | Keterangan / Notes |
+| Platform | Format / Akses | Keterangan |
 | --- | --- | --- |
-| 🪟 **PC (Windows / Linux)** | `.zip` | Ekstrak lalu jalankan `interlude-side-b.exe` atau `interlude-side-b.sh` |
-| 🌐 **Web (HTML5 / PWA)** | `.zip` | Ekstrak ke web server lokal / hosting static |
-| 📱 **Android** | `.apk` | Pasang langsung di perangkat Android |
+| **Web (Browser / itch.io)** | Online (`v1.0.5`) | Main langsung di **[nnnaren.itch.io/interlude-side-b](https://nnnaren.itch.io/interlude-side-b)** |
+| **PC (Windows / Linux)** | `.zip` | Ekstrak lalu jalankan `interlude-side-b.exe` atau `interlude-side-b.sh` |
+| **Web (Self-Host / HTML5)** | `.zip` | Ekstrak ke web server lokal / hosting static |
+| **Android** | `.apk` | Pasang langsung di perangkat Android |
 
 ### Kredit
 - **Cerita:** Roo
@@ -100,15 +102,17 @@ All assets point to fixed paths inside `game/images/` and `game/audio/`. To swap
 4. `S1` — *Static Hiss* (Sad-Passive)
 5. `S2` — *Sixty Seconds of Silence* (Sad-Ironic)
 
-###  Download Playable Builds (v1.0.4)
+### Play Online (Web Version) & Download Playable Builds
 
-Download the full playable builds from the **[Releases](https://github.com/nnnarendra/interlude-side-b/releases/tag/v1.0.4)** tab:
+- **Play Directly in Browser (itch.io):** **[nnnaren.itch.io/interlude-side-b](https://nnnaren.itch.io/interlude-side-b)** *(Web `v1.0.5`, playable directly on desktop & mobile browsers without downloading)*
+- **Download Offline Builds:** Available in the **[Releases](https://github.com/nnnarendra/interlude-side-b/releases)** tab
 
-| Platform | Format | Instructions |
+| Platform | Format / Access | Instructions |
 | --- | --- | --- |
-| 🪟 **PC (Windows / Linux)** | `.zip` | Extract and run `interlude-side-b.exe` or `interlude-side-b.sh` |
-| 🌐 **Web (HTML5 / PWA)** | `.zip` | Extract to any static hosting or local web server |
-| 📱 **Android** | `.apk` | Install directly on your Android device |
+| **Web (Browser / itch.io)** | Online (`v1.0.5`) | Play directly at **[nnnaren.itch.io/interlude-side-b](https://nnnaren.itch.io/interlude-side-b)** |
+| **PC (Windows / Linux)** | `.zip` | Extract and run `interlude-side-b.exe` or `interlude-side-b.sh` |
+| **Web (Self-Host / HTML5)** | `.zip` | Extract to any static hosting or local web server |
+| **Android** | `.apk` | Install directly on your Android device |
 
 ### Credits
 - **Story:** Roo
